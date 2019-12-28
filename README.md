@@ -31,6 +31,13 @@ $ sudo ln -s  /usr/local/node-v10.9.0-linux-x64/bin/truffle /usr/bin/truffle
 $ truffle version
 ```
 
+### Quick Create local Single Node dev enviroment
+```
+cd ./scripts/node/
+sudo ./start.sh
+sudo docker logs -f platon-witch-01
+``` 
+
 ### Quick Usage
 
 For a default set of contracts and tests, run the following within an empty project directory:
