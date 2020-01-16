@@ -1,0 +1,18 @@
+{% extends "!layout.html" %}
+
+{% block htmltitle %}
+<title>{{ title }} | Truffle documentation - DApp develop framework | PlatON</title>
+{% endblock %}
+
+{% block sidebartitle %}
+    <a href="https://learnblockchain.cn" class="home" >PlatON</a>
+    </br>
+    {{ super() }}
+
+{% endblock %}
+{% block menu %}
+    {{ super() }}
+    <p class="caption"><span class="caption-text">Related documents</span></p>
+    <li class="toctree-l1"><a class="reference internal" href="https://solidity.readthedocs.io/en/v0.6.1/">Solidity</a></li>
+    <li class="toctree-l1"><a class="reference internal" href="https://web3js.readthedocs.io/en/v1.2.4/">Web3.js</a></li>
+{% endblock %}
