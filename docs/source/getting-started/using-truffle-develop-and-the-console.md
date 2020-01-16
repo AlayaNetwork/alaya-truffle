@@ -2,7 +2,7 @@
 
 Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you two easy ways to do this via an interactive console, with your contracts available and ready to use.
 
-* **Truffle console**: A basic interactive console connecting to any Ethereum client
+* **Truffle console**: A basic interactive console connecting to any PlatON client
 * **Truffle Develop**: An interactive console that also spawns a development blockchain
 
 ## Why two different consoles?
@@ -12,7 +12,7 @@ Having two different consoles allows you to choose the best tool for your needs.
 Reasons to use **Truffle console**:
 
 * You have a client you're already using, such as platon
-* You want to migrate to a testnet (or the main Ethereum network)
+* You want to migrate to a testnet (or the main PlatON network)
 * You want to use a specific mnemonic or account list
 
 Reasons to use **Truffle Develop**:
@@ -53,7 +53,7 @@ Additionally, both Truffle Develop and the console have the following features:
 
 * All of your compiled contracts are available and ready for use.
 * After each command (such as `migrate --reset`) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.
-* The `web3` library is made available and is set to connect to your Ethereum client.
+* The `web3` library is made available and is set to connect to your PlatON client.
 
 ### Commands available
 

@@ -38,7 +38,7 @@ Build configuration of your application, if your application requires tight inte
 
 ### networks
 
-Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your Ethereum client is connected to a specific network, they'll use the contract artifacts associated that network to simplify app deployment. Networks are identified through Ethereum's `net_version` RPC call, as well as blockchain URIs.
+Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your PlatON client is connected to a specific network, they'll use the contract artifacts associated that network to simplify app deployment. Networks are identified through PlatON's `net_version` RPC call, as well as blockchain URIs.
 
 The `networks` object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The `networks` option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by `truffle init` gives you a development network that matches any network it connects to -- this is useful during development, but not suitable for production deployments. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.
 
@@ -61,12 +61,12 @@ networks: {
   live: {
     host: "178.25.19.88", // Random IP for example purposes (do not use)
     port: 80,
-    network_id: 1,        // Ethereum public network
+    network_id: 1,        // PlatON public network
     // optional config values:
     // gas
     // gasPrice
     // from - default address to use for any transaction Truffle makes during migrations
-    // provider - web3 provider instance Truffle should use to talk to the Ethereum network.
+    // provider - web3 provider instance Truffle should use to talk to the PlatON network.
     //          - function that returns a web3 provider instance (see below.)
     //          - if specified, host and port are ignored.
     // skipDryRun: - true if you don't want to test run the migration locally before the actual migration (default is false)
@@ -80,7 +80,7 @@ For each network, if unspecified, transaction options will default to the follow
 
 * `gas`: Gas limit used for deploys. Default is `6721975`.
 * `gasPrice`: Gas price used for deploys. Default is `100000000000` (100 Shannon).
-* `from`: From address used during migrations. Defaults to the first available account provided by your Ethereum client.
+* `from`: From address used during migrations. Defaults to the first available account provided by your PlatON client.
 * `provider`: Default web3 provider using `host` and `port` options: `new Web3.providers.HttpProvider("http://<host>:<port>")` 
 * `websockets`: You will need this enabled to use the `confirmations` listener or to hear Events using `.on` or `.once`. Default is `false`.
 

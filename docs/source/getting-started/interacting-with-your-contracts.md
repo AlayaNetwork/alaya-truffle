@@ -2,11 +2,11 @@
 
 ## Introduction
 
-If you were writing raw requests to the Ethereum network yourself in order to interact with your contracts, you'd soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you've made is complicated. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.
+If you were writing raw requests to the PlatON network yourself in order to interact with your contracts, you'd soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you've made is complicated. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.
 
 ## Reading and writing data
 
-The Ethereum network makes a distinction between writing data to the network and reading data from it, and this distinction plays a significant part in how you write your application. In general, writing data is called a `transaction` whereas reading data is called a `call`. Transactions and calls are treated very differently, and have the following characteristics.
+The PlatON network makes a distinction between writing data to the network and reading data from it, and this distinction plays a significant part in how you write your application. In general, writing data is called a `transaction` whereas reading data is called a `call`. Transactions and calls are treated very differently, and have the following characteristics.
 
 ### Transactions
 
@@ -31,7 +31,7 @@ Choosing between a `transaction` and a `call` is as simple as deciding whether y
 
 ## Introducing abstractions
 
-Contract abstractions are the bread and butter of interacting with Ethereum contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the [truffle-contract](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract) module, and it is this contract abstraction that's described below.
+Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the [truffle-contract](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract) module, and it is this contract abstraction that's described below.
 
 In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through Truffle Boxes via `truffle unbox metacoin`.
 
@@ -96,7 +96,7 @@ Notice that the abstraction contains the exact same functions that exist within 
 
 ## Executing contract functions
 
-Using the abstraction you can easily execute contract functions on the Ethereum network.
+Using the abstraction you can easily execute contract functions on the PlatON network.
 
 ### Making a transaction
 
@@ -112,7 +112,7 @@ truffle(develop)> instance.sendCoin(accounts[1], 10, {from: accounts[0]})
 There are a few things interesting about the above code:
 
 * We called the abstraction's `sendCoin` function directly. This will result in a transaction by default (i.e, writing data) instead of call.
-* We passed an object as the third parameter to `sendCoin`. Note that the `sendCoin` function in our Solidity contract doesn't have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction ("transaction params"). Here, we set the `from` address ensuring this transaction came from `accounts[0]`. The transaction params that you can set correspond to the fields in an Ethereum transaction:
+* We passed an object as the third parameter to `sendCoin`. Note that the `sendCoin` function in our Solidity contract doesn't have a third parameter. What you see above is a special object that can always be passed as the last parameter to a function that lets you edit specific details about the transaction ("transaction params"). Here, we set the `from` address ensuring this transaction came from `accounts[0]`. The transaction params that you can set correspond to the fields in an PlatON transaction:
   * `from`
   * `to`
   * `gas`
@@ -132,7 +132,7 @@ truffle(develop)> balance.toNumber()
 
 What's interesting here:
 
-* We received a return value. Note that since the Ethereum network can handle very large numbers, we're given a [BN](https://github.com/indutny/bn.js/) object which we then convert to a number.
+* We received a return value. Note that since the PlatON network can handle very large numbers, we're given a [BN](https://github.com/indutny/bn.js/) object which we then convert to a number.
 
  ```Note::
   Warning: We convert the return value to a number because in this example the numbers are small. However, if you try to convert a BN that's larger than the largest integer supported by Javascript, you'll likely run into errors or unexpected behavior.

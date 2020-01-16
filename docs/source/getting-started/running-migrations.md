@@ -1,6 +1,6 @@
 # Running migrations
 
-Migrations are JavaScript files that help you deploy contracts to the Ethereum network. These files are responsible for staging your deployment tasks, and they're written under the assumption that your deployment needs will change over time. As your project evolves, you'll create new migration scripts to further this evolution on the blockchain. A history of previously run migrations is recorded on-chain through a special `Migrations` contract, detailed below.
+Migrations are JavaScript files that help you deploy contracts to the PlatON network. These files are responsible for staging your deployment tasks, and they're written under the assumption that your deployment needs will change over time. As your project evolves, you'll create new migration scripts to further this evolution on the blockchain. A history of previously run migrations is recorded on-chain through a special `Migrations` contract, detailed below.
 
 ## Command
 
@@ -10,7 +10,7 @@ To run your migrations, run the following:
 $ truffle migrate
 ```
 
-This will run all migrations located within your project's `migrations` directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, `truffle migrate` will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, `truffle migrate` won't perform any action at all. You can use the `--reset` option to run all your migrations from the beginning. For local testing make sure to have a test blockchain such as Ganache installed and running before executing `migrate`.
+This will run all migrations located within your project's `migrations` directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, `truffle migrate` will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, `truffle migrate` won't perform any action at all. You can use the `--reset` option to run all your migrations from the beginning. For local testing make sure to have a test blockchain and running before executing `migrate`.
 
 
 ## Migration files
@@ -156,7 +156,7 @@ module.exports = function(deployer, network) {
 
 ## Available accounts
 
-Migrations are also passed the list of accounts provided to you by your Ethereum client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from `web3.eth.getAccounts()`.
+Migrations are also passed the list of accounts provided to you by your PlatON client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from `web3.eth.getAccounts()`.
 
 ```javascript
 module.exports = function(deployer, network, accounts) {

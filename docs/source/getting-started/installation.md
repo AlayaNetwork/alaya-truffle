@@ -2,7 +2,11 @@
 # Installation
 
 ```bash
-npm install -g truffle
+$ git clone https://github.com/PlatONnetwork/platon-truffle.git
+$ chmod a+x ./platon-truffle/build/cli.bundled.js
+$ sudo ln -s ./build/cli.bundled.js /usr/local/node-v10.9.0-linux-x64/bin/truffle
+$ sudo ln -s  /usr/local/node-v10.9.0-linux-x64/bin/truffle /usr/bin/truffle
+$ truffle version
 ```
 
 ```eval_rst
@@ -10,16 +14,7 @@ npm install -g truffle
 ```
 ## Requirements
 
-* NodeJS v8.9.4 or later
-* Windows, Linux or Mac OS X
+* NodeJS v10.9.0 or later
+* Ubuntu16.04 or later
 
 Truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.
-
-
-```eval_rst
-.. _Recommendations for Windows:
-```
-
-## Recommendations for Windows
-
-if you're running Truffle on Windows, you may encounter some naming conflicts that could prevent Truffle from executing properly. Please see the section on resolving naming conflicts for solutions.

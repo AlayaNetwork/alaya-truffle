@@ -23,7 +23,7 @@ You now have access to the following functions on `MyContract`, as well as many 
 * `deployed()`: Create an instance of `MyContract` that represents the default address managed by `MyContract`.
 * `new()`: Deploy a new version of this contract to the network, getting an instance of `MyContract` that represents the newly deployed instance.
 
-Each instance is tied to a specific address on the Ethereum network, and each instance has a 1-to-1 mapping from Javascript functions to contract functions. For instance, if your Solidity contract had a function defined `someFunction(uint value) {}` (solidity), then you could execute that function on the network like so:
+Each instance is tied to a specific address on the PlatON network, and each instance has a 1-to-1 mapping from Javascript functions to contract functions. For instance, if your Solidity contract had a function defined `someFunction(uint value) {}` (solidity), then you could execute that function on the network like so:
 
 ```javascript
 let deployed;
@@ -89,7 +89,7 @@ This function creates a new instance of the contract abstraction representing th
 
 #### `MyContract.deployed()`
 
-Creates an instance of the contract abstraction representing the contract at its deployed address. The deployed address is a special value given to truffle-contract that, when set, saves the address internally so that the deployed address can be inferred from the given Ethereum network being used. This allows you to write code referring to a specific deployed contract without having to manage those addresses yourself. Like `at()`, `deployed()` is thenable, and will resolve to a contract abstraction instance representing the deployed contract after ensuring that code exists at that location and that that address exists on the network being used.
+Creates an instance of the contract abstraction representing the contract at its deployed address. The deployed address is a special value given to truffle-contract that, when set, saves the address internally so that the deployed address can be inferred from the given PlatON network being used. This allows you to write code referring to a specific deployed contract without having to manage those addresses yourself. Like `at()`, `deployed()` is thenable, and will resolve to a contract abstraction instance representing the deployed contract after ensuring that code exists at that location and that that address exists on the network being used.
 
 #### `MyContract.link(instance)`
 

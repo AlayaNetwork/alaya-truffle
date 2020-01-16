@@ -4,7 +4,7 @@ Solidity test contracts live alongside Javascript tests as `.sol` files. When `t
 
 * Solidity tests shouldn't extend from any contract (like a `Test` contract). This makes your tests as minimal as possible and gives you complete control over the contracts you write.
 * Solidity tests shouldn't be beholden to any assertion library. Truffle provides a default assertion library for you, but you can change this library at any time to fit your needs.
-* You should be able to run your Solidity tests against any Ethereum client.
+* You should be able to run your Solidity tests against any PlatON client.
 
 ## Example
 
