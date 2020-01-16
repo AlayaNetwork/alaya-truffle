@@ -10,7 +10,7 @@ import recommonmark
 from recommonmark.transform import AutoStructify
 
 
-github_doc_root = 'https://github.com/lbc-team/truffle-docs/tree/master/source/'
+github_doc_root = 'https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm/docs/source/'
 
 # At the bottom of conf.py
 def setup(app):
@@ -36,6 +36,7 @@ def setup(app):
 # -- Project information -----------------------------------------------------
 
 project = 'Truffle documentation'
+master_doc = 'index'
 copyright = '2019, PlatON'
 author = 'Steven Xu'
 
