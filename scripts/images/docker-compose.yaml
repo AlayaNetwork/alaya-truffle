@@ -1,0 +1,55 @@
+services:
+#  fluent:
+#    network_mode: host
+#    image: registry.cn-shenzhen.aliyuncs.com/platon-dev/fluent:es
+#    ports:
+#    - 24224:24224
+#    volumes:
+#    - /home/juzix/witch/node01/fluent.conf:/fluentd/etc/fluent.conf
+#    - /home/juzix/witch/node01/log:/data/log/
+#    container_name: platon-witch-01-fluent
+  platon:
+#    cpu_count: 4
+#    depends_on:
+#    - fluent
+    image: platon-evm:latest
+    container_name: platon-witch-01
+    restart: always
+#    oom_kill_disable: 'true'
+#    logging:
+#      driver: fluentd
+#      options:
+#        fluentd-async-connect: 'true'
+#        tag: platon
+#        fluentd-address: 10.1.1.1:24224
+#    cpu_percent: 100
+    memswap_limit: 1700M
+    environment:
+      ENABLE_DEBUG: 'true'
+#      WSPORT: '6601'
+      ENABLE_LIGHT_SRV: 'true'
+      MAXPEERS: 100
+      WSAPI: platon,debug,personal,admin,net,web3,txpool
+      VERBOSITY: 4
+      ENABLE_RPC: 'true'
+      ENABLE_WS: 'true'
+#      PPROFPORT: '7001'
+      ENABLE_PPROF: 'true'
+      INIT: 'true'
+#      RPCPORT: '8801'
+      NEW_ACCOUNT: 'true'
+#      P2PPORT: '18001'
+      ENABLE_INFLUXDB: 'false'
+      ENABLE_DISCOVER: 'true'
+      ENABLE_CBFT_TRACING: 'true'
+      RPCAPI: platon,debug,personal,admin,net,web3,txpool
+    volumes:
+      - /home/juzix/witch/node01:/data/platon
+    mem_limit: 1700M
+    mem_reservation: 800M
+    ports:
+      - 6060:6060
+      - 6080:6080
+      - 6789:6789
+      - 16789:16789/udp
+version: '2.2'
