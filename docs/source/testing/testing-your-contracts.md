@@ -26,11 +26,3 @@ Alternatively, you can specify a path to a specific file you want to run, e.g.,
 ```none
 $ truffle test ./path/to/test/file.js
 ```
-
-## Clean-room environment
-
-Truffle provides a clean room environment when running your test files. When running your tests against [Ganache](https://truffleframework.com/ganache) or Truffle Develop, Truffle will use advanced snapshotting features to ensure your test files don't share state with each other. When running against other Ethereum clients like [go-ethereum](https://github.com/ethereum/go-ethereum), Truffle will re-deploy all of your migrations at the beginning of every test file to ensure you have a fresh set of contracts to test against.
-
-## Speed and reliability considerations
-
-Both Ganache and Truffle Develop are significantly faster than other clients when running automated tests. Moreover, they contain special features which Truffle takes advantage of to speed up test runtime by almost 90%. As a general workflow, we recommend you use Ganache or Truffle Develop during normal development and testing, and then run your tests once against go-ethereum or another official Ethereum client when you're gearing up to deploy to live or production networks.

@@ -8,8 +8,8 @@ Note: If you're unfamiliar with writing unit tests in Mocha, please see [Mocha's
 
 Structurally, your tests should remain largely unchanged from that of Mocha: Your tests should exist in the `./test` directory, they should end with a `.js` extension, and they should contain code that Mocha will recognize as an automated test. What makes Truffle tests different from that of Mocha is the `contract()` function: This function works exactly like `describe()` except it enables Truffle's [clean-room features](../testing/testing-your-contracts#clean-room-environment). It works like this:
 
-* Before each `contract()` function is run, your contracts are redeployed to the running Ethereum client so the tests within it run with a clean contract state.
-* The `contract()` function provides a list of accounts made available by your Ethereum client which you can use to write tests.
+* Before each `contract()` function is run, your contracts are redeployed to the running PlatON client so the tests within it run with a clean contract state.
+* The `contract()` function provides a list of accounts made available by your PlatON client which you can use to write tests.
 
 Since Truffle uses Mocha under the hood, you can still use `describe()` to run normal Mocha tests whenever Truffle clean-room features are unnecessary.
 
@@ -31,7 +31,7 @@ A `web3` instance is available in each test file, configured to the correct prov
 
 ### Using `.then`
 
-Here's an example test provided in the [MetaCoin Truffle Box](https://truffleframework.com/boxes/metacoin). Note the use of the `contract()` function, the `accounts` array for specifying available Ethereum accounts, and our use of `artifacts.require()` for interacting directly with our contracts.
+Here's an example test provided in the [MetaCoin Truffle Box](https://truffleframework.com/boxes/metacoin). Note the use of the `contract()` function, the `accounts` array for specifying available PlatON accounts, and our use of `artifacts.require()` for interacting directly with our contracts.
 
 File: `./test/metacoin.js`
 

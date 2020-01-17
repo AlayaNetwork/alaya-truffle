@@ -70,7 +70,7 @@ See the [Using the console](https://learnblockchain.cn/docs/truffle/getting-star
 Options:
 
 * `--network <name>`: Specify the network to use. Network name must exist in the configuration.
-* `--verbose-rpc`: Log communication between Truffle and the Ethereum client.
+* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 
 ```eval_rst
 .. _create:
@@ -143,7 +143,7 @@ Options：
 
 ### init
 
-Initialize new and empty Ethereum project
+Initialize new and empty PlatON project
 
 ```shell
 truffle init [--force]
@@ -181,7 +181,7 @@ Options：
 * `--to <number>`: Run contracts to a specific migration. The number refers to the prefix of the migration file.
 * `--network <name>`: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.
 * `--compile-all`: Compile all contracts instead of intelligently choosing which contracts need to be compiled.
-* `--verbose-rpc`: Log communication between Truffle and the Ethereum client.
+* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 * `--dry-run`: Fork the network specified and only perform a test migration.
 * `--interactive`: Prompt to confirm that the user wants to proceed after the dry run.
 
@@ -234,7 +234,7 @@ Options：
 * `<test_file>`: Name of the test file to be run. Can include path information if the file does not exist in the current directory.
 * `--compile-all`: Compile all contracts instead of intelligently choosing which contracts need to be compiled.
 * `--network <name>`: Specify the network to use, using artifacts specific to that network. Network name must exist in the configuration.
-* `--verbose-rpc`: Log communication between Truffle and the Ethereum client.
+* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 * `--show-events`: Log all contract events.
 
 ```eval_rst

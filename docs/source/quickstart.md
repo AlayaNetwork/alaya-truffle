@@ -3,7 +3,7 @@
 This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.
 
  ```note::
-   Before you begin, make sure that you read our `Ethereum Overview <https://truffleframework.com/tutorials/ethereum-overview>`_ page.
+   Before you begin, make sure that you read our `PlatON Overview <https://truffleframework.com/tutorials/ethereum-overview>`_ page.
  ```
 
 ## Table of Contents
@@ -12,9 +12,8 @@ This page will take you through the basics of creating a Truffle project and dep
 2. [Exploring the project]
 3. [Testing]
 4. [Compiling]
-5. [Migrating with Truffle Develop]
-6. [Alternative: Migrating with Ganache]
-7. [Interacting with the contract]
+5. [Migrating ]
+6. [Interacting with the contract]
 
 ```eval_rst
 .. _creating-a-project:
@@ -147,7 +146,7 @@ You can create a bare project template, but for those just getting started, you 
 
 ## Migrating
 
-To deploy our smart contracts, we're going to need to connect to a blockchain. Truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main Ethereum network.
+To deploy our smart contracts, we're going to need to connect to a blockchain. Truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main PlatON network.
 
 You can create this blockchain and interact with it using scripts/node/start.sh shell scripts.
 

@@ -1,7 +1,7 @@
 Truffle overview
 ==================
 
-A world class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier. With Truffle, you get:
+A world class development environment, testing framework and asset pipeline for blockchains using the PlatON Virtual Machine (EVM), aiming to make life as a developer easier. With Truffle, you get:
 
 * Built-in smart contract compilation, linking, deployment and binary management.
 * Automated contract testing for rapid development.
