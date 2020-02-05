@@ -1,6 +1,6 @@
 # Writing test in solidity
 
-Solidity test contracts live alongside Javascript tests as `.sol` files. When `truffle test` is run, they will be included as a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a [clean-room environment](/docs/getting_started/testing#clean-room-environment) per test suite, direct access to your deployed contracts and the ability to import any contract dependency. In addition to these features, Truffle's Solidity testing framework was built with the following issues in mind:
+Solidity test contracts live alongside Javascript tests as `.sol` files. When `truffle test` is run, they will be included as a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests, direct access to your deployed contracts and the ability to import any contract dependency. In addition to these features, Truffle's Solidity testing framework was built with the following issues in mind:
 
 * Solidity tests shouldn't extend from any contract (like a `Test` contract). This makes your tests as minimal as possible and gives you complete control over the contracts you write.
 * Solidity tests shouldn't be beholden to any assertion library. Truffle provides a default assertion library for you, but you can change this library at any time to fit your needs.
@@ -57,7 +57,7 @@ To better understand whats happening, let's discuss things in more detail.
 
 ### Assertions
 
-Your assertion functions like `Assert.equal()` are provided to you by the `truffle/Assert.sol` library. This is the default assertion library, however you can include your own assertion library so long as the library loosely integrates with Truffle's test runner by triggering the correct assertion events. You can find all available assertion functions in [Assert.sol](https://github.com/trufflesuite/truffle/blob/develop/packages/truffle-core/lib/testing/Assert.sol).
+Your assertion functions like `Assert.equal()` are provided to you by the `truffle/Assert.sol` library. This is the default assertion library, however you can include your own assertion library so long as the library loosely integrates with Truffle's test runner by triggering the correct assertion events. You can find all available assertion functions in `Assert.sol`.
 
 ### Deployed addresses
 

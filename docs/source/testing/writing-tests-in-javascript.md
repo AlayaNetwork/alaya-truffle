@@ -31,7 +31,7 @@ A `web3` instance is available in each test file, configured to the correct prov
 
 ### Using `.then`
 
-Here's an example test provided in the [MetaCoin Truffle Box](https://truffleframework.com/boxes/metacoin). Note the use of the `contract()` function, the `accounts` array for specifying available PlatON accounts, and our use of `artifacts.require()` for interacting directly with our contracts.
+Here's an example test provided in the `MetaCoin Truffle Box`. Note the use of the `contract()` function, the `accounts` array for specifying available PlatON accounts, and our use of `artifacts.require()` for interacting directly with our contracts.
 
 File: `./test/metacoin.js`
 
@@ -210,10 +210,6 @@ truffle test ./test/metacoin.js
 ```
 
 See the full [command reference](../reference/truffle-commands#test) for more information.
-
-## Advanced
-
-Truffle gives you access to Mocha's configuration so you can change how Mocha behaves. See the [project configuration](/docs/advanced/configuration#mocha) section for more details.
 
 ## TypeScript File Support
 

@@ -20,7 +20,6 @@ The PlatON network makes a distinction between writing data to the network and r
 ### Calls
 
 `Calls`, on the other hand, are very different. `Calls` can be used to execute code on the network, though no data will be permanently changed. `Calls` are free to run, and their defining characteristic is that they read data. When you execute a contract function via a call you will receive the return value immediately. In summary, `calls`:
-`调用`则不同，`调用`依然可以在网络上执行合约代码，但不会永久更改任何数据（如状态变量）。 `调用`的特征是读取数据。 当我们通过`调用`执行合约函数时，我们可以立刻获取到返回值。 可总结`调用Call`的特点：
 
 * Are free (do not cost gas)
 * Do not change the state of the network
@@ -31,7 +30,7 @@ Choosing between a `transaction` and a `call` is as simple as deciding whether y
 
 ## Introducing abstractions
 
-Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the [truffle-contract](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract) module, and it is this contract abstraction that's described below.
+Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the `truffle-contract` module, and it is this contract abstraction that's described below.
 
 In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through Truffle Boxes via `truffle unbox metacoin`.
 
@@ -75,7 +74,7 @@ contract MetaCoin {
 
 This contract has three methods aside from the constructor (`sendCoin`, `getBalanceInEth`, and `getBalance`). All three methods can be executed as either a transaction or a call.
 
-Now let's look at the Javascript object called `MetaCoin` provided for us by Truffle, as made available in the [Truffle console](https://learnblockchain.cn/docs/truffle/getting-started/using-truffle-develop-and-the-console.html):
+Now let's look at the Javascript object called `MetaCoin` provided for us by Truffle, as made available in the `Truffle console`:
 
 ```javascript
 truffle(develop)> let instance = await MetaCoin.deployed()
@@ -151,10 +150,8 @@ truffle(develop)> result
 Specifically, you get the following:
 
 * `result.tx` *(string)* - Transaction hash
-* `result.logs` *(array)* -  Decoded events (日志)
+* `result.logs` *(array)* -  Decoded events
 * `result.receipt` *(object)* - Transaction receipt (includes the amount of gas used)
-
-For more information, please see the [README](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract) in the `truffle-contract` package.
 
 ### Catching events
 
@@ -203,7 +200,7 @@ let specificInstance = await MetaCoin.at("0x1234...");
 ```
 
 ### Sending ether to a contract
-You may simply want to send Ether directly to a contract, or trigger a contract's [fallback function](https://learnblockchain.cn/docs/solidity/contracts.html#fallback). You can do so using one of the following two options.
+You may simply want to send Ether directly to a contract, or trigger a contract's fallback function. You can do so using one of the following two options.
 
 Option 1: Send a transaction directly to a contract via `instance.sendTransaction()`. This is promisified like all available contract instance functions, and has the same API as `web3.eth.sendTransaction` but without the callback. The `to` value will be automatically filled in for you if not specified.
 
@@ -260,6 +257,6 @@ The last method is `call` and the syntax is exactly the same as for `sendTransac
 
 ## Further reading
 
-The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the [truffle-contract](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract) documentation for tips, tricks and insights.
+The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the `truffle-contract` documentation for tips, tricks and insights.
 
 

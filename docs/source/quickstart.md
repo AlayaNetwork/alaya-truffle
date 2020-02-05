@@ -2,19 +2,6 @@
 
 This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.
 
- ```note::
-   Before you begin, make sure that you read our `PlatON Overview <https://truffleframework.com/tutorials/ethereum-overview>`_ page.
- ```
-
-## Table of Contents
-
-1. [Creating a project](./getting-started/creating-a-project.md)
-2. [Exploring the project]
-3. [Testing]
-4. [Compiling]
-5. [Migrating ]
-6. [Interacting with the contract]
-
 ```eval_rst
 .. _creating-a-project:
 ```
@@ -47,7 +34,7 @@ You can create a bare project template, but for those just getting started, you 
  Once this operation is completed, you'll now have a project structure with the following items:
 
 * `contracts/`:  Directory for [Solidity contracts](getting-started/interacting-with-your-contracts.md)
-* `migrations/`: Directory for [scriptable deployment files](getting-started/running-migrations.html#id2)目录
+* `migrations/`: Directory for [scriptable deployment files](getting-started/running-migrations.html#id2)
 * `test/`:    Directory for test files for [testing your application and contracts](testing/testing-your-contracts)
 * `truffle.js`: Truffle [configuration file](reference/configuration)
 
@@ -256,7 +243,7 @@ To interact with the contract, you can use the Truffle console. The Truffle cons
    ```
 
 ``` note::
-  控制台提示符：truffle(development)> 括号里，指当前连接的网络。
+  Console prompt: truffle (development)> The brackets refer to the currently connected network.
  ```
 
 Interact with the contract using the console in the following ways:

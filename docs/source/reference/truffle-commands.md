@@ -65,12 +65,11 @@ truffle console [--network <name>] [--verbose-rpc]
 
 Spawns an interface to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the `truffle` prefix).
 
-See the [Using the console](https://learnblockchain.cn/docs/truffle/getting-started/using-truffle-develop-and-the-console.html) section for more details.
+See the `Using the console` section for more details.
 
 Options:
 
 * `--network <name>`: Specify the network to use. Network name must exist in the configuration.
-* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 
 ```eval_rst
 .. _create:
@@ -97,7 +96,7 @@ Camel case names of artifacts will be converted to underscore-separated file nam
 
 ### deploy
 
- `migrate` 的别名. 参考 [migrate](#migrate) 。
+ `migrate` alias. reference [migrate](#migrate) 。
 
 ```eval_rst
 .. _exec:
@@ -113,7 +112,7 @@ truffle exec <script.js> [--network <name>] [--compile]
 
 This will include `web3`, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run.
 
-See the [Writing external scripts](https://learnblockchain.cn/docs/truffle/getting-started/writing-external-scripts.html) section for more details.
+See the [Writing external scripts](../getting-started/writing-external-scripts.md) section for more details.
 
 Options：
 
@@ -172,7 +171,7 @@ truffle migrate [--reset] [--f <number>] [--to <number>] [--network <name>] [--c
 ```
 
 
-Unless specified, this will run from the last completed migration. See the [Migrations](https://learnblockchain.cn/docs/truffle/getting-started/running-migrations.html) section for more details.
+Unless specified, this will run from the last completed migration. See the [Migrations](../getting-started/running-migrations.md) section for more details.
 
 Options：
 
