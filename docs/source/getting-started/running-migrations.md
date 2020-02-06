@@ -75,7 +75,7 @@ Truffle requires you to have a Migrations contract in order to use the Migration
 FileName: `contracts/Migrations.sol`
 
 ```
-pragma solidity >=0.4.8 <0.6.0;
+pragma solidity >=0.4.8 <0.5.13;
 
 contract Migrations {
   address public owner;
@@ -156,7 +156,7 @@ module.exports = function(deployer, network) {
 
 ## Available accounts
 
-Migrations are also passed the list of accounts provided to you by your PlatON client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from `web3.eth.getAccounts()`.
+Migrations are also passed the list of accounts provided to you by your PlatON client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from `web3.platon.getAccounts()`.
 
 ```javascript
 module.exports = function(deployer, network, accounts) {

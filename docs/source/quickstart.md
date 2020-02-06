@@ -163,14 +163,14 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
       > balance:             99.99445076
       > gas used:            277462
-      > gas price:           20 gwei
-      > value sent:          0 ETH
-      > total cost:          0.00554924 ETH
+      > gas price:           20 gvon
+      > value sent:          0 LAN
+      > total cost:          0.00554924 LAN
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00554924 ETH
+      > Total cost:          0.00554924 LAN
 
    2_deploy_contracts.js
    =====================
@@ -183,9 +183,9 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
       > balance:             99.9914458
       > gas used:            108240
-      > gas price:           20 gwei
-      > value sent:          0 ETH
-      > total cost:          0.0021648 ETH
+      > gas price:           20 gvon
+      > value sent:          0 LAN
+      > total cost:          0.0021648 LAN
 
       Linking
       -------
@@ -199,19 +199,19 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
       > balance:             99.98449716
       > gas used:            347432
-      > gas price:           20 gwei
-      > value sent:          0 ETH
-      > total cost:          0.00694864 ETH
+      > gas price:           20 gvon
+      > value sent:          0 LAN
+      > total cost:          0.00694864 LAN
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00911344 ETH
+      > Total cost:          0.00911344 LAN
 
    Summary
    =======
    > Total deployments:   3
-   > Final cost:          0.01466268 ETH
+   > Final cost:          0.01466268 LAN
    ```
 
    This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.
@@ -254,7 +254,7 @@ As of Truffle v5, the console supports async/await functions, enabling much simp
 
   ```shell
   truffle(development)> let instance = await MetaCoin.deployed()
-  truffle(development)> let accounts = await web3.eth.getAccounts()
+  truffle(development)> let accounts = await web3.platon.getAccounts()
   ```
 
 * Check the metacoin balance of the account that deployed the contract:
@@ -262,13 +262,6 @@ As of Truffle v5, the console supports async/await functions, enabling much simp
   ```shell
   truffle(development)> let balance = await instance.getBalance(accounts[0])
   truffle(development)> balance.toNumber()
-  ```
-
-* See how much ether that balance is worth (and note that the contract defines a metacoin to be worth 2 ether):
-
-  ```shell
-  truffle(development)> let ether = await instance.getBalanceInEth(accounts[0])
-  truffle(development)> ether.toNumber()
   ```
 
 * Transfer some metacoin from one account to another:

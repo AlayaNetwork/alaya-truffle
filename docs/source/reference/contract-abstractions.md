@@ -158,10 +158,10 @@ Example.numberFormat = 'BigNumber';
 This method allows you to set the block timeout for transactions.  Contract instances created from this abstraction will have the specified transaction block timeout.  This means that if a transaction does not immediately get mined, it will retry for the specified number of blocks.
 
 #### `MyContract.autoGas = <boolean>`
-If this is set to true, instances created from this abstraction will use `web3.eth.estimateGas` and then apply a gas multiplier to determine the amount of gas to include with the transaction.  The default value for this is `true`.  See [gasMultiplier](../reference/contract-abstractions#-code-mycontract-gasmultiplier-gas_multiplier-code-).
+If this is set to true, instances created from this abstraction will use `web3.platon.estimateGas` and then apply a gas multiplier to determine the amount of gas to include with the transaction.  The default value for this is `true`.  See [gasMultiplier](../reference/contract-abstractions#-code-mycontract-gasmultiplier-gas_multiplier-code-).
 
 #### `MyContract.gasMultiplier(gas_multiplier)`
-This is the value used when `autoGas` is enabled to determine the amount of gas to include with transactions.  The gas is computed by using `web3.eth.estimateGas` and multiplying it by the gas multiplier.  The default value is `1.25`.
+This is the value used when `autoGas` is enabled to determine the amount of gas to include with transactions.  The gas is computed by using `web3.platon.estimateGas` and multiplying it by the gas multiplier.  The default value is `1.25`.
 
 ### Contract Instance API
 
@@ -199,8 +199,7 @@ The result object that gets returned looks like this:
 {
   tx: "0x6cb0bbb6466b342ed7bc4a9816f1da8b92db1ccf197c3f91914fc2c721072ebd",
   receipt: {
-    // The return value from web3.eth.getTransactionReceipt(hash)
-    // See https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethgettransactionreceipt
+    // The return value from web3.platon.getTransactionReceipt(hash)
   },
   logs: [
     { logIndex: 0,
@@ -243,7 +242,7 @@ This isn't very useful in this case, since `setValue()` sets things, and the val
 
 #### Calling getters
 
-However, we can *get* the value using `getValue()`, using `.call()`. Calls are always free and don't cost any Ether, so they're good for calling functions that read data off the blockchain:
+However, we can *get* the value using `getValue()`, using `.call()`. Calls are always free and don't cost any Lat, so they're good for calling functions that read data off the blockchain:
 
 ```javascript
 const value = await instance.getValue.call();
@@ -270,7 +269,7 @@ const result = await instance.setValue(5);
 // result.receipt => receipt object
 ```
 
-#### Sending Ether / Triggering the fallback function
+#### Sending Lat / Triggering the fallback function
 
 You can trigger the fallback function by sending a transaction to this function:
 
@@ -279,12 +278,12 @@ const result = instance.sendTransaction({...});
 // Same result object as above.
 ```
 
-This is promisified like all available contract instance functions, and has the same API as `web3.eth.sendTransaction` without the callback. The `to` value will be automatically filled in for you.
+This is promisified like all available contract instance functions, and has the same API as `web3.platon.sendTransaction` without the callback. The `to` value will be automatically filled in for you.
 
-If you only want to send Ether to the contract a shorthand is available:
+If you only want to send Lat to the contract a shorthand is available:
 
 ```javascript
-const result = await instance.send(web3.toWei(1, "ether"));
+const result = await instance.send(web3.toVon(1, "lat"));
 // Same result object as above.
 ```
 

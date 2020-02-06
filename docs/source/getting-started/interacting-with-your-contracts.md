@@ -10,9 +10,9 @@ The PlatON network makes a distinction between writing data to the network and r
 
 ### Transactions
 
-`Transactions` fundamentally change the state of the network. A `transaction` can be as simple as sending Ether to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a `transaction` is that it writes (or changes) data. `Transactions` cost Ether to run, known as "gas", and `transactions` take time to process. When you execute a contract's function via a `transaction`, you cannot receive that function's return value because the `transaction` isn't processed immediately. In general, functions meant to be executed via a `transaction` will not return a value; they will return a `transaction` id instead. So in summary, `transactions`:
+`Transactions` fundamentally change the state of the network. A `transaction` can be as simple as sending Lat to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a `transaction` is that it writes (or changes) data. `Transactions` cost Lat to run, known as "gas", and `transactions` take time to process. When you execute a contract's function via a `transaction`, you cannot receive that function's return value because the `transaction` isn't processed immediately. In general, functions meant to be executed via a `transaction` will not return a value; they will return a `transaction` id instead. So in summary, `transactions`:
 
-* Cost gas (Ether)
+* Cost gas (Lat)
 * Change the state of the network
 * Aren't processed immediately
 * Won't expose a return value (only a transaction id).
@@ -35,7 +35,7 @@ Contract abstractions are the bread and butter of interacting with PlatON contra
 In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through Truffle Boxes via `truffle unbox metacoin`.
 
 ```javascript
-pragma solidity >=0.4.25 <0.6.0;
+pragma solidity >=0.4.25 <0.5.13;
 
 import "./ConvertLib.sol";
 
@@ -61,10 +61,6 @@ contract MetaCoin {
 		return true;
 	}
 
-	function getBalanceInEth(address addr) public view returns(uint){
-		return ConvertLib.convert(getBalance(addr),2);
-	}
-
 	function getBalance(address addr) public view returns(uint) {
 		return balances[addr];
 	}
@@ -72,7 +68,7 @@ contract MetaCoin {
 
 ```
 
-This contract has three methods aside from the constructor (`sendCoin`, `getBalanceInEth`, and `getBalance`). All three methods can be executed as either a transaction or a call.
+This contract has three methods aside from the constructor (`sendCoin` and `getBalance`). All three methods can be executed as either a transaction or a call.
 
 Now let's look at the Javascript object called `MetaCoin` provided for us by Truffle, as made available in the `Truffle console`:
 
@@ -86,7 +82,6 @@ truffle(develop)> instance
 // - address: "0xa9f441a487754e6b27ba044a5a8eb2eec77f6b92"
 // - allEvents: ()
 // - getBalance: ()
-// - getBalanceInEth: ()
 // - sendCoin: ()
 // ...
 ```
@@ -104,7 +99,7 @@ There are three functions on the MetaCoin contract that we can execute. If you a
 When calling `sendCoin`, we'll execute it as a `transaction`. In the following example, we'll send 10 Meta coin from one account to another, in a way that persists changes on the network:
 
 ```javascript
-truffle(develop)> let accounts = await web3.eth.getAccounts()
+truffle(develop)> let accounts = await web3.platon.getAccounts()
 truffle(develop)> instance.sendCoin(accounts[1], 10, {from: accounts[0]})
 ```
 
@@ -199,10 +194,10 @@ If you already have an address for a contract, you can create a new abstraction 
 let specificInstance = await MetaCoin.at("0x1234...");
 ```
 
-### Sending ether to a contract
-You may simply want to send Ether directly to a contract, or trigger a contract's fallback function. You can do so using one of the following two options.
+### Sending lat to a contract
+You may simply want to send Lat directly to a contract, or trigger a contract's fallback function. You can do so using one of the following two options.
 
-Option 1: Send a transaction directly to a contract via `instance.sendTransaction()`. This is promisified like all available contract instance functions, and has the same API as `web3.eth.sendTransaction` but without the callback. The `to` value will be automatically filled in for you if not specified.
+Option 1: Send a transaction directly to a contract via `instance.sendTransaction()`. This is promisified like all available contract instance functions, and has the same API as `web3.platon.sendTransaction` but without the callback. The `to` value will be automatically filled in for you if not specified.
 
 ```javascript
 instance.sendTransaction({...}).then(function(result) {
@@ -210,11 +205,11 @@ instance.sendTransaction({...}).then(function(result) {
 });
 ```
 
-Option 2: There's also shorthand for just sending Ether directly:
+Option 2: There's also shorthand for just sending Lat directly:
 
 
 ```javascript
-instance.send(web3.toWei(1, "ether")).then(function(result) {
+instance.send(web3.toVon(1, "lat")).then(function(result) {
   // Same result object as above.
 });
 ```
