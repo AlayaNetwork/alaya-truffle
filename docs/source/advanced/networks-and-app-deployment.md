@@ -16,6 +16,13 @@ $ truffle migrate --network live
 
 In this example, Truffle will run your migrations on the "live" network, which -- if configured like [the example](../reference/configuration.md#networks) -- is associated with the public PlatON blockchain.
 
+## Specifying a wasm contract
+If you want to deploy a specific wasm contract(contract file like contracts/test.cpp), you can use the following command：
+
+```bash
+$ truffle migrate --wasm --contract-name test
+```
+
 ## Build artifacts
 
 As mentioned in the [Compiling contracts](../getting-started/compiling-contracts.md) section, build artifacts are stored in the `./build/contracts` directory as `.json` files. When you compile your contracts or run your migrations using a specific network, Truffle will update those `.json` files so they contain the information related to that network. When those artifacts are used later -- such as within your frontend or application, they'll automatically detect which network the PlatON client is connected to and use the correct contract artifacts accordingly.

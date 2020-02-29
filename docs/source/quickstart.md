@@ -164,13 +164,13 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > balance:             99.99445076
       > gas used:            277462
       > gas price:           20 gvon
-      > value sent:          0 LAN
-      > total cost:          0.00554924 LAN
+      > value sent:          0 LAT
+      > total cost:          0.00554924 LAT
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00554924 LAN
+      > Total cost:          0.00554924 LAT
 
    2_deploy_contracts.js
    =====================
@@ -184,8 +184,8 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > balance:             99.9914458
       > gas used:            108240
       > gas price:           20 gvon
-      > value sent:          0 LAN
-      > total cost:          0.0021648 LAN
+      > value sent:          0 LAT
+      > total cost:          0.0021648 LAT
 
       Linking
       -------
@@ -200,18 +200,18 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > balance:             99.98449716
       > gas used:            347432
       > gas price:           20 gvon
-      > value sent:          0 LAN
-      > total cost:          0.00694864 LAN
+      > value sent:          0 LAT
+      > total cost:          0.00694864 LAT
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00911344 LAN
+      > Total cost:          0.00911344 LAT
 
    Summary
    =======
    > Total deployments:   3
-   > Final cost:          0.01466268 LAN
+   > Final cost:          0.01466268 LAT
    ```
 
    This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.

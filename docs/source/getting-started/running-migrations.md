@@ -2,7 +2,7 @@
 
 Migrations are JavaScript files that help you deploy contracts to the PlatON network. These files are responsible for staging your deployment tasks, and they're written under the assumption that your deployment needs will change over time. As your project evolves, you'll create new migration scripts to further this evolution on the blockchain. A history of previously run migrations is recorded on-chain through a special `Migrations` contract, detailed below.
 
-## Command
+## Command for solidity
 
 To run your migrations, run the following:
 
@@ -247,4 +247,18 @@ deployer.then(function() {
   // Set the new instance of A's address on B via B's setA() function.
   return b.setA(a.address);
 });
+```
+
+## Command for wasm
+
+To run your wasm migrations, for example: there is a test.cpp contract file in the contracts directory, run the following:
+
+```none
+$ truffle migrate --wasm --contract-name test
+```
+
+If you want to deploy all wasm contract, run the following:
+
+```none
+$ truffle migrate --wasm
 ```

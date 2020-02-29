@@ -342,3 +342,27 @@ module.exports = {
   }
 }
 ```
+
+### wasm
+
+The wasm compiler is configured as follows：
+
+```javascript
+module.exports = {
+  compilers: {
+    wasm: {
+      version: "1.0.0"
+    }
+  }
+}
+```
+
+```note::
+The wasm compiler currently has no version management, so you can specify any version number for the time being
+```
+
+```note::
+The wasm compiler and solc compiler cannot be specified at the same time, you need to choose according to the type of contract you are compiling
+if you want to compile solidity contract, you can only specific solc compilers config, if wasm, you need only specific wasm compilers 
+```
+

@@ -167,7 +167,7 @@ Options：
 Run migrations to deploy contracts.
 
 ```shell
-truffle migrate [--reset] [--f <number>] [--to <number>] [--network <name>] [--compile-all] [--verbose-rpc] [--dry-run] [--interactive]
+truffle migrate [--reset] [--wasm] [--f <number>] [--to <number>] [--network <name>] [--compile-all] [--contract-name] [--verbose-rpc] [--dry-run] [--interactive]
 ```
 
 
@@ -176,10 +176,12 @@ Unless specified, this will run from the last completed migration. See the [Migr
 Options：
 
 * `--reset`: Run all migrations from the beginning, instead of running from the last completed migration.
+* `--wasm`: migration for all wasm contract.
 * `--f <number>`: Run contracts from a specific migration. The number refers to the prefix of the migration file.
 * `--to <number>`: Run contracts to a specific migration. The number refers to the prefix of the migration file.
 * `--network <name>`: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.
 * `--compile-all`: Compile all contracts instead of intelligently choosing which contracts need to be compiled.
+* `--contract-name`: migration for specific name wasm contract.
 * `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 * `--dry-run`: Fork the network specified and only perform a test migration.
 * `--interactive`: Prompt to confirm that the user wants to proceed after the dry run.
