@@ -15,9 +15,9 @@ Truffle is a development environment, testing framework and asset pipeline for E
 + install nodejs
 
 ```shell
-wget https://nodejs.org/download/release/v10.9.0/node-v10.9.0-linux-x64.tar.gz
-tar -zxvf node-v10.9.0-linux-x64.tar.gz -C /usr/local
-sudo ln -s /usr/local/node-v10.9.0-linux-x64/bin/* /usr/bin/
+wget https://nodejs.org/download/release/v10.12.0/node-v10.12.0-linux-x64.tar.gz
+tar -zxvf node-v10.12.0-linux-x64.tar.gz -C /usr/local
+sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
 node -v
 ```
 
@@ -25,9 +25,10 @@ node -v
 
 ```shell
 $ git clone https://github.com/PlatONnetwork/platon-truffle.git
-$ chmod a+x ./platon-truffle/build/cli.bundled.js
-$ sudo ln -s ./build/cli.bundled.js /usr/local/node-v10.9.0-linux-x64/bin/truffle
-$ sudo ln -s  /usr/local/node-v10.9.0-linux-x64/bin/truffle /usr/bin/truffle
+$ cd platon-truffle
+$ git checkout -b wasm origin/feature/wasm
+$ chmod a+x ./build/cli.bundled.js
+$ sudo ln -s ${pwd}/build/cli.bundled.js /usr/bin/truffle
 $ truffle version
 ```
 
@@ -48,19 +49,9 @@ $ truffle init
 
 From there, you can run `truffle compile`, `truffle migrate` and `truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
 
-Truffle comes bundled with a local development blockchain server that launches automatically when you invoke the commands  above. If you'd like to [configure a more advanced development environment](http://truffleframework.com/docs/advanced/configuration) we recommend you install the blockchain server separately by running `npm install -g ganache-cli` at the command line.
-
-+  [ganache-cli](https://github.com/trufflesuite/ganache-cli): a command-line version of Truffle's blockchain server.
-+  [ganache](http://truffleframework.com/ganache/): A GUI for the server that displays your transaction history and chain state.
-
-
 ### Documentation
 
-Please see the [Official Truffle Documentation](http://truffleframework.com/docs/) for guides, tips, and examples.
-
-### Contributing
-
-This package is a distribution package of the Truffle command line tool. Please see [@truffle/core](https://github.com/trufflesuite/truffle/tree/develop/packages/core) to contribute to the main core code.
+Please see the [Official Truffle Documentation](https://platon-truffle.readthedocs.io/en/v0.1.0/) for guides, tips, and examples.
 
 ### License
 
