@@ -65,12 +65,11 @@ truffle console [--network <name>] [--verbose-rpc]
 
 Spawns an interface to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the `truffle` prefix).
 
-See the [Using the console](https://learnblockchain.cn/docs/truffle/getting-started/using-truffle-develop-and-the-console.html) section for more details.
+See the `Using the console` section for more details.
 
 Options:
 
 * `--network <name>`: Specify the network to use. Network name must exist in the configuration.
-* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 
 ```eval_rst
 .. _create:
@@ -97,7 +96,7 @@ Camel case names of artifacts will be converted to underscore-separated file nam
 
 ### deploy
 
- `migrate` 的别名. 参考 [migrate](#migrate) 。
+ `migrate` alias. reference [migrate](#migrate) 。
 
 ```eval_rst
 .. _exec:
@@ -113,7 +112,7 @@ truffle exec <script.js> [--network <name>] [--compile]
 
 This will include `web3`, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run.
 
-See the [Writing external scripts](https://learnblockchain.cn/docs/truffle/getting-started/writing-external-scripts.html) section for more details.
+See the [Writing external scripts](../getting-started/writing-external-scripts.md) section for more details.
 
 Options：
 
@@ -168,19 +167,21 @@ Options：
 Run migrations to deploy contracts.
 
 ```shell
-truffle migrate [--reset] [--f <number>] [--to <number>] [--network <name>] [--compile-all] [--verbose-rpc] [--dry-run] [--interactive]
+truffle migrate [--reset] [--wasm] [--f <number>] [--to <number>] [--network <name>] [--compile-all] [--contract-name] [--verbose-rpc] [--dry-run] [--interactive]
 ```
 
 
-Unless specified, this will run from the last completed migration. See the [Migrations](https://learnblockchain.cn/docs/truffle/getting-started/running-migrations.html) section for more details.
+Unless specified, this will run from the last completed migration. See the [Migrations](../getting-started/running-migrations.md) section for more details.
 
 Options：
 
 * `--reset`: Run all migrations from the beginning, instead of running from the last completed migration.
+* `--wasm`: migration for all wasm contract.
 * `--f <number>`: Run contracts from a specific migration. The number refers to the prefix of the migration file.
 * `--to <number>`: Run contracts to a specific migration. The number refers to the prefix of the migration file.
 * `--network <name>`: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.
 * `--compile-all`: Compile all contracts instead of intelligently choosing which contracts need to be compiled.
+* `--contract-name`: migration for specific name wasm contract.
 * `--verbose-rpc`: Log communication between Truffle and the PlatON client.
 * `--dry-run`: Fork the network specified and only perform a test migration.
 * `--interactive`: Prompt to confirm that the user wants to proceed after the dry run.

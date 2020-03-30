@@ -1,13 +1,10 @@
-# Using truffle develop and the console
+# Using truffle console
 
-Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you two easy ways to do this via an interactive console, with your contracts available and ready to use.
+Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you one easy way to do this via an interactive console, with your contracts available and ready to use.
 
 * **Truffle console**: A basic interactive console connecting to any PlatON client
-* **Truffle Develop**: An interactive console that also spawns a development blockchain
 
-## Why two different consoles?
-
-Having two different consoles allows you to choose the best tool for your needs.
+## Why console?
 
 Reasons to use **Truffle console**:
 
@@ -15,11 +12,6 @@ Reasons to use **Truffle console**:
 * You want to migrate to a testnet (or the main PlatON network)
 * You want to use a specific mnemonic or account list
 
-Reasons to use **Truffle Develop**:
-
-* You are testing your project with no intention of immediately deploying
-* You don't need to work with specific accounts (and you're fine with using default development accounts)
-* You don't want to install and manage a separate blockchain client
 
 ## Commands
 

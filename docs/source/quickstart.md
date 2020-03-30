@@ -2,19 +2,6 @@
 
 This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.
 
- ```note::
-   Before you begin, make sure that you read our `PlatON Overview <https://truffleframework.com/tutorials/ethereum-overview>`_ page.
- ```
-
-## Table of Contents
-
-1. [Creating a project](./getting-started/creating-a-project.md)
-2. [Exploring the project]
-3. [Testing]
-4. [Compiling]
-5. [Migrating ]
-6. [Interacting with the contract]
-
 ```eval_rst
 .. _creating-a-project:
 ```
@@ -47,7 +34,7 @@ You can create a bare project template, but for those just getting started, you 
  Once this operation is completed, you'll now have a project structure with the following items:
 
 * `contracts/`:  Directory for [Solidity contracts](getting-started/interacting-with-your-contracts.md)
-* `migrations/`: Directory for [scriptable deployment files](getting-started/running-migrations.html#id2)目录
+* `migrations/`: Directory for [scriptable deployment files](getting-started/running-migrations.html#id2)
 * `test/`:    Directory for test files for [testing your application and contracts](testing/testing-your-contracts)
 * `truffle.js`: Truffle [configuration file](reference/configuration)
 
@@ -176,14 +163,14 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
       > balance:             99.99445076
       > gas used:            277462
-      > gas price:           20 gwei
-      > value sent:          0 ETH
-      > total cost:          0.00554924 ETH
+      > gas price:           20 gvon
+      > value sent:          0 LAT
+      > total cost:          0.00554924 LAT
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00554924 ETH
+      > Total cost:          0.00554924 LAT
 
    2_deploy_contracts.js
    =====================
@@ -196,9 +183,9 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
       > balance:             99.9914458
       > gas used:            108240
-      > gas price:           20 gwei
-      > value sent:          0 ETH
-      > total cost:          0.0021648 ETH
+      > gas price:           20 gvon
+      > value sent:          0 LAT
+      > total cost:          0.0021648 LAT
 
       Linking
       -------
@@ -212,19 +199,19 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       > account:             0x627306090abab3a6e1400e9345bc60c78a8bef57
       > balance:             99.98449716
       > gas used:            347432
-      > gas price:           20 gwei
-      > value sent:          0 ETH
-      > total cost:          0.00694864 ETH
+      > gas price:           20 gvon
+      > value sent:          0 LAT
+      > total cost:          0.00694864 LAT
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00911344 ETH
+      > Total cost:          0.00911344 LAT
 
    Summary
    =======
    > Total deployments:   3
-   > Final cost:          0.01466268 ETH
+   > Final cost:          0.01466268 LAT
    ```
 
    This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.
@@ -256,7 +243,7 @@ To interact with the contract, you can use the Truffle console. The Truffle cons
    ```
 
 ``` note::
-  控制台提示符：truffle(development)> 括号里，指当前连接的网络。
+  Console prompt: truffle (development)> The brackets refer to the currently connected network.
  ```
 
 Interact with the contract using the console in the following ways:
@@ -267,7 +254,7 @@ As of Truffle v5, the console supports async/await functions, enabling much simp
 
   ```shell
   truffle(development)> let instance = await MetaCoin.deployed()
-  truffle(development)> let accounts = await web3.eth.getAccounts()
+  truffle(development)> let accounts = await web3.platon.getAccounts()
   ```
 
 * Check the metacoin balance of the account that deployed the contract:
@@ -275,13 +262,6 @@ As of Truffle v5, the console supports async/await functions, enabling much simp
   ```shell
   truffle(development)> let balance = await instance.getBalance(accounts[0])
   truffle(development)> balance.toNumber()
-  ```
-
-* See how much ether that balance is worth (and note that the contract defines a metacoin to be worth 2 ether):
-
-  ```shell
-  truffle(development)> let ether = await instance.getBalanceInEth(accounts[0])
-  truffle(development)> ether.toNumber()
   ```
 
 * Transfer some metacoin from one account to another:

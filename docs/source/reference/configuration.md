@@ -10,7 +10,7 @@ module.exports = {
     development: {
       host: "127.0.0.1",
       port: 8545,
-      network_id: "*" // 匹配任何网络
+      network_id: "*"
     }
   }
 };
@@ -40,7 +40,7 @@ Build configuration of your application, if your application requires tight inte
 
 Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your PlatON client is connected to a specific network, they'll use the contract artifacts associated that network to simplify app deployment. Networks are identified through PlatON's `net_version` RPC call, as well as blockchain URIs.
 
-The `networks` object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The `networks` option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by `truffle init` gives you a development network that matches any network it connects to -- this is useful during development, but not suitable for production deployments. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.
+The `networks` object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The `networks` option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by `truffle init` gives you a development network that matches any network it connects to this is useful during development, but not suitable for production deployments. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.
 
 The network name is used for user interface purposes, such as when running your migrations on a specific network:
 
@@ -213,9 +213,8 @@ In the `compilers` object you can specify settings related to the compilers used
 Solidity compiler settings. Supports optimizer settings for `solc`.
 You may specify...
 
-+ any solc-js version listed at [solc-bin](http://solc-bin.ethereum.org/bin/list.json). Specify the one you want and Truffle will get it for you.
++ any solc-js version listed at `solc-bin`. Specify the one you want and Truffle will get it for you.
 + a natively compiled solc binary (you'll need to install this yourself, links to help below).
-+ a dockerized solc from one of images published [here](https://hub.docker.com/r/ethereum/solc/tags/).
 + a path to a locally available solc
 + a solc-js parser for faster docker and native compilations
 
@@ -240,8 +239,6 @@ module.exports = {
   }
 }
 ```
-
-For more information, please see the Solidity documentation on [Compiler Input and Output JSON Description](https://learnblockchain.cn/docs/solidity/using-the-compiler.html#json).
 
 ### external compilers
 
@@ -345,3 +342,27 @@ module.exports = {
   }
 }
 ```
+
+### wasm
+
+The wasm compiler is configured as follows：
+
+```javascript
+module.exports = {
+  compilers: {
+    wasm: {
+      version: "1.0.0"
+    }
+  }
+}
+```
+
+```note::
+The wasm compiler currently has no version management, so you can specify any version number for the time being
+```
+
+```note::
+The wasm compiler and solc compiler cannot be specified at the same time, you need to choose according to the type of contract you are compiling
+if you want to compile solidity contract, you can only specific solc compilers config, if wasm, you need only specific wasm compilers 
+```
+

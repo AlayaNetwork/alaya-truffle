@@ -1,7 +1,7 @@
 # Build Processes
 
  ```warning::
-    The `build` command and this approach is being deprecated. Please use third-party build tools like webpack or grunt, or see our `Truffle Boxes <https://truffleframework.com/boxes>`_ for an example.
+    The `build` command and this approach is being deprecated. Please use third-party build tools like webpack or grunt, or see our `Truffle Boxes` for an example.
  ```
 
 In order to provide tight integration with Truffle for those that desire it, Truffle allows you to specify a custom build pipeline meant to bootstrap and configure your application. Truffle provides three methods of integration, described below.
@@ -62,7 +62,7 @@ When configuring your build tool or application, you'll need to perform the foll
 
 1) Get all your contract artifacts into your build pipeline / application. This includes all of the `.json` files within the `./build/contracts` directory.
 
-2) Turn those `.json` contract artifacts into contract abstractions that are easy to use, via [truffle-contract](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract).
+2) Turn those `.json` contract artifacts into contract abstractions that are easy to use.
 
 3) Provision those contract abstractions with a Web3 provider.
 

@@ -2,7 +2,7 @@
 
 Migrations are JavaScript files that help you deploy contracts to the PlatON network. These files are responsible for staging your deployment tasks, and they're written under the assumption that your deployment needs will change over time. As your project evolves, you'll create new migration scripts to further this evolution on the blockchain. A history of previously run migrations is recorded on-chain through a special `Migrations` contract, detailed below.
 
-## Command
+## Command for solidity
 
 To run your migrations, run the following:
 
@@ -75,7 +75,7 @@ Truffle requires you to have a Migrations contract in order to use the Migration
 FileName: `contracts/Migrations.sol`
 
 ```
-pragma solidity >=0.4.8 <0.6.0;
+pragma solidity >=0.4.8 <0.5.13;
 
 contract Migrations {
   address public owner;
@@ -156,7 +156,7 @@ module.exports = function(deployer, network) {
 
 ## Available accounts
 
-Migrations are also passed the list of accounts provided to you by your PlatON client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from `web3.eth.getAccounts()`.
+Migrations are also passed the list of accounts provided to you by your PlatON client and web3 provider, for you to use during your deployments. This is the exact same list of accounts returned from `web3.platon.getAccounts()`.
 
 ```javascript
 module.exports = function(deployer, network, accounts) {
@@ -176,7 +176,6 @@ You can optionally pass an array of contracts, or an array of arrays, to speed u
 
 Note that you will need to deploy and link any libraries your contracts depend on first before calling `deploy`. See the `link` function below for more details.
 
-For more information, please see the [truffle-contract](https://github.com/trufflesuite/truffle/tree/master/packages/truffle-contract) documentation.
 
 Examples:
 
@@ -248,4 +247,18 @@ deployer.then(function() {
   // Set the new instance of A's address on B via B's setA() function.
   return b.setA(a.address);
 });
+```
+
+## Command for wasm
+
+To run your wasm migrations, for example: there is a test.cpp contract file in the contracts directory, run the following:
+
+```shell script
+$ truffle migrate --wasm --contract-name test
+```
+
+If you want to deploy all wasm contract, run the following:
+
+```shell script
+$ truffle migrate --wasm
 ```

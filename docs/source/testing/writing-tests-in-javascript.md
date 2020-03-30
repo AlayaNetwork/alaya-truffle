@@ -1,4 +1,4 @@
-# Writing tests in javascript
+# Writing solidity contract tests in javascript
 
 Truffle uses the [Mocha](https://mochajs.org/) testing framework and [Chai](http://chaijs.com/) for assertions to provide you with a solid framework from which to write your JavaScript tests. Let's dive in and see how Truffle builds on top of Mocha to make testing your contracts a breeze.
 
@@ -25,13 +25,13 @@ Using `artifacts.require()` within your tests works the same way as using it wit
 
 ## Using web3
 
-A `web3` instance is available in each test file, configured to the correct provider. So calling `web3.eth.getBalance` just works!
+A `web3` instance is available in each test file, configured to the correct provider. So calling `web3.platon.getBalance` just works!
 
 ## Examples
 
 ### Using `.then`
 
-Here's an example test provided in the [MetaCoin Truffle Box](https://truffleframework.com/boxes/metacoin). Note the use of the `contract()` function, the `accounts` array for specifying available PlatON accounts, and our use of `artifacts.require()` for interacting directly with our contracts.
+Here's an example test provided in the `MetaCoin Truffle Box`. Note the use of the `contract()` function, the `accounts` array for specifying available PlatON accounts, and our use of `artifacts.require()` for interacting directly with our contracts.
 
 File: `./test/metacoin.js`
 
@@ -53,7 +53,7 @@ contract("MetaCoin", accounts => {
   it("should call a function that depends on a linked library", () => {
     let meta;
     let metaCoinBalance;
-    let metaCoinEthBalance;
+    let metaCoinLatBalance;
 
     return MetaCoin.deployed()
       .then(instance => {
@@ -62,14 +62,14 @@ contract("MetaCoin", accounts => {
       })
       .then(outCoinBalance => {
         metaCoinBalance = outCoinBalance.toNumber();
-        return meta.getBalanceInEth.call(accounts[0]);
+        return meta.getBalanceInLat.call(accounts[0]);
       })
-      .then(outCoinBalanceEth => {
-        metaCoinEthBalance = outCoinBalanceEth.toNumber();
+      .then(outCoinBalanceLat => {
+        metaCoinLatBalance = outCoinBalanceLat.toNumber();
       })
       .then(() => {
         assert.equal(
-          metaCoinEthBalance,
+          metaCoinLatBalance,
           2 * metaCoinBalance,
           "Library function returned unexpected function, linkage may be broken"
         );
@@ -157,9 +157,9 @@ contract("2nd MetaCoin test", async accounts => {
     let meta = await MetaCoin.deployed();
     let outCoinBalance = await meta.getBalance.call(accounts[0]);
     let metaCoinBalance = outCoinBalance.toNumber();
-    let outCoinBalanceEth = await meta.getBalanceInEth.call(accounts[0]);
-    let metaCoinEthBalance = outCoinBalanceEth.toNumber();
-    assert.equal(metaCoinEthBalance, 2 * metaCoinBalance);
+    let outCoinBalanceLat = await meta.getBalanceInLat.call(accounts[0]);
+    let metaCoinLatBalance = outCoinBalanceLat.toNumber();
+    assert.equal(metaCoinLatBalance, 2 * metaCoinBalance);
   });
 
   it("should send coin correctly", async () => {
@@ -211,10 +211,87 @@ truffle test ./test/metacoin.js
 
 See the full [command reference](../reference/truffle-commands#test) for more information.
 
-## Advanced
-
-Truffle gives you access to Mocha's configuration so you can change how Mocha behaves. See the [project configuration](/docs/advanced/configuration#mocha) section for more details.
-
 ## TypeScript File Support
 
 Truffle now supports tests saved as a `.ts` [TypeScript](https://www.typescriptlang.org/) file. Please see the [Writing Tests in JavaScript](#writing-tests-in-javascript) guide for more information.
+
+
+# Writing wasm contract tests in javascript
+
+## Use contract() instead of describe()
+
+Structurally, your tests should remain unchanged from that of Mocha: Your tests should exist in the `./test/wasm` directory, they should end with a `.js` extension
+
+## Using global contract object
+
+The contract object uses the contract name as the key, and the contract object value contains the abi required for the deployment contract and the parameters for calling the sendTransaction deployment contract, so you can deploy the contract based on this. After the deployment contract is successful, you can obtain the transaction receipt, which contains the contract Address to initialize the contract object
+
+```note::
+The contract name is the file name with the .wasm suffix after the contract is compiled
+if you have a wasm contract file with name js_contracttest.cpp in `./contracts` directory, the compiled file js_contracttest.wasm and js_contracttest.abi.json file will be located in `./build/contracts` directory
+and the contract name will be js_contraccttest
+```
+
+## Using web3
+
+A `web3` instance is available in each test file, configured to the correct provider. So calling `web3.platon.getBalance` just works!
+
+## Examples
+
+Here's an example wasm test:
+
+```javascript
+const waitTime = 10000;
+let contract = undefined;
+
+describe("wasm unit test (you must update config before run this test)", function () {
+    before("deploy contract", async function () {
+	    this.timeout(waitTime);
+        const receipt = await web3.platon.sendTransaction(js_contracttest.deployParams);
+	    contract = await new web3.platon.Contract(js_contracttest.abi,receipt.contractAddress,{vmType:1});
+    });
+
+    it("call get method", async function () {
+        this.timeout(waitTime);
+        var result = await contract.methods.getUint64().call();
+        assert.equal(result, 0, "getUint64 method should return 0");
+    });
+});
+```
+
+If you have already deployed a smart contract and do not want to redeploy, you can specify contract address in test file.
+
+```javascript
+const waitTime = 10000;
+let contract = undefined;
+let contractAddress = "0x3F212ec13eAD7D409eba24a84c286dD1A527EeFD";
+
+describe("wasm unit test (you must update config before run this test)", function () {
+    before("deploy contract", async function () {
+	    contract = await new web3.platon.Contract(js_contracttest.abi, contractAddress,{vmType:1});
+    });
+
+    it("call get method", async function () {
+        this.timeout(waitTime);
+        var result = await contract.methods.getUint64().call();
+        assert.equal(result, 0, "getUint64 method should return 0");
+    });
+});
+```
+
+This test will produce the following output:
+
+```
+  Contract: js_contracttest
+    √ wasm unit test (you must update config before run this test) call get method: 9ms
+
+  1 passing (4s)
+```
+
+## Specifying contract
+
+You can specify a specific wasm contract to run the test
+
+```shell script
+$ truffle test --wasm --contract-name ${ContractName} --param ${InitParamsString}
+```

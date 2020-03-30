@@ -2,9 +2,9 @@
 
 ## Location
 
-All of your contracts are located in your project's `contracts/` directory. As contracts are written in [Solidity](https://learnblockchain.cn/docs/solidity/), all files containing contracts will have a file extension of `.sol`. Associated Solidity [libraries](https://learnblockchain.cn/docs/solidity/contracts.html#libraries) will also have a `.sol` extension.
+All of your contracts are located in your project's `contracts/` directory. As contracts are written in `Solidity` or `cpp(wasm contract)`, all files containing contracts will have a file extension of `.sol` or `cpp`
 
-With a bare Truffle [project](../quickstart.md) (created through `truffle init`), you're given a single `Migrations.sol` file that helps in the deployment process. If you're using a [Truffle Box](https://truffleframework.com/boxes), you will have multiple files here.
+With a bare Truffle [project](../quickstart.md) (created through `truffle init`), you're given a single `Migrations.sol` file that helps in the deployment process. If you're using a `Truffle Box`, you will have multiple files here.
 
 ## Command
 
@@ -32,7 +32,7 @@ These artifacts are integral to the inner workings of Truffle, and they play an 
 
 ## Dependencies
 
-You can declare contract dependencies using Solidity's [import](https://learnblockchain.cn/docs/solidity/layout-of-source-files.html#import) command. Truffle will compile contracts in the correct order and ensure all dependencies are sent to the compiler. Dependencies can be specified in two ways:
+You can declare contract dependencies using Solidity's `import` command. Truffle will compile contracts in the correct order and ensure all dependencies are sent to the compiler. Dependencies can be specified in two ways:
 
 ### Importing dependencies via file name
 
@@ -44,4 +44,4 @@ import "./AnotherContract.sol";
 
 This will make all contracts within `AnotherContract.sol` available. Here, `AnotherContract.sol` is relative to the path of the current contract being written.
 
-Note that Solidity allows other import syntaxes as well. See the Solidity [import documentation](https://learnblockchain.cn/docs/solidity/layout-of-source-files.html#import) for more information.
+Note that Solidity allows other import syntaxes as well. See the Solidity `import documentation` for more information.

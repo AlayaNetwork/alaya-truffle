@@ -11,7 +11,11 @@ Both styles of tests have their advantages and drawbacks. See the next two secti
 
 ## Location
 
-All test files should be located in the `./test` directory. Truffle will only run test files with the following file extensions: `.js`, `.ts`, `.es`, `.es6`, and `.jsx`, and `.sol`. All other files are ignored.
+All solidity contract test files should be located in the `./test` directory. Truffle will only run test files with the following file extensions: `.js`, `.ts`, `.es`, `.es6`, and `.jsx`, and `.sol`. All other files are ignored.
+
+```note::
+All wasm contract test files should be located in the `./test/wasm` directory
+```
 
 ## Command
 
@@ -26,3 +30,16 @@ Alternatively, you can specify a path to a specific file you want to run, e.g.,
 ```none
 $ truffle test ./path/to/test/file.js
 ```
+
+You can also specify tests to run wasm contracts(contracts with null params to init)
+
+```
+$ truffle test --wasm
+```
+
+You Can also specify specific wasm contracts to run test, If contract initialization parameters are not empty
+
+```
+$ truffle test --wasm --contract-name ${ContractName} --params "[[], ]"
+```
+

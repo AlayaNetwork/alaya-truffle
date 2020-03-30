@@ -1,6 +1,6 @@
 # Writing test in solidity
 
-Solidity test contracts live alongside Javascript tests as `.sol` files. When `truffle test` is run, they will be included as a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests: namely a [clean-room environment](/docs/getting_started/testing#clean-room-environment) per test suite, direct access to your deployed contracts and the ability to import any contract dependency. In addition to these features, Truffle's Solidity testing framework was built with the following issues in mind:
+Solidity test contracts live alongside Javascript tests as `.sol` files. When `truffle test` is run, they will be included as a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests, direct access to your deployed contracts and the ability to import any contract dependency. In addition to these features, Truffle's Solidity testing framework was built with the following issues in mind:
 
 * Solidity tests shouldn't extend from any contract (like a `Test` contract). This makes your tests as minimal as possible and gives you complete control over the contracts you write.
 * Solidity tests shouldn't be beholden to any assertion library. Truffle provides a default assertion library for you, but you can change this library at any time to fit your needs.
@@ -57,7 +57,7 @@ To better understand whats happening, let's discuss things in more detail.
 
 ### Assertions
 
-Your assertion functions like `Assert.equal()` are provided to you by the `truffle/Assert.sol` library. This is the default assertion library, however you can include your own assertion library so long as the library loosely integrates with Truffle's test runner by triggering the correct assertion events. You can find all available assertion functions in [Assert.sol](https://github.com/trufflesuite/truffle/blob/develop/packages/truffle-core/lib/testing/Assert.sol).
+Your assertion functions like `Assert.equal()` are provided to you by the `truffle/Assert.sol` library. This is the default assertion library, however you can include your own assertion library so long as the library loosely integrates with Truffle's test runner by triggering the correct assertion events. You can find all available assertion functions in `Assert.sol`.
 
 ### Deployed addresses
 
@@ -148,9 +148,9 @@ contract TestBytesLib2 {
 }
 ```
 
-### Testing ether transactions
+### Testing lat transactions
 
-You can also test how your contracts react to receiving Ether, and script that interaction within Solidity. To do so, your Solidity test should have a public function that returns a `uint`, called `initialBalance`. This can be written directly as a function or a public variable, as shown below. When your test contract is deployed to the network, Truffle will send that amount of Ether from your test account to your test contract. Your test contract can then use that Ether to script Ether interactions within your contract under test. Note that `initialBalance` is optional and not required.
+You can also test how your contracts react to receiving Lat, and script that interaction within Solidity. To do so, your Solidity test should have a public function that returns a `uint`, called `initialBalance`. This can be written directly as a function or a public variable, as shown below. When your test contract is deployed to the network, Truffle will send that amount of Lat from your test account to your test contract. Your test contract can then use that Lat to script Lat interactions within your contract under test. Note that `initialBalance` is optional and not required.
 
 ```javascript
 import "truffle/Assert.sol";
@@ -158,8 +158,8 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/MyContract.sol";
 
 contract TestContract {
-  // Truffle will send the TestContract one Ether after deploying the contract.
-  uint public initialBalance = 1 ether;
+  // Truffle will send the TestContract one Lat after deploying the contract.
+  uint public initialBalance = 1 lat;
 
   function testInitialBalanceUsingDeployedContract() {
     MyContract myContract = MyContract(DeployedAddresses.MyContract());
@@ -169,9 +169,9 @@ contract TestContract {
   }
 
   function () {
-    // This will NOT be executed when Ether is sent. \o/
+    // This will NOT be executed when Lat is sent. \o/
   }
 }
 ```
 
-Note that Truffle sends Ether to your test contract in a way that does **not** execute a fallback function, so you can still use the fallback function within your Solidity tests for advanced test cases.
+Note that Truffle sends Lat to your test contract in a way that does **not** execute a fallback function, so you can still use the fallback function within your Solidity tests for advanced test cases.
