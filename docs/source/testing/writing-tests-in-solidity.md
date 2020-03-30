@@ -1,14 +1,14 @@
 # Writing test in solidity
 
-Solidity test contracts live alongside Javascript tests as `.sol` files. When `truffle test` is run, they will be included as a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests, direct access to your deployed contracts and the ability to import any contract dependency. In addition to these features, Truffle's Solidity testing framework was built with the following issues in mind:
+Solidity test contracts live alongside Javascript tests as `.sol` files. When `platon-truffle test` is run, they will be included as a separate test suite per test contract. These contracts maintain all the benefits of the Javascript tests, direct access to your deployed contracts and the ability to import any contract dependency. In addition to these features, platon truffle's Solidity testing framework was built with the following issues in mind:
 
 * Solidity tests shouldn't extend from any contract (like a `Test` contract). This makes your tests as minimal as possible and gives you complete control over the contracts you write.
-* Solidity tests shouldn't be beholden to any assertion library. Truffle provides a default assertion library for you, but you can change this library at any time to fit your needs.
+* Solidity tests shouldn't be beholden to any assertion library. platon truffle provides a default assertion library for you, but you can change this library at any time to fit your needs.
 * You should be able to run your Solidity tests against any PlatON client.
 
 ## Example
 
-Let's take a look at an example Solidity test before diving too deeply. Here's the example Solidity test provided for you by `truffle unbox metacoin`:
+Let's take a look at an example Solidity test before diving too deeply. Here's the example Solidity test provided for you by `platon-truffle unbox metacoin`:
 
 ```javascript
 import "truffle/Assert.sol";
@@ -37,7 +37,7 @@ contract TestMetacoin {
 This produces the following output:
 
 ```
-$ truffle test
+$ platon-truffle test
 Compiling ConvertLib.sol...
 Compiling MetaCoin.sol...
 Compiling truffle/Assert.sol
@@ -57,11 +57,11 @@ To better understand whats happening, let's discuss things in more detail.
 
 ### Assertions
 
-Your assertion functions like `Assert.equal()` are provided to you by the `truffle/Assert.sol` library. This is the default assertion library, however you can include your own assertion library so long as the library loosely integrates with Truffle's test runner by triggering the correct assertion events. You can find all available assertion functions in `Assert.sol`.
+Your assertion functions like `Assert.equal()` are provided to you by the `truffle/Assert.sol` library. This is the default assertion library, however you can include your own assertion library so long as the library loosely integrates with platon truffle's test runner by triggering the correct assertion events. You can find all available assertion functions in `Assert.sol`.
 
 ### Deployed addresses
 
-The addresses of your deployed contracts (i.e., contracts that were deployed as part of your migrations) are available through the `truffle/DeployedAddresses.sol` library. This is provided by Truffle and is recompiled and relinked before each suite is run to provide your tests with Truffle's a clean room environment. This library provides functions for all of your deployed contracts, in the form of:
+The addresses of your deployed contracts (i.e., contracts that were deployed as part of your migrations) are available through the `truffle/DeployedAddresses.sol` library. This is provided by platon truffle and is recompiled and relinked before each suite is run to provide your tests with platon truffle's a clean room environment. This library provides functions for all of your deployed contracts, in the form of:
 
 ```solidity
 DeployedAddresses.<contract name>();
@@ -116,7 +116,7 @@ Solidity tests come with a few advanced features to let you test specific use ca
 
 You can easily test if your contract should or shouldn't raise an exception (i.e., for `require()`/`assert()`/`revert()` statements; `throw` on previous versions of Solidity).
 
-This topic was first written about by guest writer Simon de la Rouviere in his tutorial Testing for Throws in Truffle Solidity Tests.  N.B. that the tutorial makes heavy use of exceptions via the deprecated keyword `throw`, replaced by `revert()`, `require()`, and `assert()` starting in Solidity v0.4.13.
+This topic was first written about by guest writer Simon de la Rouviere in his tutorial Testing for Throws in platon truffle Solidity Tests.  N.B. that the tutorial makes heavy use of exceptions via the deprecated keyword `throw`, replaced by `revert()`, `require()`, and `assert()` starting in Solidity v0.4.13.
 
 Also, since Solidity v0.4.17, a function type member was added to enable you to access a function selector (e.g.: `this.f.selector`), and so, testing for throws with external calls has been made much easier:
 ```solidity
@@ -150,7 +150,7 @@ contract TestBytesLib2 {
 
 ### Testing lat transactions
 
-You can also test how your contracts react to receiving Lat, and script that interaction within Solidity. To do so, your Solidity test should have a public function that returns a `uint`, called `initialBalance`. This can be written directly as a function or a public variable, as shown below. When your test contract is deployed to the network, Truffle will send that amount of Lat from your test account to your test contract. Your test contract can then use that Lat to script Lat interactions within your contract under test. Note that `initialBalance` is optional and not required.
+You can also test how your contracts react to receiving Lat, and script that interaction within Solidity. To do so, your Solidity test should have a public function that returns a `uint`, called `initialBalance`. This can be written directly as a function or a public variable, as shown below. When your test contract is deployed to the network, platon truffle will send that amount of Lat from your test account to your test contract. Your test contract can then use that Lat to script Lat interactions within your contract under test. Note that `initialBalance` is optional and not required.
 
 ```javascript
 import "truffle/Assert.sol";
@@ -174,4 +174,4 @@ contract TestContract {
 }
 ```
 
-Note that Truffle sends Lat to your test contract in a way that does **not** execute a fallback function, so you can still use the fallback function within your Solidity tests for advanced test cases.
+Note that platon truffle sends Lat to your test contract in a way that does **not** execute a fallback function, so you can still use the fallback function within your Solidity tests for advanced test cases.

@@ -1,12 +1,12 @@
-# Using truffle console
+# Using platon-truffle console
 
-Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. Truffle provides you one easy way to do this via an interactive console, with your contracts available and ready to use.
+Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. platon truffle provides you one easy way to do this via an interactive console, with your contracts available and ready to use.
 
-* **Truffle console**: A basic interactive console connecting to any PlatON client
+* **platon-truffle console**: A basic interactive console connecting to any PlatON client
 
 ## Why console?
 
-Reasons to use **Truffle console**:
+Reasons to use **platon-truffle console**:
 
 * You have a client you're already using, such as platon
 * You want to migrate to a testnet (or the main PlatON network)
@@ -34,14 +34,14 @@ When you load the console, you'll immediately see the following prompt:
 truffle(development)>
 ```
 
-This tells you you're running within a Truffle console using the `development` network.
+This tells you you're running within a platon truffle console using the `development` network.
 
 
 ## Features
 
-Both Truffle Develop and the console provide most of the features available in the Truffle command line tool. For instance, you can type `migrate --reset` within the console, and it will be interpreted the same as if you ran `truffle migrate --reset` on the command line.
+Both platon truffle Develop and the console provide most of the features available in the platon truffle command line tool. For instance, you can type `migrate --reset` within the console, and it will be interpreted the same as if you ran `platon-truffle migrate --reset` on the command line.
 
-Additionally, both Truffle Develop and the console have the following features:
+Additionally, both platon truffle Develop and the console have the following features:
 
 * All of your compiled contracts are available and ready for use.
 * After each command (such as `migrate --reset`) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.
@@ -60,6 +60,6 @@ Additionally, both Truffle Develop and the console have the following features:
 * `test`
 * `version`
 
-If a Truffle command is not available, it is because it is not relevant for an existing project (for example, `init`) or wouldn't make sense (for example, `console`).
+If a platon truffle command is not available, it is because it is not relevant for an existing project (for example, `init`) or wouldn't make sense (for example, `console`).
 
 See full [command reference](../reference/truffle-commands.md) for more information.

@@ -30,7 +30,7 @@ The default configuration ships with configuration for a single development netw
 
 ### build
 
-Build configuration of your application, if your application requires tight integration with Truffle. Most users likely will not need to configure this option. See the [Build Processes](../advanced/build-processes.md) section for more details.
+Build configuration of your application, if your application requires tight integration with platon truffle. Most users likely will not need to configure this option. See the [Build Processes](../advanced/build-processes.md) section for more details.
 
 ```eval_rst
 .. _config_networks:
@@ -40,12 +40,12 @@ Build configuration of your application, if your application requires tight inte
 
 Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). When compiling and running migrations on a specific network, contract artifacts will be saved and recorded for later use. When your contract abstractions detect that your PlatON client is connected to a specific network, they'll use the contract artifacts associated that network to simplify app deployment. Networks are identified through PlatON's `net_version` RPC call, as well as blockchain URIs.
 
-The `networks` object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The `networks` option is required, as if you have no network configuration, Truffle will not be able to deploy your contracts. The default network configuration provided by `truffle init` gives you a development network that matches any network it connects to this is useful during development, but not suitable for production deployments. To configure Truffle to connect to other networks, simply add more named networks and specify the corresponding network id.
+The `networks` object, shown below, is keyed by a network name and contains a corresponding object that defines the parameters of the network. The `networks` option is required, as if you have no network configuration, platon truffle will not be able to deploy your contracts. The default network configuration provided by `platon-truffle init` gives you a development network that matches any network it connects to this is useful during development, but not suitable for production deployments. To configure platon truffle to connect to other networks, simply add more named networks and specify the corresponding network id.
 
 The network name is used for user interface purposes, such as when running your migrations on a specific network:
 
 ```bash
-$ truffle migrate --network live
+$ platon-truffle migrate --network live
 ```
 
 Example:
@@ -88,16 +88,10 @@ For each network, you can specify either `host` / `port` or `provider`, but not 
 
 #### Providers
 
-The following network list consists of a local test network and an Infura-hosted Ropsten network, both provided by HDWalletProvider. Make sure you wrap `truffle-hdwallet` providers in a function closure as shown below to ensure that only one network is ever connected at a time.
+The following network list consists of a local test network, both provided by HDWalletProvider. Make sure you wrap `truffle-hdwallet` providers in a function closure as shown below to ensure that only one network is ever connected at a time.
 
 ```javascript
 networks: {
-  ropsten: {
-    provider: function() {
-       return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/YOUR-PROJECT-ID");
-    },
-    network_id: '3',
-  },
   test: {
     provider: function() {
       return new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/");
@@ -107,7 +101,7 @@ networks: {
 }
 ```
 
-If you specify `host` and `port` instead of `provider`, Truffle will create its own default HTTP provider using that host and port, and no minimal network connection will be opened, so there is no need to do the function wrapping workaround. That said, you wouldn't be able to use a custom provider in this case.
+If you specify `host` and `port` instead of `provider`, platon truffle will create its own default HTTP provider using that host and port, and no minimal network connection will be opened, so there is no need to do the function wrapping workaround. That said, you wouldn't be able to use a custom provider in this case.
 
 ### contracts_directory
 
@@ -115,7 +109,7 @@ The default directory for uncompiled contracts is `./contracts` relative to the 
 
 Example:
 
-To have Truffle find contracts in `./allMyStuff/someStuff/theContractFolder` (recursively) at compile time:
+To have platon truffle find contracts in `./allMyStuff/someStuff/theContractFolder` (recursively) at compile time:
 
 ```javascript
 module.exports = {
@@ -206,14 +200,14 @@ mocha: {
 
 ## Compiler configuration
 
-In the `compilers` object you can specify settings related to the compilers used by Truffle.
+In the `compilers` object you can specify settings related to the compilers used by platon truffle.
 
 ### solc
 
 Solidity compiler settings. Supports optimizer settings for `solc`.
 You may specify...
 
-+ any solc-js version listed at `solc-bin`. Specify the one you want and Truffle will get it for you.
++ any solc-js version listed at `solc-bin`. Specify the one you want and platon truffle will get it for you.
 + a natively compiled solc binary (you'll need to install this yourself, links to help below).
 + a path to a locally available solc
 + a solc-js parser for faster docker and native compilations
@@ -242,7 +236,7 @@ module.exports = {
 
 ### external compilers
 
-For more advanced use cases with artifact creation you can use the external compilers configuration. You can use this feature by adding a `compilers.external` object to your Truffle config:
+For more advanced use cases with artifact creation you can use the external compilers configuration. You can use this feature by adding a `compilers.external` object to your platon truffle config:
 
 ```javascript
 module.exports = {
@@ -257,11 +251,11 @@ module.exports = {
 }
 ```
 
-When you run truffle compile, Truffle will run the configured command and look for contract artifacts specified by targets.
+When you run platon truffle compile, platon truffle will run the configured command and look for contract artifacts specified by targets.
 
 This new configuration supports a couple of main use cases:
 
-+ Your compilation command outputs Truffle JSON artifacts directly. If your compilation command generates artifacts directly, or generates output that contains all the information for an artifact, configure a target as follows:
++ Your compilation command outputs platon truffle JSON artifacts directly. If your compilation command generates artifacts directly, or generates output that contains all the information for an artifact, configure a target as follows:
 
 ```javascript
 module.exports = {
@@ -276,9 +270,9 @@ module.exports = {
 }
 ```
 
-Truffle will execute your script, then expand the glob (*) and find all .json files in the listed path and copy those over as artifacts in the build/contracts/ directory.
+platon truffle will execute your script, then expand the glob (*) and find all .json files in the listed path and copy those over as artifacts in the build/contracts/ directory.
 
-+ Your compilation command outputs individual parts of an artifact, and you want Truffle to generate the artifacts for you. The above use case might not be sufficient for all use cases. You can configure your target to run an arbitrary post-processing command:
++ Your compilation command outputs individual parts of an artifact, and you want platon truffle to generate the artifacts for you. The above use case might not be sufficient for all use cases. You can configure your target to run an arbitrary post-processing command:
 
 ```javascript
 module.exports = {
@@ -294,11 +288,11 @@ module.exports = {
 }
 ```
 
-This will run ./process-artifact for each matched .json file, piping the contents of that file as stdin. Your ./process-artifact command is then expected to output a complete Truffle artifact as stdout.
+This will run ./process-artifact for each matched .json file, piping the contents of that file as stdin. Your ./process-artifact command is then expected to output a complete platon truffle artifact as stdout.
 
 Want to provide the path as a filename instead? Add `stdin: false` to your target configuration.
 
-+ You can also specify the individual properties of your contracts and have Truffle generate the artifacts itself.
++ You can also specify the individual properties of your contracts and have platon truffle generate the artifacts itself.
 
 ```javascript
 module.exports = {
@@ -321,7 +315,7 @@ module.exports = {
 }
 ```
 
-Specify `properties` and/or `fileProperties`, and Truffle will look for those values when building the artifacts.
+Specify `properties` and/or `fileProperties`, and platon truffle will look for those values when building the artifacts.
 
 To override the working directory for all specified paths and running commands, use the `workingDirectory` option. For instance, the following will run `./proj/compile-contracts` and read `./proj/output/contract.abi`:
 

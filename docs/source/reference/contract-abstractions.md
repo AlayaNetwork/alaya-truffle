@@ -1,6 +1,6 @@
 # Contract abstractions
 
-Truffle provides contract abstractions for interacting with your contracts.  Skip ahead to the [api section](../reference/contract-abstractions#api) for a list of contract methods.
+platon truffle provides contract abstractions for interacting with your contracts.  Skip ahead to the [api section](../reference/contract-abstractions#api) for a list of contract methods.
 
 ## Usage
 

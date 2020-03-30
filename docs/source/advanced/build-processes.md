@@ -1,14 +1,14 @@
 # Build Processes
 
  ```warning::
-    The `build` command and this approach is being deprecated. Please use third-party build tools like webpack or grunt, or see our `Truffle Boxes` for an example.
+    The `build` command and this approach is being deprecated. Please use third-party build tools like webpack or grunt, or see our `platon-truffle Boxes` for an example.
  ```
 
-In order to provide tight integration with Truffle for those that desire it, Truffle allows you to specify a custom build pipeline meant to bootstrap and configure your application. Truffle provides three methods of integration, described below.
+In order to provide tight integration with platon truffle for those that desire it, platon truffle allows you to specify a custom build pipeline meant to bootstrap and configure your application. Truffle provides three methods of integration, described below.
 
 ## Running an external command
 
-If you'd like Truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:
+If you'd like platon truffle to run an external command whenever it triggers a build, simply include that option as a string within your project configuration, like so:
 
 ```javascript
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
 }
 ```
 
-Note that you're given ample environment variables with which to integrate with Truffle, detailed above.
+Note that you're given ample environment variables with which to integrate with platon truffle, detailed above.
 
 ## Providing a custom function
 
@@ -45,7 +45,7 @@ module.exports = {
 
 You could also create a module or object that implements the builder interface (i.e., is an object which contains a `build` function like the one above). This is great for those who want to maintain tighter integration with Truffle and publish a package to make everyone else's lives easier.
 
-Here's an example using Truffle's default builder:
+Here's an example using platon truffle's default builder:
 
 ```javascript
 var DefaultBuilder = require("truffle-default-builder");
