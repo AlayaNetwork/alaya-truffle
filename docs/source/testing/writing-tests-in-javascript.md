@@ -1,4 +1,4 @@
-# Writing tests in javascript
+# Writing solidity contract tests in javascript
 
 Truffle uses the [Mocha](https://mochajs.org/) testing framework and [Chai](http://chaijs.com/) for assertions to provide you with a solid framework from which to write your JavaScript tests. Let's dive in and see how Truffle builds on top of Mocha to make testing your contracts a breeze.
 
@@ -214,3 +214,84 @@ See the full [command reference](../reference/truffle-commands#test) for more in
 ## TypeScript File Support
 
 Truffle now supports tests saved as a `.ts` [TypeScript](https://www.typescriptlang.org/) file. Please see the [Writing Tests in JavaScript](#writing-tests-in-javascript) guide for more information.
+
+
+# Writing wasm contract tests in javascript
+
+## Use contract() instead of describe()
+
+Structurally, your tests should remain unchanged from that of Mocha: Your tests should exist in the `./test/wasm` directory, they should end with a `.js` extension
+
+## Using global contract object
+
+The contract object uses the contract name as the key, and the contract object value contains the abi required for the deployment contract and the parameters for calling the sendTransaction deployment contract, so you can deploy the contract based on this. After the deployment contract is successful, you can obtain the transaction receipt, which contains the contract Address to initialize the contract object
+
+```note::
+The contract name is the file name with the .wasm suffix after the contract is compiled
+if you have a wasm contract file with name js_contracttest.cpp in `./contracts` directory, the compiled file js_contracttest.wasm and js_contracttest.abi.json file will be located in `./build/contracts` directory
+and the contract name will be js_contraccttest
+```
+
+## Using web3
+
+A `web3` instance is available in each test file, configured to the correct provider. So calling `web3.platon.getBalance` just works!
+
+## Examples
+
+Here's an example wasm test:
+
+```javascript
+const waitTime = 10000;
+let contract = undefined;
+
+describe("wasm unit test (you must update config before run this test)", function () {
+    before("deploy contract", async function () {
+	    this.timeout(waitTime);
+        const receipt = await web3.platon.sendTransaction(js_contracttest.deployParams);
+	    contract = await new web3.platon.Contract(js_contracttest.abi,receipt.contractAddress,{vmType:1});
+    });
+
+    it("call get method", async function () {
+        this.timeout(waitTime);
+        var result = await contract.methods.getUint64().call();
+        assert.equal(result, 0, "getUint64 method should return 0");
+    });
+});
+```
+
+If you have already deployed a smart contract and do not want to redeploy, you can specify contract address in test file.
+
+```javascript
+const waitTime = 10000;
+let contract = undefined;
+let contractAddress = "0x3F212ec13eAD7D409eba24a84c286dD1A527EeFD";
+
+describe("wasm unit test (you must update config before run this test)", function () {
+    before("deploy contract", async function () {
+	    contract = await new web3.platon.Contract(js_contracttest.abi, contractAddress,{vmType:1});
+    });
+
+    it("call get method", async function () {
+        this.timeout(waitTime);
+        var result = await contract.methods.getUint64().call();
+        assert.equal(result, 0, "getUint64 method should return 0");
+    });
+});
+```
+
+This test will produce the following output:
+
+```
+  Contract: js_contracttest
+    √ wasm unit test (you must update config before run this test) call get method: 9ms
+
+  1 passing (4s)
+```
+
+## Specifying contract
+
+You can specify a specific wasm contract to run the test
+
+```shell script
+$ truffle test --wasm --contract-name ${ContractName} --param ${InitParamsString}
+```

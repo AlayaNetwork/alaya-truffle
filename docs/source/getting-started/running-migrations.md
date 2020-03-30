@@ -253,12 +253,12 @@ deployer.then(function() {
 
 To run your wasm migrations, for example: there is a test.cpp contract file in the contracts directory, run the following:
 
-```none
+```shell script
 $ truffle migrate --wasm --contract-name test
 ```
 
 If you want to deploy all wasm contract, run the following:
 
-```none
+```shell script
 $ truffle migrate --wasm
 ```
