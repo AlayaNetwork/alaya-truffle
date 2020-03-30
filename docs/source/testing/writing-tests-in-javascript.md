@@ -1,17 +1,17 @@
 # Writing solidity contract tests in javascript
 
-Truffle uses the [Mocha](https://mochajs.org/) testing framework and [Chai](http://chaijs.com/) for assertions to provide you with a solid framework from which to write your JavaScript tests. Let's dive in and see how Truffle builds on top of Mocha to make testing your contracts a breeze.
+platon truffle uses the [Mocha](https://mochajs.org/) testing framework and [Chai](http://chaijs.com/) for assertions to provide you with a solid framework from which to write your JavaScript tests. Let's dive in and see how platon truffle builds on top of Mocha to make testing your contracts a breeze.
 
 Note: If you're unfamiliar with writing unit tests in Mocha, please see [Mocha's documentation](https://mochajs.org/) before continuing.
 
 ## Use contract() instead of describe()
 
-Structurally, your tests should remain largely unchanged from that of Mocha: Your tests should exist in the `./test` directory, they should end with a `.js` extension, and they should contain code that Mocha will recognize as an automated test. What makes Truffle tests different from that of Mocha is the `contract()` function: This function works exactly like `describe()` except it enables Truffle's [clean-room features](../testing/testing-your-contracts#clean-room-environment). It works like this:
+Structurally, your tests should remain largely unchanged from that of Mocha: Your tests should exist in the `./test` directory, they should end with a `.js` extension, and they should contain code that Mocha will recognize as an automated test. What makes platon truffle tests different from that of Mocha is the `contract()` function: This function works exactly like `describe()` except it enables platon truffle's [clean-room features](../testing/testing-your-contracts#clean-room-environment). It works like this:
 
 * Before each `contract()` function is run, your contracts are redeployed to the running PlatON client so the tests within it run with a clean contract state.
 * The `contract()` function provides a list of accounts made available by your PlatON client which you can use to write tests.
 
-Since Truffle uses Mocha under the hood, you can still use `describe()` to run normal Mocha tests whenever Truffle clean-room features are unnecessary.
+Since platon truffle uses Mocha under the hood, you can still use `describe()` to run normal Mocha tests whenever platon truffle clean-room features are unnecessary.
 
 ## Use contract abstractions within your tests
 
@@ -206,14 +206,14 @@ This test will produce identical output to the previous example.
 You can limit the tests being executed to a specific file as follows:
 
 ```
-truffle test ./test/metacoin.js
+platon-truffle test ./test/metacoin.js
 ```
 
 See the full [command reference](../reference/truffle-commands#test) for more information.
 
 ## TypeScript File Support
 
-Truffle now supports tests saved as a `.ts` [TypeScript](https://www.typescriptlang.org/) file. Please see the [Writing Tests in JavaScript](#writing-tests-in-javascript) guide for more information.
+platon truffle now supports tests saved as a `.ts` [TypeScript](https://www.typescriptlang.org/) file. Please see the [Writing Tests in JavaScript](#writing-tests-in-javascript) guide for more information.
 
 
 # Writing wasm contract tests in javascript
@@ -293,5 +293,5 @@ This test will produce the following output:
 You can specify a specific wasm contract to run the test
 
 ```shell script
-$ truffle test --wasm --contract-name ${ContractName} --param ${InitParamsString}
+$ platon-truffle test --wasm --contract-name ${ContractName} --param ${InitParamsString}
 ```

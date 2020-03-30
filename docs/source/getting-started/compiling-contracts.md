@@ -4,17 +4,17 @@
 
 All of your contracts are located in your project's `contracts/` directory. As contracts are written in `Solidity` or `cpp(wasm contract)`, all files containing contracts will have a file extension of `.sol` or `cpp`
 
-With a bare Truffle [project](../quickstart.md) (created through `truffle init`), you're given a single `Migrations.sol` file that helps in the deployment process. If you're using a `Truffle Box`, you will have multiple files here.
+With a bare platon truffle [project](../quickstart.md) (created through `platon-truffle init`), you're given a single `Migrations.sol` file that helps in the deployment process. If you're using a `platon-truffle Box`, you will have multiple files here.
 
 ## Command
 
-To compile a Truffle project, change to the root of the directory where the project is located and then type the following into a terminal:
+To compile a platon truffle project, change to the root of the directory where the project is located and then type the following into a terminal:
 
 ```shell
-truffle compile
+platon-truffle compile
 ```
 
-Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle will compile only the contracts that have been changed since the last compile. If you'd like to override this behavior, run the above command with the `--all` option.
+Upon first run, all contracts will be compiled. Upon subsequent runs, platon truffle will compile only the contracts that have been changed since the last compile. If you'd like to override this behavior, run the above command with the `--all` option.
 
 ```eval_rst
 .. _Artifacts:
@@ -24,7 +24,7 @@ Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle wi
 
 Artifacts of your compilation will be placed in the `build/contracts/` directory, relative to your project root. (This directory will be created if it does not exist.)
 
-These artifacts are integral to the inner workings of Truffle, and they play an important part in the successful deployment of your application. `You should not edit these files` as they'll be overwritten by contract compilation and deployment.
+These artifacts are integral to the inner workings of platon truffle, and they play an important part in the successful deployment of your application. `You should not edit these files` as they'll be overwritten by contract compilation and deployment.
 
 ```eval_rst
 .. _dependencies:
@@ -32,7 +32,7 @@ These artifacts are integral to the inner workings of Truffle, and they play an 
 
 ## Dependencies
 
-You can declare contract dependencies using Solidity's `import` command. Truffle will compile contracts in the correct order and ensure all dependencies are sent to the compiler. Dependencies can be specified in two ways:
+You can declare contract dependencies using Solidity's `import` command. platon truffle will compile contracts in the correct order and ensure all dependencies are sent to the compiler. Dependencies can be specified in two ways:
 
 ### Importing dependencies via file name
 

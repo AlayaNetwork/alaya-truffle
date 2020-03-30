@@ -7,10 +7,10 @@ Migrations are JavaScript files that help you deploy contracts to the PlatON net
 To run your migrations, run the following:
 
 ```none
-$ truffle migrate
+$ platon-truffle migrate
 ```
 
-This will run all migrations located within your project's `migrations` directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, `truffle migrate` will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, `truffle migrate` won't perform any action at all. You can use the `--reset` option to run all your migrations from the beginning. For local testing make sure to have a test blockchain and running before executing `migrate`.
+This will run all migrations located within your project's `migrations` directory. At their simplest, migrations are simply a set of managed deployment scripts. If your migrations were previously run successfully, `platon-truffle migrate` will start execution from the last migration that was run, running only newly created migrations. If no new migrations exists, `truffle migrate` won't perform any action at all. You can use the `--reset` option to run all your migrations from the beginning. For local testing make sure to have a test blockchain and running before executing `migrate`.
 
 
 ## Migration files
@@ -70,7 +70,7 @@ Your migration function can accept other parameters as well. See the examples be
 
 ## Initial migration
 
-Truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you're free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won't be updated again. You will also receive this contract by default when creating a new project with `truffle init`.
+platon-truffle requires you to have a Migrations contract in order to use the Migrations feature. This contract must contain a specific interface, but you're free to edit this contract at will. For most projects, this contract will be deployed initially as the first migration and won't be updated again. You will also receive this contract by default when creating a new project with `truffle init`.
 
 FileName: `contracts/Migrations.sol`
 
@@ -254,11 +254,11 @@ deployer.then(function() {
 To run your wasm migrations, for example: there is a test.cpp contract file in the contracts directory, run the following:
 
 ```shell script
-$ truffle migrate --wasm --contract-name test
+$ platon-truffle migrate --wasm --contract-name test
 ```
 
 If you want to deploy all wasm contract, run the following:
 
 ```shell script
-$ truffle migrate --wasm
+$ platon-truffle migrate --wasm
 ```

@@ -1,16 +1,16 @@
 # Truffle QuickStart
 
-This page will take you through the basics of creating a Truffle project and deploying a smart contract to a blockchain.
+This page will take you through the basics of creating a platon truffle project and deploying a smart contract to a blockchain.
 
 ```eval_rst
 .. _creating-a-project:
 ```
 ## Creating a project
 
-To use most Truffle commands, you need to run them against an existing Truffle project. So the first step is to create a Truffle project.
+To use most platon truffle commands, you need to run them against an existing platon truffle project. So the first step is to create a platon truffle project.
 
-You can create a bare project template, but for those just getting started, you can use `Truffle Boxes`, which are example applications and project templates. We'll use the `MetaCoin box`, which creates a token that can be transferred between accounts:
-1. Create a new directory for your Truffle project:
+You can create a bare project template, but for those just getting started, you can use `platon-truffle Boxes`, which are example applications and project templates. We'll use the `MetaCoin box`, which creates a token that can be transferred between accounts:
+1. Create a new directory for your platon truffle project:
 
    ```shell
    mkdir MetaCoin
@@ -20,15 +20,15 @@ You can create a bare project template, but for those just getting started, you 
 2. Download ("unbox") the MetaCoin box:
 
    ```shell
-   truffle unbox metacoin
+   platon-truffle unbox metacoin
    ```
 
  ```note::
-  You can use the `truffle unbox <box-name>` command to download any of the other Truffle Boxes.
+  You can use the `platon-truffle unbox <box-name>` command to download any of the other platon truffle Boxes.
  ```
 
  ```note::
-   To create a bare Truffle project with no smart contracts included, use `truffle init`.
+   To create a bare platon truffle project with no smart contracts included, use `platon-truffle init`.
  ```
 
  Once this operation is completed, you'll now have a project structure with the following items:
@@ -36,7 +36,7 @@ You can create a bare project template, but for those just getting started, you 
 * `contracts/`:  Directory for [Solidity contracts](getting-started/interacting-with-your-contracts.md)
 * `migrations/`: Directory for [scriptable deployment files](getting-started/running-migrations.html#id2)
 * `test/`:    Directory for test files for [testing your application and contracts](testing/testing-your-contracts)
-* `truffle.js`: Truffle [configuration file](reference/configuration)
+* `truffle-config.js`: Truffle [configuration file](reference/configuration)
 
 ```eval_rst
 .. _Exploring the project:
@@ -44,12 +44,12 @@ You can create a bare project template, but for those just getting started, you 
 ## Exploring the project
 
  ```note::
-  This page is just a quickstart, so we're not going to go into much detail here. Please see the rest of the Truffle documentation to learn more.
+  This page is just a quickstart, so we're not going to go into much detail here. Please see the rest of the platon truffle documentation to learn more.
  ```
 
 1. Open the `contracts/MetaCoin.sol` file in a text editor. This is a smart contract (written in Solidity) that creates a MetaCoin token. Note that this also references another Solidity file `contracts/ConvertLib.sol` in the same directory.
 
-1. Open the `contracts/Migrations.sol` file. This is a separate Solidity file that manages and updates [the status of your deployed smart contract](getting-started/running-migrations). This file comes with every Truffle project, and is usually not edited.
+1. Open the `contracts/Migrations.sol` file. This is a separate Solidity file that manages and updates [the status of your deployed smart contract](getting-started/running-migrations). This file comes with every platon truffle project, and is usually not edited.
 
 1. Open the `migrations/1_initial_migration.js` file. This file is the migration (deployment) script for the `Migrations` contract found in the `Migrations.sol` file.
 
@@ -59,7 +59,7 @@ You can create a bare project template, but for those just getting started, you 
 
 1. Open the `test/metacoin.js` file. This is a [test file written in JavaScript](testing/writing-tests-in-javascript) which performs a similar function to the Solidity test above.
 
-1. Open the `truffle-config.js` file. This is the Truffle [configuration file](reference/configuration), for setting network information and other project-related settings. The file is blank, but this is okay, as we'll be using a Truffle command that has some defaults built-in.
+1. Open the `truffle-config.js` file. This is the platon truffle [configuration file](reference/configuration), for setting network information and other project-related settings. The file is blank, but this is okay, as we'll be using a platon truffle command that has some defaults built-in.
 
 ```eval_rst
 .. _Testing:
@@ -69,7 +69,7 @@ You can create a bare project template, but for those just getting started, you 
 1. On a terminal, run the Solidity test:
 
    ```shell
-   truffle test ./test/TestMetacoin.sol
+   platon-truffle test ./test/TestMetacoin.sol
    ```
 
    You will see the following output
@@ -91,7 +91,7 @@ You can create a bare project template, but for those just getting started, you 
 1. Run the JavaScript test:
 
    ```shell
-   truffle test ./test/metacoin.js
+   platon-truffle test ./test/metacoin.js
    ```
 
    You will see the following output
@@ -114,7 +114,7 @@ You can create a bare project template, but for those just getting started, you 
 1. Compile the smart contracts:
 
    ```shell
-   truffle compile
+   platon-truffle compile
    ```
 
    You will see the following output:
@@ -128,19 +128,19 @@ You can create a bare project template, but for those just getting started, you 
    ```
 
 ```eval_rst
-.. _Migrating with Truffle Develop:
+.. _Migrating with platon truffle Develop:
 ```
 
 ## Migrating
 
-To deploy our smart contracts, we're going to need to connect to a blockchain. Truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main PlatON network.
+To deploy our smart contracts, we're going to need to connect to a blockchain. platon truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main PlatON network.
 
 You can create this blockchain and interact with it using scripts/node/start.sh shell scripts.
 
-1. Run Truffle migrate:
+1. Run platon truffle migrate:
 
    ```shell
-   truffle migrate
+   platon-truffle migrate
    ```
 
   我们可以看到下面的信息：
@@ -230,10 +230,10 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
 
 ## Interacting with the contract
 
-To interact with the contract, you can use the Truffle console. The Truffle console is similar to Truffle Develop, except it connects to an existing blockchain.
+To interact with the contract, you can use the platon truffle console. The platon truffle console is similar to platon truffle Develop, except it connects to an existing blockchain.
 
    ```shell
-   truffle console
+   platon-truffle console
    ```
 
    You will see the following prompt:
@@ -248,9 +248,9 @@ To interact with the contract, you can use the Truffle console. The Truffle cons
 
 Interact with the contract using the console in the following ways:
 
-As of Truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.
+As of platon truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.
 
-* Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either Truffle's built-in blockchain:
+* Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either platon truffle's built-in blockchain:
 
   ```shell
   truffle(development)> let instance = await MetaCoin.deployed()
@@ -289,4 +289,4 @@ As of Truffle v5, the console supports async/await functions, enabling much simp
 ```
 ## Continue learning
 
-This quickstart showed you the basics of the Truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our documentation and especially our tutorials to learn more.
+This quickstart showed you the basics of the platon truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our documentation and especially our tutorials to learn more.

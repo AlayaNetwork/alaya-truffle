@@ -7,10 +7,10 @@ This section will describe every command available in the Truffle application.
 All commands are in the following form:
 
 ```shell
-truffle <command> [options]
+platon-truffle <command> [options]
 ```
 
-Passing no arguments is equivalent to `truffle help`, which will display a list of all commands and then exit.
+Passing no arguments is equivalent to `platon-truffle help`, which will display a list of all commands and then exit.
 
 ## Available commands
 
@@ -23,7 +23,7 @@ Passing no arguments is equivalent to `truffle help`, which will display a list 
 Compile contract source files.
 
 ```shell
-truffle compile [--list <filter>] [--all] [--network <name>] [--quiet]
+platon-truffle compile [--list <filter>] [--all] [--network <name>] [--quiet]
 ```
 
 This will only compile contracts that have changed since the last compile, unless otherwise specified.
@@ -44,7 +44,7 @@ Options:
 Display whether analytics are enabled or disabled and prompt whether to toggle the setting.
 
 ```shell
-truffle config [--enable-analytics|--disable-analytics]
+platon-truffle config [--enable-analytics|--disable-analytics]
 ```
 
 Options:
@@ -60,10 +60,10 @@ Options:
 Run a console with contract abstractions and commands available.
 
 ```shell
-truffle console [--network <name>] [--verbose-rpc]
+platon-truffle console [--network <name>] [--verbose-rpc]
 ```
 
-Spawns an interface to interact with contracts via the command line. Additionally, many Truffle commands are available within the console (without the `truffle` prefix).
+Spawns an interface to interact with contracts via the command line. Additionally, many platon truffle commands are available within the console (without the `truffle` prefix).
 
 See the `Using the console` section for more details.
 
@@ -80,7 +80,7 @@ Options:
 Helper to create new contracts, migrations and tests.
 
 ```shell
-truffle create <artifact_type> <ArtifactName>
+platon-truffle create <artifact_type> <ArtifactName>
 ```
 
 Options:
@@ -104,13 +104,13 @@ Camel case names of artifacts will be converted to underscore-separated file nam
 
 ### exec
 
-Execute a JS module within the Truffle environment.
+Execute a JS module within the platon truffle environment.
 
 ```shell
-truffle exec <script.js> [--network <name>] [--compile]
+platon-truffle exec <script.js> [--network <name>] [--compile]
 ```
 
-This will include `web3`, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that Truffle can run.
+This will include `web3`, set the default provider based on the network specified (if any), and include your contracts as global objects while executing the script. Your script must export a function that platon truffle can run.
 
 See the [Writing external scripts](../getting-started/writing-external-scripts.md) section for more details.
 
@@ -129,7 +129,7 @@ Options：
 Display a list of all commands or information about a specific command.
 
 ```shell
-truffle help [<command>]
+platon-truffle help [<command>]
 ```
 
 Options：
@@ -145,13 +145,13 @@ Options：
 Initialize new and empty PlatON project
 
 ```shell
-truffle init [--force]
+platon-truffle init [--force]
 ```
 
-Creates a new and empty Truffle project within the current working directory.
+Creates a new and empty platon truffle project within the current working directory.
 
  ```note::
-   **警告**: Older versions of Truffle used `truffle init bare` to create an empty project. This usage has been deprecated. Those looking for the MetaCoin example that used to be available through `truffle init` should use `truffle unbox MetaCoin` instead.
+   **警告**: Older versions of platon truffle used `platon-truffle init bare` to create an empty project. This usage has been deprecated. Those looking for the MetaCoin example that used to be available through `platon-truffle init` should use `platon-truffle unbox MetaCoin` instead.
  ```
 
 Options：
@@ -167,7 +167,7 @@ Options：
 Run migrations to deploy contracts.
 
 ```shell
-truffle migrate [--reset] [--wasm] [--f <number>] [--to <number>] [--network <name>] [--compile-all] [--contract-name] [--verbose-rpc] [--dry-run] [--interactive]
+platon-truffle migrate [--reset] [--wasm] [--f <number>] [--to <number>] [--network <name>] [--compile-all] [--contract-name] [--verbose-rpc] [--dry-run] [--interactive]
 ```
 
 
@@ -182,7 +182,7 @@ Options：
 * `--network <name>`: Specify the network to use, saving artifacts specific to that network. Network name must exist in the configuration.
 * `--compile-all`: Compile all contracts instead of intelligently choosing which contracts need to be compiled.
 * `--contract-name`: migration for specific name wasm contract.
-* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
+* `--verbose-rpc`: Log communication between platon truffle and the PlatON client.
 * `--dry-run`: Fork the network specified and only perform a test migration.
 * `--interactive`: Prompt to confirm that the user wants to proceed after the dry run.
 
@@ -191,7 +191,7 @@ Options：
 Show addresses for deployed contracts on each network.
 
 ```shell
-truffle networks [--clean]
+platon-truffle networks [--clean]
 ```
 
 Use this command before publishing your package to see if there are any extraneous network artifacts you don't want published. With no options specified, this package will simply output the current artifact state.
@@ -209,7 +209,7 @@ Options：
 Print the compiled opcodes for a given contract.
 
 ```shell
-truffle opcode <contract_name>
+platon-truffle opcode <contract_name>
 ```
 
 Options：
@@ -225,7 +225,7 @@ Options：
 Run JavaScript and Solidity tests.
 
 ```shell
-truffle test [<test_file>] [--compile-all] [--network <name>] [--verbose-rpc] [--show-events]
+platon-truffle test [<test_file>] [--compile-all] [--network <name>] [--verbose-rpc] [--show-events]
 ```
 
 Runs some or all tests within the `test/` directory as specified. See the section on Testing your contracts for more information.
@@ -235,7 +235,7 @@ Options：
 * `<test_file>`: Name of the test file to be run. Can include path information if the file does not exist in the current directory.
 * `--compile-all`: Compile all contracts instead of intelligently choosing which contracts need to be compiled.
 * `--network <name>`: Specify the network to use, using artifacts specific to that network. Network name must exist in the configuration.
-* `--verbose-rpc`: Log communication between Truffle and the PlatON client.
+* `--verbose-rpc`: Log communication between platon truffle and the PlatON client.
 * `--show-events`: Log all contract events.
 
 ```eval_rst
@@ -247,7 +247,7 @@ Options：
 Show version number and exit.
 
 ```shell
-truffle version
+platon-truffle version
 ```
 
 

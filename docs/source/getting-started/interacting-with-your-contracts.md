@@ -2,7 +2,7 @@
 
 ## Introduction
 
-If you were writing raw requests to the PlatON network yourself in order to interact with your contracts, you'd soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you've made is complicated. Fortunately, Truffle takes care of this complexity for you, to make interacting with your contracts a breeze.
+If you were writing raw requests to the PlatON network yourself in order to interact with your contracts, you'd soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you've made is complicated. Fortunately, platon truffle takes care of this complexity for you, to make interacting with your contracts a breeze.
 
 ## Reading and writing data
 
@@ -30,9 +30,9 @@ Choosing between a `transaction` and a `call` is as simple as deciding whether y
 
 ## Introducing abstractions
 
-Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. Truffle uses its own contract abstraction via the `truffle-contract` module, and it is this contract abstraction that's described below.
+Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. platon truffle uses its own contract abstraction via the `truffle-contract` module, and it is this contract abstraction that's described below.
 
-In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through Truffle Boxes via `truffle unbox metacoin`.
+In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through platon truffle Boxes via `platon-truffle unbox metacoin`.
 
 ```javascript
 pragma solidity >=0.4.25 <0.5.13;
@@ -70,7 +70,7 @@ contract MetaCoin {
 
 This contract has three methods aside from the constructor (`sendCoin` and `getBalance`). All three methods can be executed as either a transaction or a call.
 
-Now let's look at the Javascript object called `MetaCoin` provided for us by Truffle, as made available in the `Truffle console`:
+Now let's look at the Javascript object called `MetaCoin` provided for us by platon truffle, as made available in the `platon-truffle console`:
 
 ```javascript
 truffle(develop)> let instance = await MetaCoin.deployed()
@@ -235,9 +235,9 @@ Note that the arguments above (`4` and `myAccount`) correspond to whatever the s
 
 Another useful thing to note is that you can also call this on a contract's new method to see how much gas it will take to deploy. So you would do `Contract.new.estimateGas()` to get the gas estimate for the contract's deployment.
 
-The next mentioned method is `sendTransaction`. In general, if you execute a contract method, Truffle will intelligently figure out whether it needs to make a transaction or a call. If your function can be executed as a call, then Truffle will do so and you will be able to avoid gas costs.
+The next mentioned method is `sendTransaction`. In general, if you execute a contract method, platon truffle will intelligently figure out whether it needs to make a transaction or a call. If your function can be executed as a call, then platon truffle will do so and you will be able to avoid gas costs.
 
-There may be some scenarios, however, where you want to force Truffle to make a transaction. In these cases, you can use the `sendTransaction` method found on the method itself. This would look something like `instance.myMethod.sendTransaction()`.
+There may be some scenarios, however, where you want to force platon truffle to make a transaction. In these cases, you can use the `sendTransaction` method found on the method itself. This would look something like `instance.myMethod.sendTransaction()`.
 
 For example, suppose I have a contract instance with the method `getTokenBalance`. I could do the following to force a transaction to take place while executing `getTokenBalance`:
 
@@ -246,12 +246,12 @@ const instance = await MyContract.deployed();
 const result = await instance.getTokenBalance.sendTransaction(myAccount);
 ```
 
-The `result` variable above will be the same kind of result you would get from executing any normal transaction in Truffle. It will contain the transaction hash, the logs, etc.
+The `result` variable above will be the same kind of result you would get from executing any normal transaction in platon truffle. It will contain the transaction hash, the logs, etc.
 
 The last method is `call` and the syntax is exactly the same as for `sendTransaction`. If you want to explicitly make a call, you can use the `call` method found on your contract abstraction's method. So you would write something that looks like const `result = await instance.myMethod.call()`.
 
 ## Further reading
 
-The contract abstractions provided by Truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the `truffle-contract` documentation for tips, tricks and insights.
+The contract abstractions provided by platon truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the `truffle-contract` documentation for tips, tricks and insights.
 
 
