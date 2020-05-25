@@ -22,7 +22,7 @@ All commands require that you be in your project folder. You do not need to be a
 To launch the console:
 
 ```shell
-truffle console
+platon-truffle console
 ```
 
 
