@@ -190,7 +190,7 @@ deployer.deploy(A, arg1, arg2, ...);
 deployer.deploy(A, {overwrite: false});
 
 // Set a maximum amount of gas and `from` address for the deployment
-deployer.deploy(A, {gas: 4612388, from: "0x...."});
+deployer.deploy(A, {gas: 4612388, from: "lax...."});
 
 // Deploying multiple contracts as an array is now deprecated.
 // This used to be quicker than writing three `deployer.deploy()` statements as the deployer

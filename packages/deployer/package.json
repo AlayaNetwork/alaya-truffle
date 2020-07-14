@@ -21,15 +21,15 @@
     "emittery": "^0.4.0",
     "eth-ens-namehash": "^2.0.8",
     "ethereum-ens": "^0.7.7",
-    "@platonnetwork/web3-utils": "0.11.0"
+    "@platonnetwork/web3-utils": "0.13.0"
   },
   "devDependencies": {
     "@truffle/reporters": "^1.0.17",
     "@truffle/workflow-compile": "^2.1.14",
-    "@platonnetwork/ganache-core": "0.11.1",
+    "@platonnetwork/ganache-core": "0.13.1",
     "mocha": "5.2.0",
     "sinon": "^7.3.2",
-    "@platonnetwork/web3": "0.11.0"
+    "@platonnetwork/web3": "0.13.0"
   },
   "keywords": [
     "contracts",

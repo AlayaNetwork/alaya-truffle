@@ -1,52 +1,67 @@
-<img src="https://truffleframework.com/img/truffle-logo-dark.svg" width="200">
-
-[![npm](https://img.shields.io/npm/v/truffle.svg)]()
-[![npm](https://img.shields.io/npm/dm/truffle.svg)]()
-[![Join the chat at https://gitter.im/consensys/truffle](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/consensys/truffle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
------------------------
-
-
-Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. With Truffle, you get:
+Platon-truffle is a development environment, testing framework and asset pipeline for PlatON, aiming to make life as an PlatON developer easier. With Platon-truffle, you get:
 
 * Built-in smart contract compilation, linking, deployment and binary management.
 * Automated contract testing with Mocha and Chai.
 * Configurable build pipeline with support for custom build processes.
 * Scriptable deployment & migrations framework.
-* Network management for deploying to many public & private networks.
 * Interactive console for direct contract communication.
 * Instant rebuilding of assets during development.
 * External script runner that executes scripts within a Truffle environment.
 
-### Install
+# Installation
 
+```note::
+  Don't install nodejs with apt, Otherwise, you will meet a lot of permission related issues 
+ ```
+
+## Install nodejs
+
+```bash
+$ wget https://nodejs.org/download/release/v10.12.0/node-v10.12.0-linux-x64.tar.gz
+$ sudo tar -zxvf node-v10.12.0-linux-x64.tar.gz -C /usr/local
+$ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
+$ node -v
+$ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/bin
+$ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/lib/node_modules/
 ```
-$ npm install -g truffle
+## Install platon-truffle
+
+```bash
+$ npm install -g platon-truffle@0.13.1
+$ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
+$ platon-truffle version
 ```
+
+## problems
+
+If you meeting this problem(Example: connect ECONNREFUSED 0.0.0.0:443), May be a problem with github routing, You can try the following method:
+
+* copy related github.com content(https://github.com/googlehosts/hosts/blob/master/hosts-files/hosts) and paste to /etc/hosts
+
+
+```eval_rst
+.. _Requirements:
+```
+## Requirements
+
+* NodeJS v10.12.0 or later
+* Ubuntu16.04 or later
+
+platon-truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.
 
 ### Quick Usage
 
 For a default set of contracts and tests, run the following within an empty project directory:
 
 ```
-$ truffle init
+$ platon-truffle init
 ```
 
-From there, you can run `truffle compile`, `truffle migrate` and `truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
-
-Truffle comes bundled with a local development blockchain server that launches automatically when you invoke the commands  above. If you'd like to [configure a more advanced development environment](http://truffleframework.com/docs/advanced/configuration) we recommend you install the blockchain server separately by running `npm install -g ganache-cli` at the command line.
-
-+  [ganache-cli](https://github.com/trufflesuite/ganache-cli): a command-line version of Truffle's blockchain server.
-+  [ganache](http://truffleframework.com/ganache/): A GUI for the server that displays your transaction history and chain state.
-
+From there, you can run `platon-truffle compile`, `platon-truffle migrate` and `platon-truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
 
 ### Documentation
 
-Please see the [Official Truffle Documentation](http://truffleframework.com/docs/) for guides, tips, and examples.
-
-### Contributing
-
-This package is a distribution package of the Truffle command line tool. Please see [@truffle/core](https://github.com/trufflesuite/truffle/tree/develop/packages/core) to contribute to the main core code.
+Please see the [Official Platon Truffle Documentation](https://platon-truffle.readthedocs.io/en/v0.13.1/) for guides, tips, and examples.
 
 ### License
 

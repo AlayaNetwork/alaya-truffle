@@ -347,7 +347,6 @@ class Deployment {
           instance = await promiEvent;
           self._stopBlockPolling();
         } catch (err) {
-	  console.trace(err);
           self._stopBlockPolling();
           eventArgs.error = err.error || err;
           let message = await self.emitter.emit("deployFailed", eventArgs);

@@ -17,9 +17,9 @@
     "@truffle/expect": "^0.0.13",
     "@truffle/interface-adapter": "^0.4.0",
     "@truffle/resolver": "^5.0.22",
-    "@platonnetwork/ganache-core": "0.11.1",
+    "@platonnetwork/ganache-core": "0.13.1",
     "node-ipc": "^9.1.1",
-    "@platonnetwork/web3": "0.11.0"
+    "@platonnetwork/web3": "0.13.0"
   },
   "devDependencies": {
     "debug": "^4.1.0"

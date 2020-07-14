@@ -99,7 +99,7 @@ class VersionRange extends LoadingStrategy {
   }
 
   async getSolcByUrlAndCache(fileName, index = 0) {
-    const url = this.config.compilerRoots[index] + "raw/feature/evm/bin/" + fileName;
+    const url = this.config.compilerRoots[index] + "raw/v0.13.0/bin/" + fileName;
     const spinner = ora({
       text: "Downloading compiler. Attempt #" + (index + 1),
       color: "red"
@@ -148,7 +148,7 @@ class VersionRange extends LoadingStrategy {
     }).start();
     if (!this.config.compilerRoots || this.config.compilerRoots.length < 1)
       throw this.errors("noUrl");
-    return request(this.config.compilerRoots[index] + "releases/download/v0.0.1/list.json")
+    return request(this.config.compilerRoots[index] + "releases/download/v0.13.0/list.json")
       .then(list => {
         spinner.stop();
         return JSON.parse(list);

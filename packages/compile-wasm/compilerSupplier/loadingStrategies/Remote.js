@@ -6,7 +6,7 @@ const LoadingStrategy = require("./LoadingStrategy");
 
 class Remote extends LoadingStrategy {
 
-  async getCDTByUrlAndCache(fileName, index = 0,callback) {
+  async getCDTByUrlAndCache(fileName, index = 0, callback) {
     const url = this.config.compilerRoots[index] + this.config.version + "/" + fileName;
     const spinner = ora({
       text: "Downloading compiler. Attempt #" + (index + 1),
@@ -21,6 +21,7 @@ class Remote extends LoadingStrategy {
       spinner.stop();
       this.addFileToCache(response.body, fileName);
       this.extractToCache(fileName,callback);
+      this.linkWasmOpt();
     } catch (error) {
       spinner.stop();
       if (index >= this.config.compilerRoots.length - 1) {
