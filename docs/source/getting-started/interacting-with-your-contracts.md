@@ -79,7 +79,7 @@ truffle(develop)> instance
 // outputs:
 //
 // Contract
-// - address: "0xa9f441a487754e6b27ba044a5a8eb2eec77f6b92"
+// - address: "lax1486yrfy8w48xkfa6q3994r4jamrh76ujtc7yed"
 // - allEvents: ()
 // - getBalance: ()
 // - sendCoin: ()
@@ -161,18 +161,18 @@ truffle(develop)> result.logs[0]
   transactionHash: '0x3b33960e99416f687b983d4a6bb628d38bf7855c6249e71d0d16c7930a588cb2',
   blockHash: '0xe36787063e114a763469e7dabc7aa57545e67eb2c395a1e6784988ac065fdd59',
   blockNumber: 8,
-  address: '0x6891Ac4E2EF3dA9bc88C96fEDbC9eA4d6D88F768',
+  address: 'lax1dzg6cn3w70dfhjyvjmldhj02f4kc3amgzf680t',
   type: 'mined',
   id: 'log_3181e274',
   event: 'Transfer',
   args:
    Result {
-     '0': '0x8128880DC48cde7e471EF6b99d3877357bb93f01',
-     '1': '0x12B6971f6eb35dD138a03Bd6cBdf9Fc9b9a87d7e',
+     '0': 'lax1sy5gsrwy3n08u3c776ue6wrhx4amj0cp50uv9j',
+     '1': 'lax1z2mfw8mwkdwazw9q80tvhhulexu6slt7clz8ct',
      '2': <BN: a>,
      __length__: 3,
-     _from: '0x8128880DC48cde7e471EF6b99d3877357bb93f01',
-     _to: '0x12B6971f6eb35dD138a03Bd6cBdf9Fc9b9a87d7e',
+     _from: 'lax1sy5gsrwy3n08u3c776ue6wrhx4amj0cp50uv9j',
+     _to: 'lax1z2mfw8mwkdwazw9q80tvhhulexu6slt7clz8ct',
      _value: <BN: a> } }
 ```
 
@@ -183,7 +183,7 @@ In all of the above cases, we've been using a contract abstraction that has alre
 ```javascript
 truffle(develop)> let newInstance = await MetaCoin.new()
 truffle(develop)> newInstance.address
-'0x64307b67314b584b1E3Be606255bd683C835A876'
+'lax1vsc8kee3fdvyk83mucrz2k7ks0yrt2rkpdxrpd'
 ```
 
 ### Use a contract at a specific address
@@ -191,7 +191,7 @@ truffle(develop)> newInstance.address
 If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.
 
 ```javascript
-let specificInstance = await MetaCoin.at("0x1234...");
+let specificInstance = await MetaCoin.at("lax1234...");
 ```
 
 ### Sending lat to a contract

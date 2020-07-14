@@ -360,3 +360,7 @@ The wasm compiler and solc compiler cannot be specified at the same time, you ne
 if you want to compile solidity contract, you can only specific solc compilers config, if wasm, you need only specific wasm compilers 
 ```
 
+```note::
+If the wasm contract is compiled for the first time, it is best to run with sudo permissions
+```
+

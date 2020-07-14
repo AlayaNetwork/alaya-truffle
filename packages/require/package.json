@@ -18,7 +18,7 @@
     "@truffle/expect": "^0.0.13",
     "@truffle/interface-adapter": "^0.4.0",
     "original-require": "1.0.1",
-    "@platonnetwork/web3": "0.11.0"
+    "@platonnetwork/web3": "0.13.0"
   },
   "devDependencies": {
     "mocha": "5.2.0"

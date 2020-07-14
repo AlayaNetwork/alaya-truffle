@@ -18,7 +18,7 @@ $ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/lib/node_modules/
 ## Install platon-truffle
 
 ```bash
-$ npm install -g platon-truffle@0.11.1
+$ npm install -g platon-truffle@0.13.1
 $ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
 $ platon-truffle version
 ```

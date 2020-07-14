@@ -2,6 +2,7 @@ const Config = require("@truffle/config");
 const path = require("path");
 const fs = require("fs");
 const decompress = require('decompress');
+const { execSync } = require("child_process");
 //const inly = require('inly');
 
 class LoadingStrategy {
@@ -33,10 +34,18 @@ class LoadingStrategy {
     extractToCache(fileName,callback) {
         const filePath = path.resolve(this.compilersDir, fileName);
         const dir = this.compilersDir;
-	decompress(filePath, dir).then(files => {
+        decompress(filePath, dir).then(files => {
             console.log('done!');
             callback();
         });
+    }
+    linkWasmOpt() {
+        const wasmOptLinkPath = "/usr/bin/wasm-opt";
+        const wasmOptPath = path.resolve(this.compilersDir, "platon-cdt/bin/wasm-opt");
+        var cmd = "sudo rm -rf " + wasmOptLinkPath + " && sudo ln -s " + wasmOptPath + " " + wasmOptLinkPath;
+        console.log("link wasm-opt to /usr/bin");
+        var stdout = execSync(cmd).toString();
+        return stdout;
     }
 
     errors(kind, input, error) {

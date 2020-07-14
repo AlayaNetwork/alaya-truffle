@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/trufflesuite/truffle/issues"
   },
-  "version": "0.11.1",
+  "version": "0.13.1",
   "main": "./build/library.bundled.js",
   "bin": {
     "platon-truffle": "./build/cli.bundled.js"
@@ -40,7 +40,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "eslint": "^5.7.0",
     "fs-extra": "6.0.1",
-    "@platonnetwork/ganache-core": "0.11.1",
+    "@platonnetwork/ganache-core": "0.13.1",
     "glob": "^7.1.2",
     "husky": "^1.1.2",
     "js-scrypt": "^0.2.0",
@@ -52,7 +52,7 @@
     "shebang-loader": "0.0.1",
     "stream-buffers": "^3.0.1",
     "tmp": "0.0.33",
-    "@platonnetwork/web3": "0.11.0",
+    "@platonnetwork/web3": "0.13.0",
     "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "yargs": "^8.0.2"
