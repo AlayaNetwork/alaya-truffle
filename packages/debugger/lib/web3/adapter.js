@@ -1,7 +1,7 @@
 import debugModule from "debug";
 const debug = debugModule("debugger:web3:adapter");
 
-import Web3 from "@platonnetwork/web3";
+import Web3 from "@alayanetwork/web3";
 import { promisify } from "util";
 
 export default class Web3Adapter {

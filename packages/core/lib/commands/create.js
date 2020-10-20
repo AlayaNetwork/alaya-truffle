@@ -12,7 +12,7 @@ var command = {
     }
   },
   help: {
-    usage: "platon-truffle create <artifact_type> <ArtifactName>",
+    usage: "alaya-truffle create <artifact_type> <ArtifactName>",
     options: [
       {
         option: "<artifact_type>",

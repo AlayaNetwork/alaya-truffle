@@ -1,4 +1,4 @@
-var Ganache = require("@platonnetwork/ganache-core");
+var Ganache = require("@alayanetwork/ganache-core");
 var fs = require("fs-extra");
 var glob = require("glob");
 

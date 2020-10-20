@@ -3,7 +3,7 @@ var command = {
   description:
     "List all commands or provide information about a specific command",
   help: {
-    usage: "platon-truffle help [<command>]",
+    usage: "alaya-truffle help [<command>]",
     options: [
       {
         option: "<command>",

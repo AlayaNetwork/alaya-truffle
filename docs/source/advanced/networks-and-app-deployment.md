@@ -8,24 +8,24 @@ See the [Configuration](../reference/configuration.md#networks) section for more
 
 ## Specifying a network
 
-Most platon truffle commands will behave differently based on the network specified, and will use that network's contracts and configuration. You can specify a network using the `--network` option, like below:
+Most alaya truffle commands will behave differently based on the network specified, and will use that network's contracts and configuration. You can specify a network using the `--network` option, like below:
 
 ```bash
-$ platon-truffle migrate --network live
+$ alaya-truffle migrate --network live
 ```
 
-In this example, platon truffle will run your migrations on the "live" network, which -- if configured like [the example](../reference/configuration.md#networks) -- is associated with the public PlatON blockchain.
+In this example, alaya truffle will run your migrations on the "live" network, which -- if configured like [the example](../reference/configuration.md#networks) -- is associated with the public PlatON blockchain.
 
 ## Specifying a wasm contract
 If you want to deploy a specific wasm contract(contract file like contracts/test.cpp), you can use the following command：
 
 ```bash
-$ platon-truffle migrate --wasm --contract-name test
+$ alaya-truffle migrate --wasm --contract-name test
 ```
 
 ## Build artifacts
 
-As mentioned in the [Compiling contracts](../getting-started/compiling-contracts.md) section, build artifacts are stored in the `./build/contracts` directory as `.json` files. When you compile your contracts or run your migrations using a specific network, platon truffle will update those `.json` files so they contain the information related to that network. When those artifacts are used later -- such as within your frontend or application, they'll automatically detect which network the PlatON client is connected to and use the correct contract artifacts accordingly.
+As mentioned in the [Compiling contracts](../getting-started/compiling-contracts.md) section, build artifacts are stored in the `./build/contracts` directory as `.json` files. When you compile your contracts or run your migrations using a specific network, alaya truffle will update those `.json` files so they contain the information related to that network. When those artifacts are used later -- such as within your frontend or application, they'll automatically detect which network the PlatON client is connected to and use the correct contract artifacts accordingly.
 
 ## Application deployment
 

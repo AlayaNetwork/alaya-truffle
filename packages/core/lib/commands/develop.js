@@ -11,7 +11,7 @@ const command = {
     }
   },
   help: {
-    usage: "platon-truffle develop [--log]",
+    usage: "alaya-truffle develop [--log]",
     options: [
       {
         option: `--log`,

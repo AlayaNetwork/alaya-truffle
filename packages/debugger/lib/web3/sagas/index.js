@@ -16,7 +16,7 @@ import * as actions from "../actions";
 import * as session from "lib/session/actions";
 
 import BN from "bn.js";
-import Web3 from "@platonnetwork/web3"; //just for utils!
+import Web3 from "@alayanetwork/web3"; //just for utils!
 import * as Codec from "@truffle/codec";
 
 import Web3Adapter from "../adapter";

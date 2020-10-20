@@ -1,4 +1,4 @@
-var Web3 = require("@platonnetwork/web3");
+var Web3 = require("@alayanetwork/web3");
 var fs_extra = require("fs-extra");
 const expect = require("@truffle/expect");
 var fs = require("fs");
@@ -85,7 +85,7 @@ class MigrateWasm {
     async reporter(contractName, receipt) {
         var balance = await this.web3.platon.getBalance(receipt.from);
         var block = await this.web3.platon.getBlock(receipt.blockNumber);
-        var gasPrice = this.web3.utils.fromVon(this.options.gasPrice.toString(), "lat");
+        var gasPrice = this.web3.utils.fromVon(this.options.gasPrice.toString(), "atp");
         var totalCost = receipt.gasUsed.toString() * gasPrice;
         console.log("contract " + contractName + " deployed successfully");
         console.log("======================\n");
@@ -99,8 +99,8 @@ class MigrateWasm {
             `   > ${"balance:".padEnd(20)} ${balance}\n` +
             `   > ${"gas limit:".padEnd(20)} ${block.gasLimit}\n` +
             `   > ${"gas used:".padEnd(20)} ${receipt.gasUsed}\n` +
-            `   > ${"gas price:".padEnd(20)} ${gasPrice} LAT\n` +
-            `   > ${"total cost:".padEnd(20)} ${totalCost} LAT\n`;
+            `   > ${"gas price:".padEnd(20)} ${gasPrice} ATP\n` +
+            `   > ${"total cost:".padEnd(20)} ${totalCost} ATP\n`;
         console.log(output);
     }
 }

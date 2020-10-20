@@ -1,6 +1,6 @@
 # Contract abstractions
 
-platon truffle provides contract abstractions for interacting with your contracts.  Skip ahead to the [api section](../reference/contract-abstractions#api) for a list of contract methods.
+alaya truffle provides contract abstractions for interacting with your contracts.  Skip ahead to the [api section](../reference/contract-abstractions#api) for a list of contract methods.
 
 ## Usage
 
@@ -207,18 +207,18 @@ The result object that gets returned looks like this:
       transactionHash: '0x728b4d1983cd00d93ae00b7adf76f78c1b32d922de636ead42e93f70cf58cdc9',
       blockHash: '0xdce5e6c580267c9bf1d82bf0a167fa60509ef9fc520b8619d8183a8373a42035',
       blockNumber: 19,
-      address: 'lax1qddc48jz0kfaz78z6gkkqzmhjutkj6p3mnfzep',
+      address: 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
       type: 'mined',
       id: 'log_70be22b0',
       event: 'Transfer',
       args:
         Result {
-          '0': 'lax10l4el2j6a58a237vcu8spsvam62754x50tg2yp',
-          '1': 'lax10l4el2j6a58a237vcu8spsvam62754x50tg2yp',
+          '0': 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
+          '1': 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
           '2': <BN: 1>,
           __length__: 3,
-          _from: 'lax10l4el2j6a58a237vcu8spsvam62754x50tg2yp',
-          _to: 'lax10l4el2j6a58a237vcu8spsvam62754x50tg2yp',
+          _from: 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
+          _to: 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
           _value: <BN: 1>
         }
     }
@@ -242,7 +242,7 @@ This isn't very useful in this case, since `setValue()` sets things, and the val
 
 #### Calling getters
 
-However, we can *get* the value using `getValue()`, using `.call()`. Calls are always free and don't cost any Lat, so they're good for calling functions that read data off the blockchain:
+However, we can *get* the value using `getValue()`, using `.call()`. Calls are always free and don't cost any ATP, so they're good for calling functions that read data off the blockchain:
 
 ```javascript
 const value = await instance.getValue.call();
@@ -269,7 +269,7 @@ const result = await instance.setValue(5);
 // result.receipt => receipt object
 ```
 
-#### Sending Lat / Triggering the fallback function
+#### Sending ATP / Triggering the fallback function
 
 You can trigger the fallback function by sending a transaction to this function:
 
@@ -280,10 +280,10 @@ const result = instance.sendTransaction({...});
 
 This is promisified like all available contract instance functions, and has the same API as `web3.platon.sendTransaction` without the callback. The `to` value will be automatically filled in for you.
 
-If you only want to send Lat to the contract a shorthand is available:
+If you only want to send ATP to the contract a shorthand is available:
 
 ```javascript
-const result = await instance.send(web3.toVon(1, "lat"));
+const result = await instance.send(web3.toVon(1, "atp"));
 // Same result object as above.
 ```
 

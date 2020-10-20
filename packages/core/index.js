@@ -8,5 +8,5 @@ module.exports = {
   package: require("./lib/package"),
   test: require("./lib/test"),
   version: pkg.version,
-  ganache: require("@platonnetwork/ganache-core/public-exports")
+  ganache: require("@alayanetwork/ganache-core/public-exports")
 };

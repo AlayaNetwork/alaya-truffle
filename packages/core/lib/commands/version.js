@@ -3,7 +3,7 @@ const command = {
   description: "Show version number and exit",
   builder: {},
   help: {
-    usage: "platon-truffle version",
+    usage: "alaya-truffle version",
     options: []
   },
   run: function(options, done) {

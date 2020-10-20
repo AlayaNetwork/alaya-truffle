@@ -1,8 +1,8 @@
 var debug = require("debug")("test:util"); // eslint-disable-line no-unused-vars
 var fs = require("fs");
-var ganache = require("@platonnetwork/ganache-core");
-var Web3 = require("@platonnetwork/web3");
-var Web3PromiEvent = require("@platonnetwork/web3-core-promievent");
+var ganache = require("@alayanetwork/ganache-core");
+var Web3 = require("@alayanetwork/web3");
+var Web3PromiEvent = require("@alayanetwork/web3-core-promievent");
 var Compile = require("@truffle/compile-solidity/legacy");
 var contract = require("../");
 var path = require("path");

@@ -191,7 +191,7 @@ class TruffleConfig {
   }
 
   public static getUserConfig(): Configstore {
-    return new Configstore("truffle", {}, { globalConfigPath: true });
+    return new Configstore("alaya-truffle", {}, { globalConfigPath: true });
   }
 
   public static getTruffleDataDirectory(): string {

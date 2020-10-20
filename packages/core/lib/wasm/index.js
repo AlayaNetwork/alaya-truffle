@@ -1,4 +1,4 @@
-var Web3 = require("@platonnetwork/web3");
+var Web3 = require("@alayanetwork/web3");
 var fs = require("fs-extra");
 var Mocha = require("mocha");
 const chai = require("chai");
@@ -22,7 +22,7 @@ class TestWasm {
         });
         await this.setJSTestGlobals();
         await this.setContractGlobals(contractName, initArgs);
-        
+
         const testDir = path.join(this.options.working_directory, "test/wasm/");
 
         fs.readdirSync(testDir)

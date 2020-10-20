@@ -1,5 +1,5 @@
 const ENSJS = require("ethereum-ens");
-const { isAddress } = require("@platonnetwork/web3-utils");
+const { isAddress } = require("@alayanetwork/web3-utils");
 
 module.exports = {
   convertENSNames: async function({

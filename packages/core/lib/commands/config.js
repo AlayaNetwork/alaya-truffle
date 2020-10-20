@@ -3,7 +3,7 @@ const command = {
   description: "Set user-level configuration options",
   help: {
     usage:
-      "platon-truffle config [--enable-analytics|--disable-analytics] [[<get|set> <key>] [<value-for-set>]]",
+      "alaya-truffle config [--enable-analytics|--disable-analytics] [[<get|set> <key>] [<value-for-set>]]",
     options: [
       {
         option: "--enable-analytics",

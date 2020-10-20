@@ -1,7 +1,7 @@
 const assert = require("assert");
-const Ganache = require("@platonnetwork/ganache-core");
+const Ganache = require("@alayanetwork/ganache-core");
 const Provider = require("../index");
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 
 describe("Provider", function() {
   let server;

@@ -7,8 +7,8 @@ const path = require("path");
 const fs = require("fs");
 const requireNoCache = require("require-nocache")(module);
 const Compile = require("@truffle/compile-solidity/legacy");
-const Ganache = require("@platonnetwork/ganache-core");
-const Web3 = require("@platonnetwork/web3");
+const Ganache = require("@alayanetwork/ganache-core");
+const Web3 = require("@alayanetwork/web3");
 const { promisify } = require("util");
 
 describe("artifactor + require", () => {

@@ -1,10 +1,10 @@
 # Creating a project
 
-To use most platon truffle commands, you need to run them against an existing platon truffle project. So the first step is to create a platon truffle project.
+To use most alaya truffle commands, you need to run them against an existing alaya truffle project. So the first step is to create a alaya truffle project.
 
-You can create a bare project template, but for those just getting started, you can use `platon truffle Boxes`, which are example applications and project templates. We'll use the `MetaCoin box`, which creates a token that can be transferred between accounts:
+You can create a bare project template, but for those just getting started, you can use `alaya truffle Boxes`, which are example applications and project templates. We'll use the `MetaCoin box`, which creates a token that can be transferred between accounts:
 
-1. Create a new directory for your platon truffle project:
+1. Create a new directory for your alaya truffle project:
 
    ```shell
    mkdir MetaCoin
@@ -14,16 +14,16 @@ You can create a bare project template, but for those just getting started, you 
 1. Download ("unbox") the MetaCoin box:
 
    ```shell
-   platon-truffle unbox metacoin
+   alaya-truffle unbox metacoin
    ```
 
 
  ```note::
-  You can use the platon-truffle unbox <box-name> command to download any of the other platon truffle Boxes.
+  You can use the alaya-truffle unbox <box-name> command to download any of the other alaya truffle Boxes.
  ```
 
  ```note::
-   To create a bare platon truffle project with no smart contracts included, use platon-truffle init.
+   To create a bare alaya truffle project with no smart contracts included, use alaya-truffle init.
  ```
 
 
@@ -37,4 +37,4 @@ You can create a bare project template, but for those just getting started, you 
 * `contracts/`: Directory for [Solidity contracts](../getting-started/interacting-with-your-contracts)
 * `migrations/`: Directory for [scriptable deployment files](../getting-started/running-migrations.html#migration-files)
 * `test/`: Directory for test files for [testing your application and contracts](../testing/testing-your-contracts)
-* `truffle-config.js`: platon truffle [configuration file](../reference/configuration)
+* `truffle-config.js`: alaya truffle [configuration file](../reference/configuration)

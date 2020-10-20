@@ -3,7 +3,7 @@ import { Web3Shim } from "..";
 import {
   Transaction as EvmTransaction,
   TransactionReceipt as EvmTransactionReceipt
-} from "@platonnetwork/web3-core";
+} from "@alayanetwork/web3-core";
 import { EvmBlockType } from "../../adapter/types";
 
 export const EthereumDefinition = {

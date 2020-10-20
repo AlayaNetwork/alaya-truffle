@@ -18,7 +18,7 @@ import {
 } from "@truffle/codec";
 import * as Utils from "./utils";
 import * as DecoderTypes from "./types";
-import Web3 from "@platonnetwork/web3";
+import Web3 from "@alayanetwork/web3";
 import { ContractObject as Artifact } from "@truffle/contract-schema/spec";
 import BN from "bn.js";
 import { Provider } from "@truffle/provider";

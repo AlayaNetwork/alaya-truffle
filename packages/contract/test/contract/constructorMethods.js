@@ -1,6 +1,6 @@
 const TruffleContract = require("../../");
 const assert = require("assert");
-const Ganache = require("@platonnetwork/ganache-core");
+const Ganache = require("@alayanetwork/ganache-core");
 
 describe("TruffleContract", () => {
   it("can be used to return an empty TruffleContract class object", () => {

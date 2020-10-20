@@ -1,5 +1,5 @@
 const debug = require("debug")("provider");
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 const { createInterfaceAdapter } = require("@truffle/interface-adapter");
 const wrapper = require("./wrapper");
 const DEFAULT_NETWORK_CHECK_TIMEOUT = 5000;

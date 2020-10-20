@@ -10,7 +10,7 @@ var command = {
     }
   },
   help: {
-    usage: "platon-truffle networks [--clean]",
+    usage: "alaya-truffle networks [--clean]",
     options: [
       {
         option: "--clean",

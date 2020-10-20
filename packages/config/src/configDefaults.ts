@@ -46,7 +46,7 @@ export const getInitialConfig = ({
       solc: {
         settings: {
           optimizer: {
-            enabled: false,
+            enabled: true,
             runs: 200
           },
           remappings: []

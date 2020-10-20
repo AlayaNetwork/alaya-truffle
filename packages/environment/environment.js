@@ -1,10 +1,10 @@
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 const { createInterfaceAdapter } = require("@truffle/interface-adapter");
 const expect = require("@truffle/expect");
 const TruffleError = require("@truffle/error");
 const Resolver = require("@truffle/resolver");
 const Artifactor = require("@truffle/artifactor");
-const Ganache = require("@platonnetwork/ganache-core/public-exports");
+const Ganache = require("@alayanetwork/ganache-core/public-exports");
 const Provider = require("@truffle/provider");
 
 const Environment = {

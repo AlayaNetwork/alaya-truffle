@@ -2,7 +2,7 @@ import debugModule from "debug";
 const debug = debugModule("codec:abi-data:utils");
 
 // untyped import since no @types/web3-utils exists
-import Web3Utils from "@platonnetwork/web3-utils";
+import Web3Utils from "@alayanetwork/web3-utils";
 import { Abi as SchemaAbi } from "@truffle/contract-schema/spec";
 import * as Evm from "@truffle/codec/evm";
 import * as Common from "@truffle/codec/common";

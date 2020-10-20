@@ -1,18 +1,18 @@
 # Writing external scripts
 
-Often you may want to run external scripts that interact with your contracts. platon truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your PlatON client automatically per your [project configuration](../reference/configuration.md).
+Often you may want to run external scripts that interact with your contracts. alaya truffle provides an easy way to do this, bootstrapping your contracts based on your desired network and connecting to your PlatON client automatically per your [project configuration](../reference/configuration.md).
 
 ## Command
 
 To run an external script, perform the following:
 
 ```
-$ platon-truffle exec <path/to/file.js>
+$ alaya-truffle exec <path/to/file.js>
 ```
 
 ## File structure
 
-In order for external scripts to be run correctly, platon truffle expects them to export a function that takes a single parameter as a callback:
+In order for external scripts to be run correctly, alaya truffle expects them to export a function that takes a single parameter as a callback:
 
 ```javascript
 module.exports = function(callback) {

@@ -18,7 +18,7 @@
     "@truffle/expect": "^0.0.13",
     "debug": "^4.1.0",
     "glob": "^7.1.2",
-    "@platonnetwork/web3-utils": "0.13.0"
+    "@alayanetwork/web3-utils": "0.13.2"
   },
   "devDependencies": {
     "chai": "4.2.0",

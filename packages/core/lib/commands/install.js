@@ -3,7 +3,7 @@ const command = {
   description: "Install a package from the Ethereum Package Registry",
   builder: {},
   help: {
-    usage: "platon-truffle install <package_name>[@<version>]",
+    usage: "alaya-truffle install <package_name>[@<version>]",
     options: [
       {
         option: "package_name",

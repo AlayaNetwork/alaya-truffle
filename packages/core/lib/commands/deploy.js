@@ -6,7 +6,7 @@ const command = {
   builder: migrate.builder,
   help: {
     usage:
-      "platon-truffle deploy [--reset] [-f <number>] [--network <name>] [--compile-all] [--verbose-rpc]",
+      "alaya-truffle deploy [--reset] [-f <number>] [--network <name>] [--compile-all] [--verbose-rpc]",
     options: migrate.help.options
   },
   run: migrate.run

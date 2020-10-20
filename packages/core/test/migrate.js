@@ -6,10 +6,10 @@ var Networks = require("../lib/networks");
 var path = require("path");
 var fs = require("fs-extra");
 var glob = require("glob");
-var Ganache = require("@platonnetwork/ganache-core");
+var Ganache = require("@alayanetwork/ganache-core");
 var Resolver = require("@truffle/resolver");
 var Artifactor = require("@truffle/artifactor");
-var Web3 = require("@platonnetwork/web3");
+var Web3 = require("@alayanetwork/web3");
 
 describe("migrate", function() {
   var config;

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-If you were writing raw requests to the PlatON network yourself in order to interact with your contracts, you'd soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you've made is complicated. Fortunately, platon truffle takes care of this complexity for you, to make interacting with your contracts a breeze.
+If you were writing raw requests to the PlatON network yourself in order to interact with your contracts, you'd soon realize that writing these requests is clunky and cumbersome. As well, you might find that managing the state for each request you've made is complicated. Fortunately, alaya truffle takes care of this complexity for you, to make interacting with your contracts a breeze.
 
 ## Reading and writing data
 
@@ -10,9 +10,9 @@ The PlatON network makes a distinction between writing data to the network and r
 
 ### Transactions
 
-`Transactions` fundamentally change the state of the network. A `transaction` can be as simple as sending Lat to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a `transaction` is that it writes (or changes) data. `Transactions` cost Lat to run, known as "gas", and `transactions` take time to process. When you execute a contract's function via a `transaction`, you cannot receive that function's return value because the `transaction` isn't processed immediately. In general, functions meant to be executed via a `transaction` will not return a value; they will return a `transaction` id instead. So in summary, `transactions`:
+`Transactions` fundamentally change the state of the network. A `transaction` can be as simple as sending ATP to another account, or as complicated as executing a contract function or adding a new contract to the network. The defining characteristic of a `transaction` is that it writes (or changes) data. `Transactions` cost ATP to run, known as "gas", and `transactions` take time to process. When you execute a contract's function via a `transaction`, you cannot receive that function's return value because the `transaction` isn't processed immediately. In general, functions meant to be executed via a `transaction` will not return a value; they will return a `transaction` id instead. So in summary, `transactions`:
 
-* Cost gas (Lat)
+* Cost gas (ATP)
 * Change the state of the network
 * Aren't processed immediately
 * Won't expose a return value (only a transaction id).
@@ -30,9 +30,9 @@ Choosing between a `transaction` and a `call` is as simple as deciding whether y
 
 ## Introducing abstractions
 
-Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. platon truffle uses its own contract abstraction via the `truffle-contract` module, and it is this contract abstraction that's described below.
+Contract abstractions are the bread and butter of interacting with PlatON contracts from Javascript. In short, contract abstractions are wrapper code that makes interaction with your contracts easy, in a way that lets you forget about the many engines and gears executing under the hood. alaya truffle uses its own contract abstraction via the `truffle-contract` module, and it is this contract abstraction that's described below.
 
-In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through platon truffle Boxes via `platon-truffle unbox metacoin`.
+In order to appreciate the usefulness of a contract abstraction, however, we first need a contract to talk about. We'll use the MetaCoin contract available to you through alaya truffle Boxes via `alaya-truffle unbox metacoin`.
 
 ```javascript
 pragma solidity >=0.4.25 <0.5.13;
@@ -70,7 +70,7 @@ contract MetaCoin {
 
 This contract has three methods aside from the constructor (`sendCoin` and `getBalance`). All three methods can be executed as either a transaction or a call.
 
-Now let's look at the Javascript object called `MetaCoin` provided for us by platon truffle, as made available in the `platon-truffle console`:
+Now let's look at the Javascript object called `MetaCoin` provided for us by alaya truffle, as made available in the `alaya-truffle console`:
 
 ```javascript
 truffle(develop)> let instance = await MetaCoin.deployed()
@@ -79,7 +79,7 @@ truffle(develop)> instance
 // outputs:
 //
 // Contract
-// - address: "lax1486yrfy8w48xkfa6q3994r4jamrh76ujtc7yed"
+// - address: "atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737"
 // - allEvents: ()
 // - getBalance: ()
 // - sendCoin: ()
@@ -161,18 +161,18 @@ truffle(develop)> result.logs[0]
   transactionHash: '0x3b33960e99416f687b983d4a6bb628d38bf7855c6249e71d0d16c7930a588cb2',
   blockHash: '0xe36787063e114a763469e7dabc7aa57545e67eb2c395a1e6784988ac065fdd59',
   blockNumber: 8,
-  address: 'lax1dzg6cn3w70dfhjyvjmldhj02f4kc3amgzf680t',
+  address: 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
   type: 'mined',
   id: 'log_3181e274',
   event: 'Transfer',
   args:
    Result {
-     '0': 'lax1sy5gsrwy3n08u3c776ue6wrhx4amj0cp50uv9j',
-     '1': 'lax1z2mfw8mwkdwazw9q80tvhhulexu6slt7clz8ct',
+     '0': 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
+     '1': 'atp1mm09yjr8vwr2g78gselj03w2eks7atq2jrjlww',
      '2': <BN: a>,
      __length__: 3,
-     _from: 'lax1sy5gsrwy3n08u3c776ue6wrhx4amj0cp50uv9j',
-     _to: 'lax1z2mfw8mwkdwazw9q80tvhhulexu6slt7clz8ct',
+     _from: 'atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737',
+     _to: 'atp1mm09yjr8vwr2g78gselj03w2eks7atq2jrjlww',
      _value: <BN: a> } }
 ```
 
@@ -183,7 +183,7 @@ In all of the above cases, we've been using a contract abstraction that has alre
 ```javascript
 truffle(develop)> let newInstance = await MetaCoin.new()
 truffle(develop)> newInstance.address
-'lax1vsc8kee3fdvyk83mucrz2k7ks0yrt2rkpdxrpd'
+'atp1gsddntg6uyk0ykvzy3zv5rp5nx5krnudmn9qav'
 ```
 
 ### Use a contract at a specific address
@@ -191,11 +191,11 @@ truffle(develop)> newInstance.address
 If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.
 
 ```javascript
-let specificInstance = await MetaCoin.at("lax1234...");
+let specificInstance = await MetaCoin.at("atp1234...");
 ```
 
-### Sending lat to a contract
-You may simply want to send Lat directly to a contract, or trigger a contract's fallback function. You can do so using one of the following two options.
+### Sending ATP to a contract
+You may simply want to send ATP directly to a contract, or trigger a contract's fallback function. You can do so using one of the following two options.
 
 Option 1: Send a transaction directly to a contract via `instance.sendTransaction()`. This is promisified like all available contract instance functions, and has the same API as `web3.platon.sendTransaction` but without the callback. The `to` value will be automatically filled in for you if not specified.
 
@@ -205,11 +205,11 @@ instance.sendTransaction({...}).then(function(result) {
 });
 ```
 
-Option 2: There's also shorthand for just sending Lat directly:
+Option 2: There's also shorthand for just sending ATP directly:
 
 
 ```javascript
-instance.send(web3.toVon(1, "lat")).then(function(result) {
+instance.send(web3.toVon(1, "atp")).then(function(result) {
   // Same result object as above.
 });
 ```
@@ -235,9 +235,9 @@ Note that the arguments above (`4` and `myAccount`) correspond to whatever the s
 
 Another useful thing to note is that you can also call this on a contract's new method to see how much gas it will take to deploy. So you would do `Contract.new.estimateGas()` to get the gas estimate for the contract's deployment.
 
-The next mentioned method is `sendTransaction`. In general, if you execute a contract method, platon truffle will intelligently figure out whether it needs to make a transaction or a call. If your function can be executed as a call, then platon truffle will do so and you will be able to avoid gas costs.
+The next mentioned method is `sendTransaction`. In general, if you execute a contract method, alaya truffle will intelligently figure out whether it needs to make a transaction or a call. If your function can be executed as a call, then alaya truffle will do so and you will be able to avoid gas costs.
 
-There may be some scenarios, however, where you want to force platon truffle to make a transaction. In these cases, you can use the `sendTransaction` method found on the method itself. This would look something like `instance.myMethod.sendTransaction()`.
+There may be some scenarios, however, where you want to force alaya truffle to make a transaction. In these cases, you can use the `sendTransaction` method found on the method itself. This would look something like `instance.myMethod.sendTransaction()`.
 
 For example, suppose I have a contract instance with the method `getTokenBalance`. I could do the following to force a transaction to take place while executing `getTokenBalance`:
 
@@ -246,12 +246,12 @@ const instance = await MyContract.deployed();
 const result = await instance.getTokenBalance.sendTransaction(myAccount);
 ```
 
-The `result` variable above will be the same kind of result you would get from executing any normal transaction in platon truffle. It will contain the transaction hash, the logs, etc.
+The `result` variable above will be the same kind of result you would get from executing any normal transaction in alaya truffle. It will contain the transaction hash, the logs, etc.
 
 The last method is `call` and the syntax is exactly the same as for `sendTransaction`. If you want to explicitly make a call, you can use the `call` method found on your contract abstraction's method. So you would write something that looks like const `result = await instance.myMethod.call()`.
 
 ## Further reading
 
-The contract abstractions provided by platon truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the `truffle-contract` documentation for tips, tricks and insights.
+The contract abstractions provided by alaya truffle contain a wealth of utilities for making interacting with your contracts easy. Check out the `truffle-contract` documentation for tips, tricks and insights.
 
 

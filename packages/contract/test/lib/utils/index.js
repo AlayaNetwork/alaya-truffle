@@ -1,7 +1,7 @@
 const ens = require("../../../lib/utils/ens");
 const assert = require("assert");
 const sinon = require("sinon");
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 const methodABI = {
   constant: true,
   inputs: [
