@@ -4,7 +4,7 @@ const CommandRunner = require("../commandrunner");
 const fs = require("fs-extra");
 const path = require("path");
 const assert = require("assert");
-const Ganache = require("@platonnetwork/ganache-core");
+const Ganache = require("@alayanetwork/ganache-core");
 const Reporter = require("../reporter");
 
 describe("Cyclic Dependencies [ @standalone ]", function() {

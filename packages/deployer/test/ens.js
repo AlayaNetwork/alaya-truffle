@@ -1,7 +1,7 @@
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 const { sha3 } = Web3.utils;
 const assert = require("assert");
-const Ganache = require("@platonnetwork/ganache-core");
+const Ganache = require("@alayanetwork/ganache-core");
 const ENS = require("../ens");
 const sinon = require("sinon");
 const ENSJS = require("ethereum-ens");

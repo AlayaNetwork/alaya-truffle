@@ -55,7 +55,7 @@ const command = {
   },
   help: {
     usage:
-      "platon-truffle migrate [--reset] [--wasm] [--f <number>] [--to <number>] [--network <name>]\n" +
+      "alaya-truffle migrate [--reset] [--wasm] [--f <number>] [--to <number>] [--network <name>]\n" +
       "                                " + // spacing to align with previous line
       "[--compile-all] [--contract-name] [--params] [--verbose-rpc] [--interactive] [--dry-run]\n" +
       "                                " + // spacing to align with previous line

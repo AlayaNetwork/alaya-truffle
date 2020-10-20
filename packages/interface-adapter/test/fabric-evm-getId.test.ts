@@ -3,7 +3,7 @@ import assert from "assert";
 
 import { Server } from "http";
 
-import Web3 from "@platonnetwork/web3";
+import Web3 from "@alayanetwork/web3";
 import Ganache from "ganache-core";
 
 import { createInterfaceAdapter, InterfaceAdapter } from "../lib";

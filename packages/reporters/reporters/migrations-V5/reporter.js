@@ -1,5 +1,5 @@
 const debug = require("debug")("reporters:migrations:reporter"); // eslint-disable-line no-unused-vars
-const web3Utils = require("@platonnetwork/web3-utils");
+const web3Utils = require("@alayanetwork/web3-utils");
 const readline = require("readline");
 const ora = require("ora");
 
@@ -129,7 +129,7 @@ class Reporter {
    */
   getTotals() {
     const gas = this.currentGasTotal.clone();
-    const cost = web3Utils.fromVon(this.currentCostTotal, "lat");
+    const cost = web3Utils.fromVon(this.currentCostTotal, "atp");
     this.finalCostTotal = this.finalCostTotal.add(this.currentCostTotal);
 
     this.currentGasTotal = new web3Utils.BN(0);
@@ -138,7 +138,7 @@ class Reporter {
     return {
       gas: gas.toString(10),
       cost: cost,
-      finalCost: web3Utils.fromVon(this.finalCostTotal, "lat"),
+      finalCost: web3Utils.fromVon(this.finalCostTotal, "atp"),
       deployments: this.deployments.toString()
     };
   }
@@ -390,9 +390,9 @@ class Reporter {
       data.gasPrice = web3Utils.fromVon(gasPrice, "gvon");
       data.gas = gas.toString(10);
       data.from = tx.from;
-      data.value = web3Utils.fromVon(value, "lat");
-      data.cost = web3Utils.fromVon(cost, "lat");
-      data.balance = web3Utils.fromVon(balance, "lat");
+      data.value = web3Utils.fromVon(value, "atp");
+      data.cost = web3Utils.fromVon(cost, "atp");
+      data.balance = web3Utils.fromVon(balance, "atp");
 
       this.currentGasTotal = this.currentGasTotal.add(gas);
       this.currentCostTotal = this.currentCostTotal.add(cost);

@@ -8,7 +8,7 @@ const glob = promisify(require("glob"));
 const fs = require("fs");
 const expect = require("@truffle/expect");
 const Schema = require("@truffle/contract-schema");
-const web3Utils = require("@platonnetwork/web3-utils");
+const web3Utils = require("@alayanetwork/web3-utils");
 
 const DEFAULT_ABI = [
   {

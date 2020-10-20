@@ -19,7 +19,7 @@ You can use this provider wherever a Web3 provider is needed, not just in Truffl
 
 ```javascript
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 const mnemonic = "mountains supernatural bird..."; // 12 word mnemonic
 let provider = new HDWalletProvider(mnemonic, "http://localhost:8545");
 

@@ -100,7 +100,7 @@ const command = {
   description: "Download a Truffle Box, a pre-built Truffle project",
   builder: {},
   help: {
-    usage: "platon-truffle unbox [<box_name>] [--force]",
+    usage: "alaya-truffle unbox [<box_name>] [--force]",
     options: [
       {
         option: "<box_name>",

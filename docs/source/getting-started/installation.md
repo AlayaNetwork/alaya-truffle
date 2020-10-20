@@ -15,12 +15,12 @@ $ node -v
 $ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/bin
 $ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/lib/node_modules/
 ```
-## Install platon-truffle
+## Install alaya-truffle
 
 ```bash
-$ npm install -g platon-truffle@0.13.1
+$ npm install -g alaya-truffle@0.13.1
 $ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
-$ platon-truffle version
+$ alaya-truffle version
 ```
 
 ## problems
@@ -29,6 +29,12 @@ If you meeting this problem(Example: connect ECONNREFUSED 0.0.0.0:443), May be a
 
 * copy related github.com content(https://github.com/googlehosts/hosts/blob/master/hosts-files/hosts) and paste to /etc/hosts
 
+If the wasm compiler always fails to download due to network problems, you can go directly to github to download the [compiled compressed file](https://github.com/PlatONnetwork/PlatON-CDT/releases/download/v0.13.2/platon-cdt.tar.gz), and then unzip it to the ~/.config/alaya-truffle/compilers directory, and change it to platon-cdt/bin/wasm -opt soft link to /usr/bin directory
+```
+wget https://github.com/PlatONnetwork/PlatON-CDT/releases/download/v0.13.2/platon-cdt.tar.gz
+sudo tar -zxvf platon-cdt.tar.gz -C ${USER}/.config/alaya-truffle/compilers/
+sudo ln -s ${USER}/.config/alaya-truffle/compilers/platon-cdt/bin/wasm-opt /usr/bin/wasm-opt
+```
 
 ```eval_rst
 .. _Requirements:
@@ -38,4 +44,4 @@ If you meeting this problem(Example: connect ECONNREFUSED 0.0.0.0:443), May be a
 * NodeJS v10.12.0 or later
 * Ubuntu16.04 or later
 
-platon-truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.
+alaya-truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.

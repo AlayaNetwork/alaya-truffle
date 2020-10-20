@@ -2,7 +2,7 @@ import debugModule from "debug";
 const debug = debugModule("test:data:more-decoding");
 
 import { assert } from "chai";
-import Web3 from "@platonnetwork/web3"; //just using for utils
+import Web3 from "@alayanetwork/web3"; //just using for utils
 
 import Ganache from "ganache-core";
 

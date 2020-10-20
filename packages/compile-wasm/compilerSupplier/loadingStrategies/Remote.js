@@ -17,12 +17,19 @@ class Remote extends LoadingStrategy {
         gzip: true,
         resolveWithFullResponse: true, // optional, otherwise replace `res.body` with just `res` below
         encoding: null
+      }).catch(function (err) {
+        throw new Error("Pull platon-cdt compiler failed: " + err.toString())
       });
+      if (response.statusCode < 200 || response.statusCode > 209) {
+        throw new Error("Pull platon-cdt compiler failed, statusCode: " + response.statusCode.toString())
+      }
       spinner.stop();
       this.addFileToCache(response.body, fileName);
       this.extractToCache(fileName,callback);
       this.linkWasmOpt();
     } catch (error) {
+      console.log(error)
+      console.log("Pull failed, try again")
       spinner.stop();
       if (index >= this.config.compilerRoots.length - 1) {
         throw this.errors("noRequest", "compiler URLs", error);

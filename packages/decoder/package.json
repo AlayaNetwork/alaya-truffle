@@ -48,7 +48,7 @@
     "@truffle/codec": "^0.2.0",
     "bn.js": "^4.11.8",
     "debug": "^4.1.0",
-    "@platonnetwork/web3": "0.13.0"
+    "@alayanetwork/web3": "0.13.2"
   },
   "peerDependencies": {
     "truffle": "^5.0.14"

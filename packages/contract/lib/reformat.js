@@ -2,7 +2,7 @@
  * Utilities for reformatting web3 outputs
  */
 const BigNumber = require("bignumber.js/bignumber");
-const web3Utils = require("@platonnetwork/web3-utils");
+const web3Utils = require("@alayanetwork/web3-utils");
 
 /**
  * Converts from string to other number format

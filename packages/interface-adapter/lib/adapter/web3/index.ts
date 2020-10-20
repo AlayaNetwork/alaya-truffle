@@ -1,5 +1,5 @@
 import { Web3Shim } from "../../shim";
-import { TransactionConfig as EvmTransactionConfig } from "@platonnetwork/web3-core";
+import { TransactionConfig as EvmTransactionConfig } from "@alayanetwork/web3-core";
 import { InterfaceAdapter, EvmBlockType } from "../types";
 import { Provider } from "@truffle/provider";
 

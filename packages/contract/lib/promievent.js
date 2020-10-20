@@ -1,4 +1,4 @@
-const Web3PromiEvent = require("@platonnetwork/web3-core-promievent");
+const Web3PromiEvent = require("@alayanetwork/web3-core-promievent");
 
 function PromiEvent() {
   const { resolve, reject, eventEmitter } = Web3PromiEvent.apply(

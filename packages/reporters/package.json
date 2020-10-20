@@ -10,7 +10,7 @@
   "dependencies": {
     "node-emoji": "^1.8.1",
     "ora": "^3.0.0",
-    "@platonnetwork/web3-utils": "0.13.0"
+    "@alayanetwork/web3-utils": "0.13.2"
   },
   "publishConfig": {
     "access": "public"

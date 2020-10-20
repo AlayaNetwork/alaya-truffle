@@ -4,7 +4,7 @@ const command = {
     "Run a console with contract abstractions and commands available",
   builder: {},
   help: {
-    usage: "platon-truffle console [--network <name>] [--verbose-rpc]",
+    usage: "alaya-truffle console [--network <name>] [--verbose-rpc]",
     options: [
       {
         option: "--network <name>",

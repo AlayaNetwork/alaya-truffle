@@ -10,7 +10,7 @@ import recommonmark
 from recommonmark.transform import AutoStructify
 
 
-github_doc_root = 'https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm/docs/source/'
+github_doc_root = 'https://github.com/PlatONnetwork/platon-truffle/tree/alaya/docs/source/'
 
 # At the bottom of conf.py
 def setup(app):

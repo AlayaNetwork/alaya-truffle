@@ -6,7 +6,7 @@ const { promisify } = require("util");
 const temp = require("temp").track();
 const assert = require("chai").assert;
 const web3 = {};
-web3.utils = require("@platonnetwork/web3-utils");
+web3.utils = require("@alayanetwork/web3-utils");
 
 const { processTarget, DEFAULT_ABI } = require("..");
 

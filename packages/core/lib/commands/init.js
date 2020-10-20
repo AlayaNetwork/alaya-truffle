@@ -3,7 +3,7 @@ var command = {
   description: "Initialize new and empty PlatON project",
   builder: {},
   help: {
-    usage: "platon-truffle init [--force]",
+    usage: "alaya-truffle init [--force]",
     options: [
       {
         option: "--force",

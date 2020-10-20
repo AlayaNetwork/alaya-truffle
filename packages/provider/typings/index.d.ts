@@ -1,6 +1,6 @@
-import { HttpProvider } from "@platonnetwork/web3-providers-http";
-import { IpcProvider } from "@platonnetwork/web3-providers-ipc";
-import { WebsocketProvider } from "@platonnetwork/web3-providers-ws";
+import { HttpProvider } from "@alayanetwork/web3-providers-http";
+import { IpcProvider } from "@alayanetwork/web3-providers-ipc";
+import { WebsocketProvider } from "@alayanetwork/web3-providers-ws";
 
 export type Provider = HttpProvider | IpcProvider | WebsocketProvider;
 

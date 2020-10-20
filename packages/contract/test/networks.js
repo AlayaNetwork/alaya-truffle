@@ -10,7 +10,7 @@ process.removeListener(
 );
 
 var debug = require("debug")("ganache-core");
-var Ganache = require("@platonnetwork/ganache-core");
+var Ganache = require("@alayanetwork/ganache-core");
 var BlockchainUtils = require("@truffle/blockchain-utils");
 var contract = require("../");
 var times = require("async/times");

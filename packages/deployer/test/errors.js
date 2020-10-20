@@ -1,5 +1,5 @@
-const ganache = require("@platonnetwork/ganache-core");
-const Web3 = require("@platonnetwork/web3");
+const ganache = require("@alayanetwork/ganache-core");
+const Web3 = require("@alayanetwork/web3");
 const assert = require("assert");
 const Reporter = require("@truffle/reporters").migrationsV5;
 const EventEmitter = require("events");

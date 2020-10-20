@@ -21,7 +21,7 @@ const command = {
     }
   },
   help: {
-    usage: "platon-truffle compile [--list <filter>] [--all] [--network <name>]",
+    usage: "alaya-truffle compile [--list <filter>] [--all] [--network <name>]",
     options: [
       {
         option: "--all",

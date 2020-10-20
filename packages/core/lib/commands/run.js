@@ -3,7 +3,7 @@ const command = {
   description: "Run a third-party command",
   builder: {},
   help: {
-    usage: "platon-truffle run [<command>]",
+    usage: "alaya-truffle run [<command>]",
     options: [
       {
         option: "<command>",

@@ -1,17 +1,17 @@
 # Writing solidity contract tests in javascript
 
-platon truffle uses the [Mocha](https://mochajs.org/) testing framework and [Chai](http://chaijs.com/) for assertions to provide you with a solid framework from which to write your JavaScript tests. Let's dive in and see how platon truffle builds on top of Mocha to make testing your contracts a breeze.
+alaya truffle uses the [Mocha](https://mochajs.org/) testing framework and [Chai](http://chaijs.com/) for assertions to provide you with a solid framework from which to write your JavaScript tests. Let's dive in and see how alaya truffle builds on top of Mocha to make testing your contracts a breeze.
 
 Note: If you're unfamiliar with writing unit tests in Mocha, please see [Mocha's documentation](https://mochajs.org/) before continuing.
 
 ## Use contract() instead of describe()
 
-Structurally, your tests should remain largely unchanged from that of Mocha: Your tests should exist in the `./test` directory, they should end with a `.js` extension, and they should contain code that Mocha will recognize as an automated test. What makes platon truffle tests different from that of Mocha is the `contract()` function: This function works exactly like `describe()` except it enables platon truffle's [clean-room features](../testing/testing-your-contracts#clean-room-environment). It works like this:
+Structurally, your tests should remain largely unchanged from that of Mocha: Your tests should exist in the `./test` directory, they should end with a `.js` extension, and they should contain code that Mocha will recognize as an automated test. What makes alaya truffle tests different from that of Mocha is the `contract()` function: This function works exactly like `describe()` except it enables alaya truffle's [clean-room features](../testing/testing-your-contracts#clean-room-environment). It works like this:
 
 * Before each `contract()` function is run, your contracts are redeployed to the running PlatON client so the tests within it run with a clean contract state.
 * The `contract()` function provides a list of accounts made available by your PlatON client which you can use to write tests.
 
-Since platon truffle uses Mocha under the hood, you can still use `describe()` to run normal Mocha tests whenever platon truffle clean-room features are unnecessary.
+Since alaya truffle uses Mocha under the hood, you can still use `describe()` to run normal Mocha tests whenever alaya truffle clean-room features are unnecessary.
 
 ## Use contract abstractions within your tests
 
@@ -53,7 +53,7 @@ contract("MetaCoin", accounts => {
   it("should call a function that depends on a linked library", () => {
     let meta;
     let metaCoinBalance;
-    let metaCoinLatBalance;
+    let metaCoinATPBalance;
 
     return MetaCoin.deployed()
       .then(instance => {
@@ -62,14 +62,14 @@ contract("MetaCoin", accounts => {
       })
       .then(outCoinBalance => {
         metaCoinBalance = outCoinBalance.toNumber();
-        return meta.getBalanceInLat.call(accounts[0]);
+        return meta.getBalanceInATP.call(accounts[0]);
       })
-      .then(outCoinBalanceLat => {
-        metaCoinLatBalance = outCoinBalanceLat.toNumber();
+      .then(outCoinBalanceATP => {
+        metaCoinATPBalance = outCoinBalanceATP.toNumber();
       })
       .then(() => {
         assert.equal(
-          metaCoinLatBalance,
+          metaCoinATPBalance,
           2 * metaCoinBalance,
           "Library function returned unexpected function, linkage may be broken"
         );
@@ -157,9 +157,9 @@ contract("2nd MetaCoin test", async accounts => {
     let meta = await MetaCoin.deployed();
     let outCoinBalance = await meta.getBalance.call(accounts[0]);
     let metaCoinBalance = outCoinBalance.toNumber();
-    let outCoinBalanceLat = await meta.getBalanceInLat.call(accounts[0]);
-    let metaCoinLatBalance = outCoinBalanceLat.toNumber();
-    assert.equal(metaCoinLatBalance, 2 * metaCoinBalance);
+    let outCoinBalanceATP = await meta.getBalanceInATP.call(accounts[0]);
+    let metaCoinATPBalance = outCoinBalanceATP.toNumber();
+    assert.equal(metaCoinATPBalance, 2 * metaCoinBalance);
   });
 
   it("should send coin correctly", async () => {
@@ -206,14 +206,14 @@ This test will produce identical output to the previous example.
 You can limit the tests being executed to a specific file as follows:
 
 ```
-platon-truffle test ./test/metacoin.js
+alaya-truffle test ./test/metacoin.js
 ```
 
 See the full [command reference](../reference/truffle-commands#test) for more information.
 
 ## TypeScript File Support
 
-platon truffle now supports tests saved as a `.ts` [TypeScript](https://www.typescriptlang.org/) file. Please see the [Writing Tests in JavaScript](#writing-tests-in-javascript) guide for more information.
+alaya truffle now supports tests saved as a `.ts` [TypeScript](https://www.typescriptlang.org/) file. Please see the [Writing Tests in JavaScript](#writing-tests-in-javascript) guide for more information.
 
 
 # Writing wasm contract tests in javascript
@@ -264,7 +264,7 @@ If you have already deployed a smart contract and do not want to redeploy, you c
 ```javascript
 const waitTime = 10000;
 let contract = undefined;
-let contractAddress = "lax18usjasf74475p846yj5yc2rd6xjj0mhacj9u4t";
+let contractAddress = "atp1c5aajt5zkyzughfsdm2l7fvl4untv2hvlhpkzl";
 
 describe("wasm unit test (you must update config before run this test)", function () {
     before("deploy contract", async function () {
@@ -293,5 +293,5 @@ This test will produce the following output:
 You can specify a specific wasm contract to run the test
 
 ```shell script
-$ platon-truffle test --wasm --contract-name ${ContractName} --param ${InitParamsString}
+$ alaya-truffle test --wasm --contract-name ${ContractName} --param ${InitParamsString}
 ```

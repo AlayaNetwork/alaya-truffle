@@ -9,7 +9,7 @@ import NonceSubProvider from "web3-provider-engine/subproviders/nonce-tracker";
 import HookedSubprovider from "web3-provider-engine/subproviders/hooked-wallet";
 import ProviderSubprovider from "web3-provider-engine/subproviders/provider";
 import Url from "url";
-import Web3 from "@platonnetwork/web3";
+import Web3 from "@alayanetwork/web3";
 import { JSONRPCRequestPayload, JSONRPCErrorCallback } from "ethereum-protocol";
 import { Callback, JsonRpcResponse } from "@truffle/provider";
 

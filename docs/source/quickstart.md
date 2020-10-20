@@ -1,16 +1,16 @@
 # Truffle QuickStart
 
-This page will take you through the basics of creating a platon truffle project and deploying a smart contract to a blockchain.
+This page will take you through the basics of creating a alaya truffle project and deploying a smart contract to a blockchain.
 
 ```eval_rst
 .. _creating-a-project:
 ```
 ## Creating a project
 
-To use most platon truffle commands, you need to run them against an existing platon truffle project. So the first step is to create a platon truffle project.
+To use most alaya truffle commands, you need to run them against an existing alaya truffle project. So the first step is to create a alaya truffle project.
 
-You can create a bare project template, but for those just getting started, you can use `platon-truffle Boxes`, which are example applications and project templates. We'll use the `MetaCoin box`, which creates a token that can be transferred between accounts:
-1. Create a new directory for your platon truffle project:
+You can create a bare project template, but for those just getting started, you can use `alaya-truffle Boxes`, which are example applications and project templates. We'll use the `MetaCoin box`, which creates a token that can be transferred between accounts:
+1. Create a new directory for your alaya truffle project:
 
    ```shell
    mkdir MetaCoin
@@ -20,15 +20,15 @@ You can create a bare project template, but for those just getting started, you 
 2. Download ("unbox") the MetaCoin box:
 
    ```shell
-   platon-truffle unbox metacoin
+   alaya-truffle unbox metacoin
    ```
 
  ```note::
-  You can use the `platon-truffle unbox <box-name>` command to download any of the other platon truffle Boxes.
+  You can use the `alaya-truffle unbox <box-name>` command to download any of the other alaya truffle Boxes.
  ```
 
  ```note::
-   To create a bare platon truffle project with no smart contracts included, use `platon-truffle init`.
+   To create a bare alaya truffle project with no smart contracts included, use `alaya-truffle init`.
  ```
 
  Once this operation is completed, you'll now have a project structure with the following items:
@@ -44,12 +44,12 @@ You can create a bare project template, but for those just getting started, you 
 ## Exploring the project
 
  ```note::
-  This page is just a quickstart, so we're not going to go into much detail here. Please see the rest of the platon truffle documentation to learn more.
+  This page is just a quickstart, so we're not going to go into much detail here. Please see the rest of the alaya truffle documentation to learn more.
  ```
 
 1. Open the `contracts/MetaCoin.sol` file in a text editor. This is a smart contract (written in Solidity) that creates a MetaCoin token. Note that this also references another Solidity file `contracts/ConvertLib.sol` in the same directory.
 
-1. Open the `contracts/Migrations.sol` file. This is a separate Solidity file that manages and updates [the status of your deployed smart contract](getting-started/running-migrations). This file comes with every platon truffle project, and is usually not edited.
+1. Open the `contracts/Migrations.sol` file. This is a separate Solidity file that manages and updates [the status of your deployed smart contract](getting-started/running-migrations). This file comes with every alaya truffle project, and is usually not edited.
 
 1. Open the `migrations/1_initial_migration.js` file. This file is the migration (deployment) script for the `Migrations` contract found in the `Migrations.sol` file.
 
@@ -59,7 +59,7 @@ You can create a bare project template, but for those just getting started, you 
 
 1. Open the `test/metacoin.js` file. This is a [test file written in JavaScript](testing/writing-tests-in-javascript) which performs a similar function to the Solidity test above.
 
-1. Open the `truffle-config.js` file. This is the platon truffle [configuration file](reference/configuration), for setting network information and other project-related settings. The file is blank, but this is okay, as we'll be using a platon truffle command that has some defaults built-in.
+1. Open the `truffle-config.js` file. This is the alaya truffle [configuration file](reference/configuration), for setting network information and other project-related settings. The file is blank, but this is okay, as we'll be using a alaya truffle command that has some defaults built-in.
 
 ```eval_rst
 .. _Testing:
@@ -69,7 +69,7 @@ You can create a bare project template, but for those just getting started, you 
 1. On a terminal, run the Solidity test:
 
    ```shell
-   platon-truffle test ./test/TestMetacoin.sol
+   alaya-truffle test ./test/TestMetacoin.sol
    ```
 
    You will see the following output
@@ -91,7 +91,7 @@ You can create a bare project template, but for those just getting started, you 
 1. Run the JavaScript test:
 
    ```shell
-   platon-truffle test ./test/metacoin.js
+   alaya-truffle test ./test/metacoin.js
    ```
 
    You will see the following output
@@ -114,7 +114,7 @@ You can create a bare project template, but for those just getting started, you 
 1. Compile the smart contracts:
 
    ```shell
-   platon-truffle compile
+   alaya-truffle compile
    ```
 
    You will see the following output:
@@ -128,19 +128,19 @@ You can create a bare project template, but for those just getting started, you 
    ```
 
 ```eval_rst
-.. _Migrating with platon truffle Develop:
+.. _Migrating with alaya truffle Develop:
 ```
 
 ## Migrating
 
-To deploy our smart contracts, we're going to need to connect to a blockchain. platon truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main PlatON network.
+To deploy our smart contracts, we're going to need to connect to a blockchain. alaya truffle has a built-in personal blockchain that can be used for testing. This blockchain is local to your system and does not interact with the main PlatON network.
 
 You can create this blockchain and interact with it using scripts/node/start.sh shell scripts.
 
-1. Run platon truffle migrate:
+1. Run alaya truffle migrate:
 
    ```shell
-   platon-truffle migrate
+   alaya-truffle migrate
    ```
 
   我们可以看到下面的信息：
@@ -159,18 +159,18 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       ----------------------
       > transaction hash:    0x3fd222279dad48583a3320decd0a2d12e82e728ba9a0f19bdaaff98c72a030a2
       > Blocks: 0            Seconds: 0
-      > contract address:    lax15zk6km5znjqc65x8tutulnpwzkla2knrcv4w7e
-      > account:             lax1vfesvzg2h2e6dc2qp6f5t0rqc79ghm6hwsuf63
+      > contract address:    atp1gsddntg6uyk0ykvzy3zv5rp5nx5krnudmn9qav
+      > account:             atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737
       > balance:             99.99445076
       > gas used:            277462
       > gas price:           20 gvon
-      > value sent:          0 LAT
-      > total cost:          0.00554924 LAT
+      > value sent:          0 ATP
+      > total cost:          0.00554924 ATP
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00554924 LAT
+      > Total cost:          0.00554924 ATP
 
    2_deploy_contracts.js
    =====================
@@ -179,39 +179,39 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
       ----------------------
       > transaction hash:    0x97e8168f1c05fc40dd8ffc529b9a2bf45cc7c55b07b6b9a5a22173235ee247b6
       > Blocks: 0            Seconds: 0
-      > contract address:    lax1lvulathn4slagm3pydmgu4vmee4avwxkxl4trl
-      > account:             lax1vfesvzg2h2e6dc2qp6f5t0rqc79ghm6hwsuf63
+      > contract address:    atp13yv6jtgdqjyuqfl55e5470hm358hw7vfv8w48f
+      > account:             atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737
       > balance:             99.9914458
       > gas used:            108240
       > gas price:           20 gvon
-      > value sent:          0 LAT
-      > total cost:          0.0021648 LAT
+      > value sent:          0 ATP
+      > total cost:          0.0021648 ATP
 
       Linking
       -------
-      * Contract: MetaCoin <--> Library: ConvertLib (at address: lax1lvulathn4slagm3pydmgu4vmee4avwxkxl4trl)
+      * Contract: MetaCoin <--> Library: ConvertLib (at address: atp1c5aajt5zkyzughfsdm2l7fvl4untv2hvlhpkzl)
 
       Deploying 'MetaCoin'
       --------------------
       > transaction hash:    0xee4994097c10e7314cc83adf899d67f51f22e08b920e95b6d3f75c5eb498bde4
       > Blocks: 0            Seconds: 0
-      > contract address:    lax1dzg6cn3w70dfhjyvjmldhj02f4kc3amgzf680t
-      > account:             lax1vfesvzg2h2e6dc2qp6f5t0rqc79ghm6hwsuf63
+      > contract address:    atp1c5aajt5zkyzughfsdm2l7fvl4untv2hvlhpkzl
+      > account:             atp1x6s4e7kvyqhdqk7lw3095h9xargxxd4hdse737
       > balance:             99.98449716
       > gas used:            347432
       > gas price:           20 gvon
-      > value sent:          0 LAT
-      > total cost:          0.00694864 LAT
+      > value sent:          0 ATP
+      > total cost:          0.00694864 ATP
 
       > Saving migration to chain.
       > Saving artifacts
       -------------------------------------
-      > Total cost:          0.00911344 LAT
+      > Total cost:          0.00911344 ATP
 
    Summary
    =======
    > Total deployments:   3
-   > Final cost:          0.01466268 LAT
+   > Final cost:          0.01466268 ATP
    ```
 
    This shows the transaction IDs and addresses of your deployed contracts. It also includes a cost summary and real-time status updates.
@@ -230,10 +230,10 @@ You can create this blockchain and interact with it using scripts/node/start.sh 
 
 ## Interacting with the contract
 
-To interact with the contract, you can use the platon truffle console. The platon truffle console is similar to platon truffle Develop, except it connects to an existing blockchain.
+To interact with the contract, you can use the alaya truffle console. The alaya truffle console is similar to alaya truffle Develop, except it connects to an existing blockchain.
 
    ```shell
-   platon-truffle console
+   alaya-truffle console
    ```
 
    You will see the following prompt:
@@ -248,9 +248,9 @@ To interact with the contract, you can use the platon truffle console. The plato
 
 Interact with the contract using the console in the following ways:
 
-As of platon truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.
+As of alaya truffle v5, the console supports async/await functions, enabling much simpler interactions with the contract.
 
-* Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either platon truffle's built-in blockchain:
+* Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either alaya truffle's built-in blockchain:
 
   ```shell
   truffle(development)> let instance = await MetaCoin.deployed()
@@ -289,4 +289,4 @@ As of platon truffle v5, the console supports async/await functions, enabling mu
 ```
 ## Continue learning
 
-This quickstart showed you the basics of the platon truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our documentation and especially our tutorials to learn more.
+This quickstart showed you the basics of the alaya truffle project lifecycle, but there is much more to learn. Please continue on with the rest of our documentation and especially our tutorials to learn more.

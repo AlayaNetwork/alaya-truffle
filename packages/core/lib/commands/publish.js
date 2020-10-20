@@ -3,7 +3,7 @@ var command = {
   description: "Publish a package to the Ethereum Package Registry",
   builder: {},
   help: {
-    usage: "platon-truffle publish",
+    usage: "alaya-truffle publish",
     options: []
   },
   run: function(options, done) {

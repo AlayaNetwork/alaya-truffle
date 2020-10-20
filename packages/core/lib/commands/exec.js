@@ -15,7 +15,7 @@ const command = {
     }
   },
   help: {
-    usage: "platon-truffle exec <script.js> [--network <name>]",
+    usage: "alaya-truffle exec <script.js> [--network <name>]",
     options: [
       {
         option: "<script.js>",

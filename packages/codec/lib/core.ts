@@ -24,7 +24,7 @@ import * as Format from "@truffle/codec/format";
 import { StopDecodingError } from "@truffle/codec/errors";
 import read from "@truffle/codec/read";
 import decode from "@truffle/codec/decode";
-import Web3Utils from "@platonnetwork/web3-utils";
+import Web3Utils from "@alayanetwork/web3-utils";
 
 /**
  * @Category Decoding

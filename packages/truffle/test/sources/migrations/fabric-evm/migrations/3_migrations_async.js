@@ -1,4 +1,4 @@
-const web3 = require("@platonnetwork/web3");
+const web3 = require("@alayanetwork/web3");
 
 const Example = artifacts.require("Example");
 const IsLibrary = artifacts.require("IsLibrary");

@@ -10,13 +10,13 @@
     "baseUrl": ".",
     "lib": ["es2017"],
     "paths": {
-      "@platonnetwork/web3-eth": [
-        "../../node_modules/@platonnetwork/web3/node_modules/@platonnetwork/web3-eth/types",
-        "node_modules/@platonnetwork/web3/node_modules/@platonnetwork/web3-eth/types"
+      "@alayanetwork/web3-eth": [
+        "../../node_modules/@alayanetwork/web3/node_modules/@alayanetwork/web3-eth/types",
+        "node_modules/@alayanetwork/web3/node_modules/@alayanetwork/web3-eth/types"
       ],
-      "@platonnetwork/web3-core": [
-        "../../node_modules/@platonnetwork/web3/node_modules/@platonnetwork/web3-core/types",
-        "node_modules/@platonnetwork/web3/node_modules/@platonnetwork/web3-core/types"
+      "@alayanetwork/web3-core": [
+        "../../node_modules/@alayanetwork/web3/node_modules/@alayanetwork/web3-core/types",
+        "node_modules/@alayanetwork/web3/node_modules/@alayanetwork/web3-core/types"
       ]
     },
     "rootDir": "lib",

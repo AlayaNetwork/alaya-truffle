@@ -2,7 +2,7 @@ module.exports = {
   command: "obtain",
   description: "Fetch and cache a specified compiler",
   help: {
-    usage: "platon-truffle obtain [--solc <version>]",
+    usage: "alaya-truffle obtain [--solc <version>]",
     options: [
       {
         option: "--solc <version>",

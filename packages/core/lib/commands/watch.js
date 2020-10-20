@@ -7,7 +7,7 @@ const command = {
     "Watch filesystem for changes and rebuild the project automatically",
   builder: {},
   help: {
-    usage: "platon-truffle watch",
+    usage: "alaya-truffle watch",
     options: []
   },
   run: function(options) {

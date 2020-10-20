@@ -1,12 +1,12 @@
-# Using platon-truffle console
+# Using alaya-truffle console
 
-Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. platon truffle provides you one easy way to do this via an interactive console, with your contracts available and ready to use.
+Sometimes it's nice to work with your contracts interactively for testing and debugging purposes, or for executing transactions by hand. alaya truffle provides you one easy way to do this via an interactive console, with your contracts available and ready to use.
 
-* **platon-truffle console**: A basic interactive console connecting to any PlatON client
+* **alaya-truffle console**: A basic interactive console connecting to any PlatON client
 
 ## Why console?
 
-Reasons to use **platon-truffle console**:
+Reasons to use **alaya-truffle console**:
 
 * You have a client you're already using, such as platon
 * You want to migrate to a testnet (or the main PlatON network)
@@ -22,7 +22,7 @@ All commands require that you be in your project folder. You do not need to be a
 To launch the console:
 
 ```shell
-platon-truffle console
+alaya-truffle console
 ```
 
 
@@ -34,14 +34,14 @@ When you load the console, you'll immediately see the following prompt:
 truffle(development)>
 ```
 
-This tells you you're running within a platon truffle console using the `development` network.
+This tells you you're running within a alaya truffle console using the `development` network.
 
 
 ## Features
 
-Both platon truffle Develop and the console provide most of the features available in the platon truffle command line tool. For instance, you can type `migrate --reset` within the console, and it will be interpreted the same as if you ran `platon-truffle migrate --reset` on the command line.
+Both alaya truffle Develop and the console provide most of the features available in the alaya truffle command line tool. For instance, you can type `migrate --reset` within the console, and it will be interpreted the same as if you ran `alaya-truffle migrate --reset` on the command line.
 
-Additionally, both platon truffle Develop and the console have the following features:
+Additionally, both alaya truffle Develop and the console have the following features:
 
 * All of your compiled contracts are available and ready for use.
 * After each command (such as `migrate --reset`) your contracts are reprovisioned so you can start using the newly assigned addresses and binaries immediately.
@@ -60,6 +60,6 @@ Additionally, both platon truffle Develop and the console have the following fea
 * `test`
 * `version`
 
-If a platon truffle command is not available, it is because it is not relevant for an existing project (for example, `init`) or wouldn't make sense (for example, `console`).
+If a alaya truffle command is not available, it is because it is not relevant for an existing project (for example, `init`) or wouldn't make sense (for example, `console`).
 
 See full [command reference](../reference/truffle-commands.md) for more information.

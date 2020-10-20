@@ -1,7 +1,7 @@
 const debug = require("debug")("contract:utils");
-const web3Utils = require("@platonnetwork/web3-utils");
+const web3Utils = require("@alayanetwork/web3-utils");
 const { bigNumberify } = require("ethers/utils");
-const abi = require("@platonnetwork/web3-eth-abi");
+const abi = require("@alayanetwork/web3-eth-abi");
 const BlockchainUtils = require("@truffle/blockchain-utils");
 const reformat = require("../reformat");
 const ens = require("./ens");

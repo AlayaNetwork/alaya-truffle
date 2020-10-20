@@ -8,7 +8,7 @@ const command = {
     }
   },
   help: {
-    usage: "platon-truffle debug [<transaction_hash>]",
+    usage: "alaya-truffle debug [<transaction_hash>]",
     options: [
       {
         option: "<transaction_hash>",

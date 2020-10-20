@@ -1,4 +1,4 @@
-const web3Utils = require("@platonnetwork/web3-utils");
+const web3Utils = require("@alayanetwork/web3-utils");
 const semver = require("semver");
 const Native = require("@truffle/compile-solidity/compilerSupplier/loadingStrategies/Native");
 

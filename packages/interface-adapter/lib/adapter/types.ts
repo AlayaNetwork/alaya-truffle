@@ -1,9 +1,9 @@
-import { Block as EvmBlock } from "@platonnetwork/web3-eth";
+import { Block as EvmBlock } from "@alayanetwork/web3-eth";
 import {
   Transaction as EvmTransaction,
   TransactionReceipt as EvmTransactionReceipt,
   TransactionConfig as EvmTransactionConfig
-} from "@platonnetwork/web3-core";
+} from "@alayanetwork/web3-core";
 
 export type EvmBlockType = number | string;
 export type NetworkId = Number | String;

@@ -7,7 +7,7 @@ import {
   CalldataDecoding,
   LogDecoding
 } from "@truffle/codec";
-import Web3 from "@platonnetwork/web3";
+import Web3 from "@alayanetwork/web3";
 
 /**
  * This type represents the state of a contract aside from its storage.

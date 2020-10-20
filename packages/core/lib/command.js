@@ -152,9 +152,9 @@ class Command {
           " - a development framework for PlatON" +
           OS.EOL +
           OS.EOL +
-          "Usage: platon-truffle <command> [options]"
+          "Usage: alaya-truffle <command> [options]"
       )
-      .epilog("See more at https://platon-truffle.readthedocs.io/en/v0.1.0/")
+      .epilog("See more at https://platon-truffle.readthedocs.io/en/v0.13.2/")
       .showHelp();
   }
 }

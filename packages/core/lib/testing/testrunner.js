@@ -2,14 +2,14 @@ const {
   Web3Shim,
   createInterfaceAdapter
 } = require("@truffle/interface-adapter");
-const web3Utils = require("@platonnetwork/web3-utils");
+const web3Utils = require("@alayanetwork/web3-utils");
 var Config = require("@truffle/config");
 var Migrate = require("@truffle/migrate");
 var TestResolver = require("./testresolver");
 var TestSource = require("./testsource");
 var expect = require("@truffle/expect");
 var contract = require("@truffle/contract");
-var abi = require("@platonnetwork/web3-eth-abi");
+var abi = require("@alayanetwork/web3-eth-abi");
 var path = require("path");
 var _ = require("lodash");
 var async = require("async");

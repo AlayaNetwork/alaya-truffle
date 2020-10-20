@@ -24,12 +24,12 @@ $ node -v
 $ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/bin
 $ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/lib/node_modules/
 ```
-## Install platon-truffle
+## Install alaya-truffle
 
 ```bash
-$ npm install -g platon-truffle@0.13.1
+$ npm install -g alaya-truffle@0.13.2
 $ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
-$ platon-truffle version
+$ alaya-truffle version
 ```
 
 ## problems
@@ -47,21 +47,21 @@ If you meeting this problem(Example: connect ECONNREFUSED 0.0.0.0:443), May be a
 * NodeJS v10.12.0 or later
 * Ubuntu16.04 or later
 
-platon-truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.
+alaya-truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.
 
 ### Quick Usage
 
 For a default set of contracts and tests, run the following within an empty project directory:
 
 ```
-$ platon-truffle init
+$ alaya-truffle init
 ```
 
-From there, you can run `platon-truffle compile`, `platon-truffle migrate` and `platon-truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
+From there, you can run `alaya-truffle compile`, `alaya-truffle migrate` and `alaya-truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
 
 ### Documentation
 
-Please see the [Official Platon Truffle Documentation](https://platon-truffle.readthedocs.io/en/v0.13.1/) for guides, tips, and examples.
+Please see the [Official Platon Truffle Documentation](https://platon-truffle.readthedocs.io/en/v0.13.2/) for guides, tips, and examples.
 
 ### License
 

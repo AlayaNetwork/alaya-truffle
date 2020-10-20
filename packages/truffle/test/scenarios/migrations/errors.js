@@ -5,7 +5,7 @@ const assert = require("assert");
 const Server = require("../server");
 const Reporter = require("../reporter");
 const sandbox = require("../sandbox");
-const Web3 = require("@platonnetwork/web3");
+const Web3 = require("@alayanetwork/web3");
 
 describe("migration errors", function() {
   let config;

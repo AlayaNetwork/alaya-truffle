@@ -8,7 +8,7 @@ var command = {
     }
   },
   help: {
-    usage: "platon-truffle opcode <contract_name>",
+    usage: "alaya-truffle opcode <contract_name>",
     options: [
       {
         option: "<contract_name>",

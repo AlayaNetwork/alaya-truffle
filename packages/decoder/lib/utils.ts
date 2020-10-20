@@ -1,5 +1,5 @@
 import { ContractObject as Artifact } from "@truffle/contract-schema/spec";
-import Web3 from "@platonnetwork/web3";
+import Web3 from "@alayanetwork/web3";
 import BN from "bn.js";
 
 import * as Codec from "@truffle/codec";
