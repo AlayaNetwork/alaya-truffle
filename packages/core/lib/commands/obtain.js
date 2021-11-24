@@ -26,7 +26,7 @@ module.exports = {
       `You have specified a compiler that is unsupported by ` +
       `Truffle.\nYou must specify one of the following ` +
       `compilers as well as a version as arguments: ` +
-      `${SUPPORTED_COMPILERS.join(", ")}\nSee 'truffle help ` +
+      `${SUPPORTED_COMPILERS.join(", ")}\nSee 'alaya-truffle help ` +
       `obtain' for more information and usage.`;
     return done(new Error(message));
   },

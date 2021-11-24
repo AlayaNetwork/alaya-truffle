@@ -55,7 +55,7 @@ const Develop = {
     var ipcNetwork = options.network;
 
     var ipc = new IPC();
-    ipc.config.appspace = "truffle.";
+    ipc.config.appspace = "alaya-truffle.";
 
     // set connectPath explicitly
     var dirname = ipc.config.socketRoot;
@@ -102,7 +102,7 @@ const Develop = {
         callback(new Error("IPC connection destroyed"));
       });
 
-      ipc.of[ipcNetwork].on("truffle.ready", function() {
+      ipc.of[ipcNetwork].on("alaya-truffle.ready", function() {
         callback(null, disconnect);
       });
 

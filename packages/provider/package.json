@@ -30,7 +30,7 @@
     "ethereum",
     "http",
     "provider",
-    "truffle"
+    "alaya-truffle"
   ],
   "publishConfig": {
     "access": "public"

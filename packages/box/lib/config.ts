@@ -7,9 +7,9 @@ function setDefaults(config: any = {}): boxConfig {
   return {
     ignore: config.ignore || [],
     commands: config.commands || {
-      compile: "truffle compile",
-      migrate: "truffle migrate",
-      test: "truffle test"
+      compile: "alaya-truffle compile",
+      migrate: "alaya-truffle migrate",
+      test: "alaya-truffle test"
     },
     hooks: {
       "post-unpack": hooks["post-unpack"] || ""

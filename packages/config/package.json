@@ -12,7 +12,7 @@
   "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/config",
   "keywords": [
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "config"
   ],
   "author": "Tim Coulter <tim@trufflesuite.com>",

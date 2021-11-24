@@ -27,7 +27,7 @@
   "keywords": [
     "blockchain",
     "ethereum",
-    "truffle"
+    "alaya-truffle"
   ],
   "publishConfig": {
     "access": "public"

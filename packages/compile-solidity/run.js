@@ -409,6 +409,9 @@ function processContracts({
 
 function formatLinkReferences(linkReferences) {
   // convert to flat list
+  if (!linkReferences) {
+    linkReferences = {};
+  }
   const libraryLinkReferences = Object.values(linkReferences)
     .map(fileLinks =>
       Object.entries(fileLinks).map(([name, links]) => ({

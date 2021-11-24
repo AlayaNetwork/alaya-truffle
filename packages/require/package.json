@@ -27,7 +27,7 @@
     "ethereum",
     "exec",
     "require",
-    "truffle"
+    "alaya-truffle"
   ],
   "publishConfig": {
     "access": "public"

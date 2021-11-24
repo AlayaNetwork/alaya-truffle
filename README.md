@@ -1,6 +1,6 @@
-platon-truffle is a development environment, testing framework and asset pipeline for PlatON, aiming to make life as an developer easier. With platon-truffle, you get:
+alaya-truffle is a development environment, testing framework for Alaya, aiming to make life as an developer easier. With alaya-truffle, you get:
 
-* Built-in smart contract compilation, linking, deployment and binary management.
+* Built-in __smart contract(include evm/wasm contract)__ compilation, linking, deployment and binary management.
 * Automated contract testing with Mocha and Chai.
 * Configurable build pipeline with support for custom build processes.
 * Scriptable deployment & migrations framework.
@@ -15,20 +15,20 @@ WARNING: Don't install nodejs with apt, Otherwise, you will meet a lot of permis
 
 #### Install node
 ```
-$ wget https://nodejs.org/download/release/v10.12.0/node-v10.12.0-linux-x64.tar.gz
-$ sudo tar -zxvf node-v10.12.0-linux-x64.tar.gz -C /usr/local
-$ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
+$ wget https://nodejs.org/download/release/v10.18.1/node-v10.18.1-linux-x64.tar.gz
+$ sudo tar -zxvf node-v10.18.1-linux-x64.tar.gz -C /usr/local
+$ sudo ln -s /usr/local/node-v10.18.1-linux-x64/bin/* /usr/bin/
 $ node -v
-$ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/bin
-$ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/lib/node_modules/
+$ sudo chmod -R 777 /usr/local/node-v10.18.1-linux-x64/bin
+$ sudo chmod -R 777 /usr/local/node-v10.18.1-linux-x64/lib/node_modules/
 ```
 
-#### Install platon-truffle
+#### Install alaya-truffle
 
 ```
-$ npm install -g platon-truffle
-$ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
-$ platon-truffle -v
+$ npm install -g alaya-truffle
+$ sudo ln -s /usr/local/node-v10.18.1-linux-x64/bin/* /usr/bin/
+$ alaya-truffle -v
 ```
 
 #### others
@@ -44,14 +44,14 @@ If you meeting this problem(Example: connect ECONNREFUSED 0.0.0.0:443), May be a
 For a default set of contracts and tests, run the following within an empty project directory:
 
 ```
-$ platon-truffle init
+$ alaya-truffle init
 ```
 
-From there, you can run `platon-truffle compile`, `platon-truffle migrate` and `platon-truffle test` to compile your contracts, deploy those contracts to the network, and run their associated unit tests.
+From there, you can run `alaya-truffle compile`, `alaya-truffle migrate` and `alaya-truffle test` to compile your contracts, deploy those contracts to the alaya network, and run their associated unit tests.
 
 ### Documentation
 
-Please see the [Official platon-truffle Documentation](https://platon-truffle.readthedocs.io/en/v0.11.1/) for guides, tips, and examples.
+Please see the [Official alaya-truffle Documentation](https://platon-truffle.readthedocs.io/en/alaya/) for guides, tips, and examples.
 
 ### Development
 
@@ -61,10 +61,7 @@ We welcome pull requests. To get started, just fork this repo, clone it locally,
 # Install
 npm install -g lerna@3.4.3
 npm install -g yarn
-yarn bootstrap
-
-# Test
-yarn test
+sudo yarn bootstrap
 
 # Adding dependencies to a package
 cd packages/<truffle-package>

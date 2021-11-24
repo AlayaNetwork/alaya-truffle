@@ -8,18 +8,18 @@
 ## Install nodejs
 
 ```bash
-$ wget https://nodejs.org/download/release/v10.12.0/node-v10.12.0-linux-x64.tar.gz
-$ sudo tar -zxvf node-v10.12.0-linux-x64.tar.gz -C /usr/local
-$ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
+$ wget https://nodejs.org/download/release/v10.18.1/node-v10.18.1-linux-x64.tar.gz
+$ sudo tar -zxvf node-v10.18.1-linux-x64.tar.gz -C /usr/local
+$ sudo ln -s /usr/local/node-v10.18.1-linux-x64/bin/* /usr/bin/
 $ node -v
-$ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/bin
-$ sudo chmod -R 777 /usr/local/node-v10.12.0-linux-x64/lib/node_modules/
+$ sudo chmod -R 777 /usr/local/node-v10.18.1-linux-x64/bin
+$ sudo chmod -R 777 /usr/local/node-v10.18.1-linux-x64/lib/node_modules/
 ```
 ## Install alaya-truffle
 
 ```bash
-$ npm install -g alaya-truffle@0.13.1
-$ sudo ln -s /usr/local/node-v10.12.0-linux-x64/bin/* /usr/bin/
+$ npm install -g alaya-truffle@0.16.1
+$ sudo ln -s /usr/local/node-v10.18.1-linux-x64/bin/* /usr/bin/
 $ alaya-truffle version
 ```
 
@@ -41,7 +41,7 @@ sudo ln -s ${USER}/.config/alaya-truffle/compilers/platon-cdt/bin/wasm-opt /usr/
 ```
 ## Requirements
 
-* NodeJS v10.12.0 or later
+* NodeJS v10.18.1 or later
 * Ubuntu16.04 or later
 
 alaya-truffle also requires that you have a running PlatON client which supports the standard JSON RPC API (which is nearly all of them). There are many to choose from, and some better than others for development. We'll discuss them in detail in the Choosing an PlatON client section.

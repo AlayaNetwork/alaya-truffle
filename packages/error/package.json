@@ -7,7 +7,7 @@
   "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/error",
   "keywords": [
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "error",
     "extendable"
   ],

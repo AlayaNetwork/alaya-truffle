@@ -52,7 +52,7 @@ const command = {
       const message =
         `> WARNING: The --enable-analytics and ` +
         `--disable-analytics flags have been deprecated.${OS.EOL}> Please ` +
-        `use 'truffle config set analytics <boolean>'.`;
+        `use 'alaya-truffle config set analytics <boolean>'.`;
       console.warn(OS.EOL + message + OS.EOL);
     } else {
       command = parse(options._);

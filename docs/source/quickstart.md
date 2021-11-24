@@ -239,7 +239,7 @@ To interact with the contract, you can use the alaya truffle console. The alaya 
    You will see the following prompt:
 
    ```
-   truffle(development)>
+   alaya-truffle(development)>
    ```
 
 ``` note::
@@ -253,35 +253,35 @@ As of alaya truffle v5, the console supports async/await functions, enabling muc
 * Begin by establishing both the deployed MetaCoin contract instance and the accounts created by either alaya truffle's built-in blockchain:
 
   ```shell
-  truffle(development)> let instance = await MetaCoin.deployed()
-  truffle(development)> let accounts = await web3.platon.getAccounts()
+  alaya-truffle(development)> let instance = await MetaCoin.deployed()
+  alaya-truffle(development)> let accounts = await web3.platon.getAccounts()
   ```
 
 * Check the metacoin balance of the account that deployed the contract:
 
   ```shell
-  truffle(development)> let balance = await instance.getBalance(accounts[0])
-  truffle(development)> balance.toNumber()
+  alaya-truffle(development)> let balance = await instance.getBalance(accounts[0])
+  alaya-truffle(development)> balance.toNumber()
   ```
 
 * Transfer some metacoin from one account to another:
 
   ```shell
-  truffle(development)> instance.sendCoin(accounts[1], 500)
+  alaya-truffle(development)> instance.sendCoin(accounts[1], 500)
   ```
 
 * Check the balance of the account that received the metacoin:
 
   ```shell
-  truffle(development)> let received = await instance.getBalance(accounts[1])
-  truffle(development)> received.toNumber()
+  alaya-truffle(development)> let received = await instance.getBalance(accounts[1])
+  alaya-truffle(development)> received.toNumber()
   ```
 
 * Check the balance of the account that sent the metacoin:
 
   ```shell
-  truffle(development)> let newBalance = await instance.getBalance(accounts[0])
-  truffle(development)> newBalance.toNumber()
+  alaya-truffle(development)> let newBalance = await instance.getBalance(accounts[0])
+  alaya-truffle(development)> newBalance.toNumber()
   ```
 
 ```eval_rst

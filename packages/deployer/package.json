@@ -36,7 +36,7 @@
     "deployment",
     "ethereum",
     "solidity",
-    "truffle"
+    "alaya-truffle"
   ],
   "publishConfig": {
     "access": "public"

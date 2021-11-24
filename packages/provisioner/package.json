@@ -7,7 +7,7 @@
   "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/provisioner",
   "keywords": [
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "contracts",
     "provision"
   ],

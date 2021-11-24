@@ -3,7 +3,7 @@ const command = {
   description: "Execute build pipeline (if configuration present)",
   builder: {},
   help: {
-    usage: "truffle build",
+    usage: "alaya-truffle build",
     options: []
   },
   run: function(options, done) {

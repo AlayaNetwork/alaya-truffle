@@ -28,7 +28,7 @@
   "keywords": [
     "ethereum",
     "smart-contract",
-    "truffle"
+    "alaya-truffle"
   ],
   "publishConfig": {
     "access": "public"

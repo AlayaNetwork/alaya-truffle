@@ -39,7 +39,7 @@
   "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/compile-solidity",
   "keywords": [
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "compile",
     "solidity"
   ],
