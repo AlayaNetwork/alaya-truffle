@@ -16,7 +16,7 @@ if (!semver.satisfies(process.version, ">=" + minimumNodeVersion)) {
   console.log(
     "Error: Node version not supported. You are currently using version " +
       process.version.slice(1) +
-      " of Node. Truffle requires Node v" +
+      " of Node. Alaya-Truffle requires Node v" +
       minimumNodeVersion +
       " or higher."
   );
@@ -87,7 +87,9 @@ command.run(inputArguments, options, function(err) {
           //making sure users' identifying information does not get sent to
           //analytics by cutting off everything before truffle. Will not properly catch the user's info
           //here if the user has truffle in their name.
-          let identifyingInfo = String.raw`${directory.split("truffle")[0]}`;
+          let identifyingInfo = String.raw`${
+            directory.split("alaya-truffle")[0]
+          }`;
           let removedInfo = new XRegExp(XRegExp.escape(identifyingInfo), "g");
           error = error.replace(removedInfo, "");
         }

@@ -17,7 +17,7 @@ const processInput = input => {
   const inputComponents = input.trim().split(" ");
   if (inputComponents.length === 0) return input;
 
-  if (inputComponents[0] === "truffle") {
+  if (inputComponents[0] === "alaya-truffle") {
     return inputComponents.slice(1).join(" ");
   }
   return input.trim();
@@ -72,7 +72,7 @@ class Console extends EventEmitter {
         const abstractions = this.provision();
 
         this.repl.start({
-          prompt: "truffle(" + this.options.network + ")> ",
+          prompt: "alaya-truffle(" + this.options.network + ")> ",
           context: {
             web3: this.web3,
             interfaceAdapter: this.interfaceAdapter,

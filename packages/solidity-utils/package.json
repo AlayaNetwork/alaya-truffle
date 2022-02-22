@@ -7,7 +7,7 @@
   "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/solidity-utils",
   "keywords": [
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "solidity",
     "contracts"
   ],

@@ -2,11 +2,11 @@ const command = {
   command: "migrate",
   description: "Run migrations to deploy contracts",
   builder: {
-    "reset": {
+    reset: {
       type: "boolean",
       default: false
     },
-    "wasm": {
+    wasm: {
       type: "boolean",
       default: false
     },
@@ -14,7 +14,7 @@ const command = {
       type: "string",
       default: ""
     },
-    "params": {
+    params: {
       describe: "wasm contract migrate init params",
       type: "string",
       default: ""
@@ -32,17 +32,17 @@ const command = {
     "skip-dry-run": {
       describe: "Skip the test or 'dry run' migrations",
       type: "boolean",
-      default: false
+      default: true
     },
-    "f": {
+    f: {
       describe: "Specify a migration number to run from",
       type: "number"
     },
-    "to": {
+    to: {
       describe: "Specify a migration number to run to",
       type: "number"
     },
-    "interactive": {
+    interactive: {
       describe: "Manually authorize deployments after seeing a preview",
       type: "boolean",
       default: false
@@ -69,7 +69,7 @@ const command = {
       },
       {
         option: "--wasm",
-	description: "Run wasm contract migrations"
+        description: "Run wasm contract migrations"
       },
       {
         option: "--contract-name",
@@ -164,7 +164,7 @@ const command = {
       networkWhitelist.includes(parseInt(config.network_id)) ||
       config.production;
     var dryRunAndMigrations = production && !skipDryRun;
-    if(options.wasm === true) {
+    if (options.wasm === true) {
       dryRunOnly = false;
       dryRunAndMigrations = false;
     }
@@ -270,14 +270,14 @@ const command = {
     }
 
     async function runMigrations(config) {
-      if(config.wasm === true) {
-	  var migrateWasm = new MigrateWasm(config);
-	  if(config.contractName === "") {
-            await migrateWasm.runAll();
-	  } else {
-	    await migrateWasm.run(config.contractName);
-          }
-	  return;
+      if (config.wasm === true) {
+        var migrateWasm = new MigrateWasm(config);
+        if (config.contractName === "") {
+          await migrateWasm.runAll();
+        } else {
+          await migrateWasm.run(config.contractName);
+        }
+        return;
       }
       Migrate.launchReporter(config);
 

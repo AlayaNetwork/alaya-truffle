@@ -14,7 +14,7 @@ const MyContract = artifacts.require("MyContract");
 You can also obtain one in the developer console.  Your contract types are available here and all you need to do is use the `at`, `deployed`, or `new` method.
 
 ```javascript
-truffle(development)> const myContract = await MyContract.deployed();
+alaya-truffle(development)> const myContract = await MyContract.deployed();
 ```
 
 You now have access to the following functions on `MyContract`, as well as many others:

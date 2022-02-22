@@ -6,7 +6,7 @@ class LoadingStrategy {
   constructor(options) {
     const defaultConfig = {
       compilerRoots: [
-        "https://github.com/PlatONnetwork/solc-bin/",
+        "https://github.com/PlatONnetwork/solc-bin/"
         // "https://relay.trufflesuite.com/solc/bin/",
         // "https://solc-bin.ethereum.org/bin/",
         // "https://ethereum.github.io/solc-bin/bin/"
@@ -33,7 +33,8 @@ class LoadingStrategy {
   }
 
   errors(kind, input, error) {
-    const info = "Run `truffle compile --list` to see available versions.";
+    const info =
+      "Run `alaya-truffle compile --list` to see available versions.";
 
     const kinds = {
       noPath: "Could not find compiler at: " + input,

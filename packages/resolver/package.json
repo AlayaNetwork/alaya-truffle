@@ -9,7 +9,7 @@
   "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/resolver",
   "keywords": [
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "dependencies",
     "resolver"
   ],

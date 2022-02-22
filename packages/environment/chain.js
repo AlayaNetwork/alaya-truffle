@@ -273,7 +273,7 @@ const ipcLogger = new Logger();
 const ganacheLogger = new Logger();
 
 const supervisor = new Supervisor({
-  appspace: "truffle.",
+  appspace: "alaya-truffle.",
   id: ipcNetwork,
   retry: 1500,
   logger: ipcLogger.log.bind(ipcLogger)

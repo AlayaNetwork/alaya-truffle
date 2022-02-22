@@ -120,7 +120,7 @@ class Command {
         opt => !validOptions.includes(opt)
       );
 
-      // TODO: Remove exception for 'truffle run' when plugin options support added.
+      // TODO: Remove exception for 'alaya-truffle run' when plugin options support added.
       if (invalidOptions.length > 0 && result.name !== "run") {
         if (options.logger) {
           const log = options.logger.log || options.logger.debug;
@@ -154,7 +154,7 @@ class Command {
           OS.EOL +
           "Usage: alaya-truffle <command> [options]"
       )
-      .epilog("See more at https://platon-truffle.readthedocs.io/en/v0.13.2/")
+      // .epilog("See more at https://alaya-truffle.readthedocs.io/en/v0.16.1/")
       .showHelp();
   }
 }

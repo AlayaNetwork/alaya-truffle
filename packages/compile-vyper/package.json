@@ -23,7 +23,7 @@
   "keywords": [
     "compile",
     "ethereum",
-    "truffle",
+    "alaya-truffle",
     "vyper"
   ],
   "publishConfig": {
