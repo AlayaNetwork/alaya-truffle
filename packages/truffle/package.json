@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/trufflesuite/truffle/issues"
   },
-  "version": "0.16.1",
+  "version": "0.16.3",
   "main": "./build/library.bundled.js",
   "bin": {
     "alaya-truffle": "./build/cli.bundled.js"
