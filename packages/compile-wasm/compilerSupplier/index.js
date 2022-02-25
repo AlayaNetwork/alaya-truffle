@@ -7,7 +7,7 @@ const { Remote } = require("./loadingStrategies");
 class CompilerSupplier {
   constructor(_config) {
     _config = _config || {};
-    const defaultConfig = { version: "v0.13.2" };
+    const defaultConfig = { version: "v0.16.3" };
     this.config = Object.assign({}, defaultConfig, _config);
     this.strategyOptions = { version: this.config.version };
   }
